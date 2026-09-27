@@ -1,0 +1,29 @@
+# Roteamento de alertas por severidade. O webhook (Teams/Slack/PagerDuty) vem de arquivo
+# secreto; sem ele configurado, os alertas ficam visíveis na UI do Alertmanager.
+route:
+  receiver: time-specradar
+  group_by: [alertname, componente]
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 4h
+  routes:
+    - matchers: [severidade="critica"]
+      receiver: plantao
+      group_wait: 0s
+      repeat_interval: 30m
+
+receivers:
+  - name: plantao
+    webhook_configs:
+      - url_file: /run/secrets/webhook_plantao
+        send_resolved: true
+  - name: time-specradar
+    webhook_configs:
+      - url_file: /run/secrets/webhook_time
+        send_resolved: true
+
+inhibit_rules:
+  # API fora do ar explica todos os outros alertas da API: não notificar em cascata.
+  - source_matchers: [alertname="ApiForaDoAr"]
+    target_matchers: [componente="api"]
+    equal: [sistema]

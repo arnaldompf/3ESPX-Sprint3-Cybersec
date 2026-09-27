@@ -1,0 +1,6 @@
+{
+  "source_url": "https://www.carrosnaweb.com.br/fichadetalhe.asp?codigo=36635",
+  "snapshot_path": "data/snapshots/2d80b11fd54045d0ba330801f5e7e56c/2026-09-14T22-59-57Z/carrosnaweb_com_br_fichadetalhe_asp_codigo_36635__html__a1be34fd10c5085eed667204/page.md",
+  "sha256": "3e7fa1b4f4ec3265226a3a1e1b7c2d52b010629e452489c95321d1e8b667453f",
+  "purpose": "regression_identity_only_not_gold_dataset"
+}

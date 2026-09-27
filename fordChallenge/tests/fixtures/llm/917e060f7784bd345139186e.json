@@ -1,0 +1,61 @@
+{
+  "chave": "917e060f7784bd345139186e",
+  "meta": {
+    "origem": "derivada de gabarito_v1.json (valor e trecho verbatim da verdade-terra humana), porque nao havia ANTHROPIC_API_KEY",
+    "version_id": "ford_ranger_raptor_2026",
+    "source_id": "registro_evidencias_raptor",
+    "modelo": "claude-sonnet-5",
+    "campos_pedidos": [
+      "adas_nome_comercial",
+      "amortecedores",
+      "fipe_referencia",
+      "modos_direcao",
+      "paddle_shifters",
+      "pneus_tipo",
+      "potencia_rpm",
+      "preco_data",
+      "preco_fipe_brl",
+      "torque_rpm"
+    ],
+    "campos_respondidos": [
+      "amortecedores",
+      "fipe_referencia",
+      "pneus_tipo",
+      "preco_data",
+      "preco_fipe_brl"
+    ],
+    "gerado_por": "scripts/record_llm_fixtures.py"
+  },
+  "dados": {
+    "amortecedores": {
+      "raw_value": "FOX Racing 2.5 Live Valve",
+      "value": "FOX Racing 2.5 Live Valve",
+      "unit": null,
+      "evidence_quote": "Amortecedores FOX 2.5” Racing com tecnologia Live Valve"
+    },
+    "pneus_tipo": {
+      "raw_value": "AT",
+      "value": "AT",
+      "unit": null,
+      "evidence_quote": "Pneus 285/70 R17 General Grabber; Rodas de liga leve 17\""
+    },
+    "preco_data": {
+      "raw_value": "2026-09-01",
+      "value": "2026-09-01",
+      "unit": null,
+      "evidence_quote": "Raptor 3.0 V6 Bi-turbo 4WD AT 2026 (AOD6) ... R$ 499.000"
+    },
+    "preco_fipe_brl": {
+      "raw_value": "452540",
+      "value": 452540,
+      "unit": null,
+      "evidence_quote": "Referência FIPE: Setembro 2026; Preço: R$ 452.540,00"
+    },
+    "fipe_referencia": {
+      "raw_value": "2026-09",
+      "value": "2026-09",
+      "unit": null,
+      "evidence_quote": "Referência FIPE: Setembro 2026; Preço: R$ 452.540,00"
+    }
+  }
+}

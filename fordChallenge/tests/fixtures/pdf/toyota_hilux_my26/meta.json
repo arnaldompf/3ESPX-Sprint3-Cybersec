@@ -1,0 +1,9 @@
+{
+  "nome": "toyota_hilux_my26",
+  "arquivo_de_origem": "gabarito/raw/toyota_hilux_my26_ficha_oficial.pdf",
+  "sha256_do_pdf": "98913702b201f524cca2bf461ee2ead90c3e5f882726617206f7be7db48b1f92",
+  "motor": "pdfplumber",
+  "paginas": 10,
+  "tabelas": 6,
+  "gerado_por": "scripts/build_fixtures.py"
+}

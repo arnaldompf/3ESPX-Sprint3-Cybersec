@@ -1,0 +1,15 @@
+{
+  "source_id": "ford_ficha_tecnica",
+  "version_id": "ford_ranger_raptor_2026",
+  "url_final": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2025/ranger-raptor/pdf/fbr-ranger-raptor-ficha-tecnica.pdf",
+  "http_status": 200,
+  "tier": 1,
+  "tipo": "pdf_oficial",
+  "status": "consultada",
+  "captured_at": "2026-09-01",
+  "text_path": "doc.md",
+  "sha256": "904e4c0c848c9ddadd3a96f82a104a3941238a429b398872c6d62ec538350d52",
+  "bytes": 7746,
+  "arquivo_de_origem": "gabarito/raw/ford_raptor_ficha_tecnica_oficial.txt",
+  "gerado_por": "scripts/build_fixtures.py"
+}

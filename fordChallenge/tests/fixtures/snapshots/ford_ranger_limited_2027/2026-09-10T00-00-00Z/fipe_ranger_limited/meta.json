@@ -1,0 +1,17 @@
+{
+  "source_id": "fipe_ranger_limited",
+  "version_id": "ford_ranger_limited_2027",
+  "url_final": "https://parallelum.com.br/fipe/api/v1/carros/marcas/22/modelos/10761/anos/32000-3",
+  "http_status": 200,
+  "tier": 2,
+  "tipo": "fipe",
+  "status": "consultada",
+  "captured_at": "2026-09-10",
+  "text_path": "page.md",
+  "sha256": "bea11c7580dc5aa26aac323cd580e6f25ec326b8f18426e1e525ba06975fdadd",
+  "bytes": 390,
+  "arquivo_de_origem": "gabarito/raw/fipe_api_ranger_limited.md",
+  "gerado_por": "scripts/build_fixtures.py",
+  "origem": "coleta ao vivo de 2026-09-10 por scripts/coleta/coletar_faltantes.py (robots.txt consultado, 1 req/s, user-agent identificado)",
+  "nota": "resposta da API comunitária da FIPE; o corpo JSON é o texto salvo e a citação é o par `\"Valor\":\"R$ …\"` dentro dele"
+}

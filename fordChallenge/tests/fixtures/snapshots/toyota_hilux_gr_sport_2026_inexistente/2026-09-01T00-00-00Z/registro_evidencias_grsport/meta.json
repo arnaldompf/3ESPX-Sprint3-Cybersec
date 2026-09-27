@@ -1,0 +1,17 @@
+{
+  "source_id": "registro_evidencias_grsport",
+  "version_id": "toyota_hilux_gr_sport_2026_inexistente",
+  "url_final": "https://www.toyota.com.br/modelos/hilux-cabine-dupla",
+  "http_status": 200,
+  "tier": 1,
+  "tipo": "registro_de_evidencia",
+  "status": "consultada",
+  "captured_at": "2026-09-01",
+  "text_path": "page.md",
+  "sha256": "15112ce316e4a8bd5e6f1e21117bf593649dac56e0959ca5b90dc81c82d538e4",
+  "bytes": 19483,
+  "arquivo_de_origem": "gabarito/raw/manus_hilux_gr_sport_negativo.json",
+  "gerado_por": "scripts/build_fixtures.py",
+  "origem": "registro verbatim da coleta de 2026-09-01 (execução do Manus seguindo o protocolo)",
+  "nota": "linha vigente 2026 e ausência da GR-Sport"
+}

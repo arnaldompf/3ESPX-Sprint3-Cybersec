@@ -1,0 +1,44 @@
+auth_enabled: false
+
+server:
+  http_listen_port: 3100
+
+common:
+  path_prefix: /loki
+  replication_factor: 1
+  ring:
+    kvstore:
+      store: inmemory
+  storage:
+    filesystem:
+      chunks_directory: /loki/chunks
+      rules_directory: /loki/rules
+
+schema_config:
+  configs:
+    - from: 2026-01-01
+      store: tsdb
+      object_store: filesystem
+      schema: v13
+      index:
+        prefix: index_
+        period: 24h
+
+# Retenção de 90 dias: a mesma da política de logs da solução (LGPD: minimização).
+limits_config:
+  retention_period: 2160h
+
+compactor:
+  working_directory: /loki/compactor
+  retention_enabled: true
+  delete_request_store: filesystem
+
+# Alertas sobre o conteúdo dos logs (login falho, refresh reutilizado).
+ruler:
+  alertmanager_url: http://alertmanager:9093
+  enable_api: true
+  rule_path: /loki/regras-temp
+  storage:
+    type: local
+    local:
+      directory: /etc/loki/regras

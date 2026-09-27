@@ -1,0 +1,13 @@
+{
+  "consulta": "Chevrolet S10 PBE Inmetro consumo",
+  "provedor": "replay",
+  "veiculo": "Chevrolet S10 High Country",
+  "achados": [
+    {
+      "url": "https://www.chevrolet.com.br/picapes/s10",
+      "titulo": "Chevrolet S10",
+      "snippet": "",
+      "posicao": 0
+    }
+  ]
+}

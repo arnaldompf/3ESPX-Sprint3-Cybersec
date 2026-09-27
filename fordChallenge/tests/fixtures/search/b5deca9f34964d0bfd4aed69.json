@@ -1,0 +1,19 @@
+{
+  "consulta": "Ford Ranger catálogo pdf",
+  "provedor": "replay",
+  "veiculo": "Ford Ranger Limited 3.0 V6 Diesel 4WD AT",
+  "achados": [
+    {
+      "url": "https://www.ford.com.br/picapes/ranger/limited/",
+      "titulo": "Ford Ranger",
+      "snippet": "",
+      "posicao": 0
+    },
+    {
+      "url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes.html",
+      "titulo": "Ford Ranger",
+      "snippet": "",
+      "posicao": 1
+    }
+  ]
+}

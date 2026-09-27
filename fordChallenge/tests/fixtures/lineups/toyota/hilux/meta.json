@@ -1,0 +1,15 @@
+{
+  "marca": "Toyota",
+  "modelo": "Hilux",
+  "url_final": "https://www.toyota.com.br/modelos/hilux-cabine-dupla",
+  "tier": 1,
+  "tipo": "linha_vigente",
+  "status": "consultada",
+  "captured_at": "2026-09-01",
+  "text_path": "lineup.md",
+  "sha256": "770172cc02d3d78f9cc77bc0e09ecd02f4b68524116a8aadae5b65fa278e2cb6",
+  "derivado_de": "gabarito/raw/toyota_hilux_site.md (bloco \"Conheça as versões\", linhas 19-23)",
+  "gerado_por": "scripts/build_fixtures.py",
+  "versoes": 5,
+  "nota": "A Hilux GR-Sport NÃO está nesta linha — é o caso negativo do resolvedor. Preços não constam na página salva (status pendente_coleta no gabarito v1)."
+}

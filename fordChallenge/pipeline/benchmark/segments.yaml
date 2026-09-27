@@ -1,0 +1,56 @@
+# O segmento de cada modelo Ford, e contra quem ele briga.
+#
+# Fica em arquivo, e não em código, pela mesma razão de `pipeline/comparables.yaml`: o
+# gestor da Ford discorda de um concorrente lendo esta lista, e a discordância vira uma
+# linha alterada com data — não um pedido de mudança de software.
+#
+# **O que este arquivo NÃO faz.** Ele não escolhe a versão do concorrente. Diz apenas
+# "a Ranger briga com a Hilux"; *qual* Hilux entra na comparação é decisão de
+# `pipeline/comparables.py`, pelos sete critérios (combustível, tração, transmissão,
+# faixa de preço, finalidade, segmento, carroceria) e sempre no mesmo ano-modelo.
+# Separar as duas coisas é o que permite trocar a régua de comparabilidade sem reescrever
+# o mapa, e vice-versa.
+#
+# **Modelo Ford que não está aqui não vira erro.** Cai para o Pesquisador, que busca
+# "concorrentes de <modelo>" em fontes T3 e **propõe** a lista com as fontes, para um
+# humano confirmar. Uma lista proposta por busca e uma lista escrita aqui não têm o mesmo
+# peso, e a tela diz de qual se trata.
+versao: 2026-09-13
+
+segmentos:
+  picape_media:
+    rotulo: picape média
+    descricao: >-
+      Cabine dupla, motor diesel de 2,0 a 3,0 litros, tração 4x4 disponível e uso misto
+      entre trabalho e família. É o segmento da Ranger e o único mapeado à mão neste
+      arquivo — os outros dependem de pesquisa, e a tela diz isso.
+    concorrentes:
+      - marca: Toyota
+        modelo: Hilux
+      - marca: Volkswagen
+        modelo: Amarok
+      - marca: Chevrolet
+        modelo: S10
+      - marca: RAM
+        modelo: Rampage
+      - marca: Mitsubishi
+        modelo: Triton
+      - marca: Nissan
+        modelo: Frontier
+      - marca: Fiat
+        modelo: Toro
+        categoria_diferente: true
+        motivo: >-
+          A Toro é monobloco e de porte menor — a imprensa a chama de picape "intermediária"
+          ou "aventureira", não média. Ela entra porque **aparece na conversa do showroom**:
+          o cliente que pergunta por Ranger frequentemente pergunta por Toro no mesmo dia.
+          Entra marcada, e a comparação leva o aviso: comparar as duas sem a etiqueta faria
+          a Toro "ganhar" em preço por ser um carro de outra categoria.
+
+# Modelo Ford -> segmento. Só o que se sabe; o resto vai para o Pesquisador.
+#
+# **Não preencha este mapa de memória.** Um segmento errado aqui escolhe os concorrentes
+# errados, e o erro não aparece como erro: aparece como uma matriz de paridade bonita
+# comparando carros que ninguém compara.
+modelos_ford:
+  Ranger: picape_media

@@ -1,0 +1,89 @@
+{
+  "consulta": "site:nissan.com.br filetype:pdf Frontier",
+  "provedor": "replay",
+  "veiculo": "Nissan Frontier Pro-4X 2.3 Bi-Turbodiesel AT7 4x4",
+  "gravado_em": "2026-09-13",
+  "gravado_de": "tavily",
+  "achados": [
+    {
+      "url": "https://www.nissan.com.br/content/dam/Nissan/br/manuais/Frontier/2018/Manual_Proprietario_MPPT-H60A03.pdf",
+      "titulo": "[PDF] FRONTIER - Nissan Brasil",
+      "snippet": "uma concessionária Nissan. [...] da estrada e do tráfego. [...] às pessoas ou animais.",
+      "posicao": 0,
+      "provedor": "tavily",
+      "consulta": "site:nissan.com.br filetype:pdf Frontier"
+    },
+    {
+      "url": "https://www.nissan.com.br/content/dam/Nissan/br/site/servicos/manuais/frontier/2024/Manual%20de%20Propriet%C3%A1rio%20%E2%80%93%20Nissan%20Frontier%20%E2%80%93%20Modelo%202024.pdf",
+      "titulo": "[PDF] FRONTIER - Nissan Brasil",
+      "snippet": "a substituição em uma concessionária Nissan. [...] Nissan para este serviço. [...] 18 pol.",
+      "posicao": 1,
+      "provedor": "tavily",
+      "consulta": "site:nissan.com.br filetype:pdf Frontier"
+    },
+    {
+      "url": "https://www.nissan.com.br/content/dam/Nissan/br/site/mundo_nissan/noticias_eventos/Eventos/concurso-2023/REGULAMENTO_Festival%20da%20Cultura%20Japonesa_2023.pdf",
+      "titulo": "[PDF] regras de participação no “ concurso acadêmico de design gráfico ...",
+      "snippet": "Frontier, que será exibido pela Organizadora no Festival do Japão, em São Paulo, a ocorrer em julho de 2023, e em outros eventos internos e externos da Organizadora. 6.1.1. O nome do (s) participantes (s) criador (es) do Projeto vencedor estará (ão) exposto (s) próximo ao carro Nissan Frontier nesses eventos. 6.2. Os Projetos do 2º e 3 lugares também poderão ser expostos pela Organizadora em eventos externos e internos com devidos créditos aos criadores, ficando a critério da Organizadora 7 [...",
+      "posicao": 2,
+      "provedor": "tavily",
+      "consulta": "site:nissan.com.br filetype:pdf Frontier"
+    },
+    {
+      "url": "https://www.nissan.com.br/content/dam/Nissan/br/manuais/Frontier/2013-2014/site_MP_fronteir_29-01-2013.pdf",
+      "titulo": "[PDF] Manual do Proprietário - Nissan Brasil",
+      "snippet": "LUZ SINALIZADORA DE DIREÇÃO DO TRAILER (se equipado) A carga elétrica adicional da luz sinalizadora de direção do trailer será automaticamente detectada e as luzes sinalizadoras de dire-ção irão se acender.\nTOP61B01 INSTALAÇÃO DO ENGATE PARA REBOQUE A Frontier possui pontos de fixação para a instalação do reboque traseiro localizados na parte inferior do chassi próximo ao pára-choque traseiro. [...] Lembre-se sempre, quem melhor conhece seu veículo é a Concessionária NISSAN. Sempre que forem nec",
+      "posicao": 3,
+      "provedor": "tavily",
+      "consulta": "site:nissan.com.br filetype:pdf Frontier"
+    },
+    {
+      "url": "https://www.nissan.com.br/content/dam/Nissan/br/manuais/Versa/2017/Guia%20de%20Refer%2Bncia%20R%2Bpido%20(Novo)%20Versa%2017MY.pdf",
+      "titulo": "[PDF] GUIA DE REFERÊNCIA RÁPIDO - Nissan Brasil",
+      "snippet": "CUIDADO: SE VOCÊ TENTAR DAR PARTIDA AO MOTOR ANTES DO AQUECIMEN­ TO DO COMBUSTÍVEL, A LUZ INDICADORA IRÁ PISCAR E O MOTOR NÃO DARÁ A PARTIDA.\n1. Acione o freio de estacionamento.\n2.\tModelos com transmissão CVT (se equipado) • Mova a alavanca seletora de marchas para P (Park) ou N (Neutro). A posição P (Park) é recomendada. Pise no pedal do freio até finalizar o processo de aquecimento. Modelos com transmissão manual • Mova a alavanca seletora para a posição N (Neutro). [...] • QUANDO O MODO ALR ",
+      "posicao": 4,
+      "provedor": "tavily",
+      "consulta": "site:nissan.com.br filetype:pdf Frontier"
+    },
+    {
+      "url": "https://www.nissan.com.br/content/dam/Nissan/br/manuais/Versa/2017/Manual%20do%20Propriet+rio%20%20Versa%2017MY.pdf",
+      "titulo": "[PDF] novo versa - Nissan Brasil",
+      "snippet": "conduzindo o veículo. [...] durante uma colisão. [...] da estrada e do tráfego.",
+      "posicao": 5,
+      "provedor": "tavily",
+      "consulta": "site:nissan.com.br filetype:pdf Frontier"
+    },
+    {
+      "url": "https://www.nissan.com.br/content/dam/Nissan/br/manuais/Sentra/2014/MP_Novo_Sentra_site_27_novembr_sbsr49c19f5b27f7d9612404144345aff893404269d13dd2c4ab.pdf",
+      "titulo": "[PDF] Manual do Proprietário - Nissan Brasil",
+      "snippet": "de air bag frontal durante o acionamento. [...] interna do veículo. [...] Nunca deixe as chaves no interior do veículo.",
+      "posicao": 6,
+      "provedor": "tavily",
+      "consulta": "site:nissan.com.br filetype:pdf Frontier"
+    },
+    {
+      "url": "https://www.nissan.com.br/content/dam/Nissan/br/manuais/March/2016/Site_MP_New_March___29-10-2015_sbsr6b73bf0b3de941f2ea203e6bc9975d0d17c4437c5a07d8f6.pdf",
+      "titulo": "[PDF] NEW MARCH - Nissan Brasil",
+      "snippet": "de air bag frontal durante o acionamento. [...] ouvir e sentir um estalido de encaixe. [...] o manual do iPod.",
+      "posicao": 7,
+      "provedor": "tavily",
+      "consulta": "site:nissan.com.br filetype:pdf Frontier"
+    },
+    {
+      "url": "https://www.nissan.com.br/content/dam/Nissan/br/site/servicos/manuais/kicks/2026/Manual_de_Propriet%C3%A1rio_-_Kicks_2026.pdf",
+      "titulo": "[PDF] NOVO KICKS - Nissan Brasil",
+      "snippet": "até a velocidade definida. [...] de peças para o veículo. [...] do sistema de proteção.",
+      "posicao": 8,
+      "provedor": "tavily",
+      "consulta": "site:nissan.com.br filetype:pdf Frontier"
+    },
+    {
+      "url": "https://www.nissan.com.br/content/dam/Nissan/br/vehicles/2019/Frontier/Manuais/Guia%20de%20Refer%C3%AAncia%20R%C3%A1pido%20do%20Sistema%20Multim%C3%ADdia_GRNP-IVI00.pdf",
+      "titulo": "[PDF] SISTEMA MULTIMÍDIA",
+      "snippet": "avalie a segurança do trajeto indicado pelo Navegador antes de segui-lo. O software de navegação e seus dados estão protegidos pela legislação de direitos autorais e são fornecidos exclusivamente para utilização pessoal e não comercial/econômica, sendo vedada a sua comercialização, manipulação, alteração ou reprodução e divulgação, sem os necessários créditos ao fabricante. Caracteres como ç e letras acentuadas presentes nos títulos de músicas e vídeos não são identifi­ cadas pelo equipamento, [",
+      "posicao": 9,
+      "provedor": "tavily",
+      "consulta": "site:nissan.com.br filetype:pdf Frontier"
+    }
+  ]
+}

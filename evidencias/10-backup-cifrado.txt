@@ -1,0 +1,33 @@
+$ export SPECRADAR_DATA_KEY=$(python -m seguranca.cripto_local gerar-chave)
+# chave AES-256 gerada (não exibida)
+
+$ python -m seguranca.backup criar --banco sqlite:///specradar.db --destino backups/ --manter 14
+backups/specradar-20261001T070708Z.srbak
+
+$ ls -l backups/
+-rw-r--r-- 282 specradar-20261001T070708Z.json
+-rw------- 512042 specradar-20261001T070708Z.srbak
+
+# ocorrências de "admin@specradar" no banco original: 8 | no backup cifrado: 0
+
+$ python -m seguranca.backup verificar backups/specradar-20261001T070708Z.srbak
+{
+  "arquivo": "specradar-20261001T070708Z.srbak",
+  "criado_em": "20261001T070708Z",
+  "origem": "sqlite",
+  "algoritmo": "AES-256-GCM",
+  "id_da_chave": "aa39f0c244a913d9",
+  "sha256_cifrado": "30ab49f0d546b0646a187e04b1ec026d91feb0ee3ca8b3e8ef31342c45daca00",
+  "bytes": 512042
+}
+
+# simulando adulteração: 1 byte alterado no meio do arquivo
+$ python -m seguranca.backup verificar backups/specradar-20261001T070708Z-adulterado.srbak
+erro: SHA-256 não confere com o manifesto
+(código de saída: 1)
+
+$ python -m seguranca.backup restaurar backups/specradar-20261001T070708Z.srbak --banco sqlite:///restaurado.db
+restaurado
+$ sqlite3 restaurado.db "select email, role from users"
+admin@specradar.example.com|admin
+vendedor.demo@specradar.example.com|vendedor

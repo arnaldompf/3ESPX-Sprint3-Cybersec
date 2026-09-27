@@ -1,0 +1,76 @@
+{
+  "chave": "76e2a329f3ce823e6d0692a3",
+  "meta": {
+    "origem": "derivada de gabarito_v1.json (valor e trecho verbatim da verdade-terra humana), porque nao havia ANTHROPIC_API_KEY",
+    "version_id": "chevrolet_s10_high_country_2027",
+    "source_id": "registro_evidencias_s10",
+    "modelo": "claude-sonnet-5",
+    "campos_pedidos": [
+      "aceleracao_0_100_s",
+      "adas_nome_comercial",
+      "amortecedores",
+      "cilindros",
+      "farois_tipo",
+      "fipe_referencia",
+      "modos_amortecedor",
+      "modos_conducao",
+      "modos_direcao",
+      "modos_escapamento",
+      "paddle_shifters",
+      "pneus_medida",
+      "potencia_rpm",
+      "preco_data",
+      "preco_fipe_brl",
+      "rodas_aro_pol",
+      "rodas_material",
+      "torque_rpm"
+    ],
+    "campos_respondidos": [
+      "amortecedores",
+      "cilindros",
+      "farois_tipo",
+      "fipe_referencia",
+      "preco_data",
+      "preco_fipe_brl"
+    ],
+    "gerado_por": "scripts/record_llm_fixtures.py"
+  },
+  "dados": {
+    "cilindros": {
+      "raw_value": "4 em linha",
+      "value": "4 em linha",
+      "unit": null,
+      "evidence_quote": "Motor 2.8 turbo diesel de 207 cv"
+    },
+    "amortecedores": {
+      "raw_value": "suspensão com calibração refinada",
+      "value": "suspensão com calibração refinada",
+      "unit": null,
+      "evidence_quote": "Suspensão com calibração refinada"
+    },
+    "farois_tipo": {
+      "raw_value": "LED",
+      "value": "LED",
+      "unit": null,
+      "evidence_quote": "assinatura em LED"
+    },
+    "preco_data": {
+      "raw_value": "2026-09-01",
+      "value": "2026-09-01",
+      "unit": null,
+      "evidence_quote": "S10 High Country A partir de R$ 348.790"
+    },
+    "preco_fipe_brl": {
+      "raw_value": "294378",
+      "value": 294378,
+      "unit": null,
+      "evidence_quote": "R$ 294.378,00 (referência setembro de 2026)"
+    },
+    "fipe_referencia": {
+      "raw_value": "2026-09",
+      "value": "2026-09",
+      "unit": null,
+      "evidence_quote": "R$ 294.378,00 (referência setembro de 2026)"
+    }
+  }
+}

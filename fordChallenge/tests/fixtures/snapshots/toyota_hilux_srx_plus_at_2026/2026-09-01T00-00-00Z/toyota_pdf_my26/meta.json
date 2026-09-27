@@ -1,0 +1,16 @@
+{
+  "source_id": "toyota_pdf_my26",
+  "version_id": "toyota_hilux_srx_plus_at_2026",
+  "url_final": "https://media.toyota.com.br/d400f124-b3ac-4d73-a885-5d6828812f11.pdf",
+  "http_status": 200,
+  "tier": 1,
+  "tipo": "pdf_oficial",
+  "status": "consultada",
+  "captured_at": "2026-09-01",
+  "text_path": "doc.md",
+  "sha256": "e416eb60df4c24b3e76a7f21e1f08517f5da10efec9c516756d6a09f617f036f",
+  "bytes": 22069,
+  "arquivo_de_origem": "gabarito/raw/toyota_hilux_my26_p6_p7_layout.txt",
+  "gerado_por": "scripts/build_fixtures.py",
+  "nota": "páginas 6-7 da lista de equipamentos MY26, com o layout de tabela preservado"
+}

@@ -1,0 +1,26 @@
+$ uvx semgrep scan --config p/python --config p/typescript --config p/owasp-top-ten --config .semgrep/ \
+      fordChallenge/api fordChallenge/pipeline fordChallenge/web/src seguranca
+# 285 arquivos analisados | 5 achados de severidade ERROR
+
+[ERROR] avoid-sqlalchemy-text
+  fordChallenge/api/alembic/versions/0006_nomes_de_versao_canonicos.py:186
+  triagem: FALSO POSITIVO — identificadores vêm da inspeção do esquema (lista fechada); valores são parametrizados (:v)
+
+[ERROR] avoid-sqlalchemy-text
+  fordChallenge/api/alembic/versions/0006_nomes_de_versao_canonicos.py:203
+  triagem: FALSO POSITIVO — identificadores vêm da inspeção do esquema (lista fechada); valores são parametrizados (:v)
+
+[ERROR] avoid-sqlalchemy-text
+  fordChallenge/api/alembic/versions/0006_nomes_de_versao_canonicos.py:300
+  triagem: FALSO POSITIVO — identificadores vêm da inspeção do esquema (lista fechada); valores são parametrizados (:v)
+
+[ERROR] unverified-jwt-decode
+  fordChallenge/api/app/rate_limit.py:36
+  triagem: VERDADEIRO POSITIVO — corrigido em seguranca/app_segura.py (chave_do_limite_verificada); demonstrado em tests/test_rate_limit.py
+
+[ERROR] dangerous-subprocess-use-tainted-env-args
+  fordChallenge/pipeline/research/reprocess.py:65
+  triagem: RISCO ACEITO (baixo) — só no Windows; SYSTEMROOT é do operador, argumentos fixos, PID inteiro
+
+Regras próprias do projeto (.semgrep/specradar.yml): 0 achados.
+Resultado do portão (--error): REPROVADO até a triagem ser registrada.

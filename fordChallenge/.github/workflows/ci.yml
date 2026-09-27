@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+env:
+  # Testes e eval sao sempre deterministicos: nada de rede, nada de LLM real.
+  REPLAY_MODE: "1"
+  LLM_FAKE: "1"
+  PYTHONUTF8: "1"
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - run: uv sync --frozen
+      - run: uv run ruff check .
+      - run: uv run ruff format --check .
+
+  test:
+    runs-on: ubuntu-latest
+    services:
+      db:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: specradar
+          POSTGRES_PASSWORD: specradar
+          POSTGRES_DB: specradar
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U specradar -d specradar"
+          --health-interval 5s --health-timeout 3s --health-retries 12
+    env:
+      DATABASE_URL: postgresql+psycopg://specradar:specradar@localhost:5432/specradar
+      JWT_SECRET: ci-secret-nao-usar-em-producao-0000000000000000
+      ADMIN_EMAIL: admin@specradar.local
+      ADMIN_PASSWORD: ci-only-password
+      SPECRADAR_USER_AGENT: "SpecRadar/0.1 (CI; contato: ci@example.com)"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - run: uv sync --frozen --extra postgres
+      - run: uv run pytest -q
+
+  seguranca:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: gitleaks (segredos)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: astral-sh/setup-uv@v5
+      - name: pip-audit (dependencias)
+        run: uvx pip-audit --strict || true
+      - name: semgrep
+        run: uvx semgrep --config p/python --error --quiet || true

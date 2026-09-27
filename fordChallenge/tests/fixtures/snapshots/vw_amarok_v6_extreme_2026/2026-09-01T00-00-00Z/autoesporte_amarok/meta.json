@@ -1,0 +1,15 @@
+{
+  "source_id": "autoesporte_amarok",
+  "version_id": "vw_amarok_v6_extreme_2026",
+  "url_final": "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2025/08/volkswagen-amarok-2026-precos-versoes-equipamentos.ghtml",
+  "http_status": 200,
+  "tier": 3,
+  "tipo": "imprensa",
+  "status": "consultada",
+  "captured_at": "2026-09-01",
+  "text_path": "page.md",
+  "sha256": "6e3d6195d52df354d54ec05ac77a6a815e3d4391c4bd98b36585fa08728981f9",
+  "bytes": 22420,
+  "arquivo_de_origem": "gabarito/raw/autoesporte_amarok_2026.md",
+  "gerado_por": "scripts/build_fixtures.py"
+}

@@ -1,0 +1,17 @@
+{
+  "source_id": "ford_ficha_tecnica",
+  "version_id": "ford_ranger_limited_2027",
+  "url_final": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2025/nova-geracao-ranger/pdf/fbr-ranger-ficha-tecnica.pdf",
+  "http_status": 200,
+  "tier": 1,
+  "tipo": "pdf_oficial",
+  "status": "consultada",
+  "captured_at": "2026-09-10",
+  "text_path": "doc.md",
+  "sha256": "5577188fc3c69d7ed11caa3129b3afa47cdccbe30b5eb6b4d1b8a5186efbef89",
+  "bytes": 5867,
+  "arquivo_de_origem": "gabarito/raw/ford_ranger_ficha_tecnica_oficial.txt",
+  "gerado_por": "scripts/build_fixtures.py",
+  "origem": "coleta ao vivo de 2026-09-10 por scripts/coleta/coletar_faltantes.py (robots.txt consultado, 1 req/s, user-agent identificado)",
+  "nota": "a página de especificações deste PDF é **imagem**: o texto extraível é o folheto de serviços. As especificações vêm da página da versão — a fonte foi consultada e o que ela dá está dito"
+}

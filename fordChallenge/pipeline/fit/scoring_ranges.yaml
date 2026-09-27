@@ -1,0 +1,80 @@
+# Faixas de referência por campo — a régua que transforma valor em nota 0–10.
+#
+# GERADO por `specradar fit recompute-ranges`. Não edite à mão: o comando registra a
+# procedência de cada faixa (`de_onde`, `amostras`) e a data em `versao`, e uma edição
+# manual quebraria a correspondência entre a nota exibida e os dados que a formaram.
+#
+# `insuficiente: true` significa **um valor só ou nenhum**. O campo então recebe nota
+# neutra (5,0) e a resposta diz o motivo, em vez de sair 0 ou 10 por acidente de amostra.
+#
+# Recalcular é comando explícito de propósito: se a faixa mudasse a cada consulta, a nota
+# de um veículo cairia porque OUTRO veículo entrou na base — o vendedor veria o número
+# mudar sem nada ter mudado no carro dele.
+versao: '2026-09-09'
+faixas:
+  aceleracao_0_100_s:
+    minimo: 5.8
+    maximo: 8.0
+    amostras: 2
+    de_onde: gabarito (2) + banco (3)
+    insuficiente: false
+  airbags_qtd:
+    minimo: 7.0
+    maximo: 7.0
+    amostras: 1
+    de_onde: banco (2)
+    insuficiente: true
+  capacidade_carga_kg:
+    minimo: 1005.0
+    maximo: 1005.0
+    amostras: 1
+    de_onde: banco (2)
+    insuficiente: true
+  capacidade_reboque_kg:
+    minimo: 0.0
+    maximo: 0.0
+    amostras: 0
+    de_onde: nenhum valor observado
+    insuficiente: true
+  consumo_rodoviario_kml:
+    minimo: 10.6
+    maximo: 10.6
+    amostras: 1
+    de_onde: banco (1)
+    insuficiente: true
+  consumo_urbano_kml:
+    minimo: 9.7
+    maximo: 9.7
+    amostras: 1
+    de_onde: banco (1)
+    insuficiente: true
+  potencia_cv:
+    minimo: 204.0
+    maximo: 397.0
+    amostras: 4
+    de_onde: gabarito (4) + banco (7)
+    insuficiente: false
+  preco_fipe_brl:
+    minimo: 294378.0
+    maximo: 452540.0
+    amostras: 3
+    de_onde: gabarito (3) + banco (5)
+    insuficiente: false
+  preco_sugerido_brl:
+    minimo: 348790.0
+    maximo: 499000.0
+    amostras: 3
+    de_onde: gabarito (3) + banco (5)
+    insuficiente: false
+  tanque_l:
+    minimo: 80.0
+    maximo: 80.0
+    amostras: 1
+    de_onde: banco (2)
+    insuficiente: true
+  torque_nm:
+    minimo: 499.0
+    maximo: 583.0
+    amostras: 4
+    de_onde: gabarito (4) + banco (7)
+    insuficiente: false

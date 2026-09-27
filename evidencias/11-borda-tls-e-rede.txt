@@ -1,0 +1,56 @@
+# Stack de produção (infra/docker-compose.yml) em execução — 2026-10-01T07:32Z
+
+$ docker compose -f infra/docker-compose.yml ps
+SERVICE   IMAGE                          STATUS                    PORTS
+api       specradar:local                Up 29 seconds (healthy)   8000/tcp
+caddy     caddy:2.9-alpine               Up 21 seconds             0.0.0.0:80->80/tcp, [::]:80->80/tcp, 0.0.0.0:443->443/tcp, [::]:443->443/tcp
+db        pgvector/pgvector:0.8.0-pg16   Up 4 minutes (healthy)    5432/tcp
+worker    specradar:local                Up 2 minutes              8000/tcp
+
+$ curl -sk -D - -o /dev/null https://localhost/api/v1/health
+HTTP/2 200 
+content-security-policy: default-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'
+content-type: application/json
+permissions-policy: geolocation=(), camera=(), microphone=()
+referrer-policy: no-referrer
+strict-transport-security: max-age=31536000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+content-length: 302
+
+$ curl -s -o /dev/null -w "%{http_code} -> %{redirect_url}" http://localhost/api/v1/health
+308 -> https://localhost/api/v1/health
+
+$ curl -sk -o /dev/null -w "%{http_code}" https://localhost/metrics   # métricas não são publicadas
+404
+$ curl -sk -o /dev/null -w "%{http_code}" https://localhost/docs      # documentação interativa não é publicada
+404
+
+$ openssl s_client -connect localhost:443 -tls1_1    # TLS 1.1 é recusado
+New, (NONE), Cipher is (NONE)
+$ openssl s_client -connect localhost:443                 # negociação padrão
+New, TLSv1.3, Cipher is TLS_AES_128_GCM_SHA256
+    Protocol  : TLSv1.3
+
+$ nc -zv localhost 5432   # Postgres: sem porta publicada
+nc: connect to localhost (127.0.0.1) port 5432 (tcp) failed: Connection refused
+$ nc -zv localhost 8000   # API: só alcançável pelo Caddy
+nc: connect to localhost (127.0.0.1) port 8000 (tcp) failed: Connection refused
+
+# Saída para a internet (egress) — só o worker, que faz a coleta:
+$ docker compose exec api python -c "urlopen(\"https://example.com\")"
+urllib.error.URLError: <urlopen error [Errno -3] Temporary failure in name resolution>
+$ docker compose exec worker python -c "urlopen(\"https://example.com\")"
+HTTP 200
+# Achado ao subir a stack: na 1ª versão do compose a rede `borda` não era interna e a API
+# alcançava https://example.com. Corrigido: `borda` e `dados` com internal: true; o Caddy
+# publica as portas por uma rede `publica` separada.
+
+$ docker inspect specradar-api-1 (endurecimento)
+User=10001:10001 ReadonlyRootfs=true CapDrop=[ALL] SecurityOpt=[no-new-privileges:true] PidsLimit=256 Memory=1073741824
+$ docker compose exec api touch /app/api/app/main.py   # código é somente leitura
+touch: cannot touch '/app/api/app/main.py': Permission denied
+$ docker compose exec api ls /run/secrets/   # segredos como arquivos
+admin_password data_key database_url jwt_secret log_pseudonimo_key metrics_token 
+$ docker inspect specradar-api-1 --format "{{.Config.Env}}" | grep -c "JWT_SECRET=\|DATABASE_URL=postgres"   # nenhum segredo literal no ambiente
+0

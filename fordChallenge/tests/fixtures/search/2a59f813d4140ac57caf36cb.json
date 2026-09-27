@@ -1,0 +1,33 @@
+{
+  "consulta": "Mitsubishi Triton PBE Inmetro consumo",
+  "provedor": "replay",
+  "veiculo": "Mitsubishi Triton HPE-S 2.4 Turbodiesel AT6 4x4",
+  "gravado_em": "2026-09-13",
+  "gravado_de": "tavily",
+  "achados": [
+    {
+      "url": "https://www.youtube.com/watch?v=DUiMu0EMRWU",
+      "titulo": "MITSUBISHI TRITON TURBO DIESEL HPE-S AVALIAÇÃO ...",
+      "snippet": "Avaliação Triton 2018 2.4 Turbo Diesel 190 cv 43,9 kgfm Consumo:9.8 km/l cidade 11,8 km/l estrada 0 a 100 divulgado: 10,4 No teste: 9,1",
+      "posicao": 0,
+      "provedor": "tavily",
+      "consulta": "Mitsubishi Triton PBE Inmetro consumo"
+    },
+    {
+      "url": "https://www.facebook.com/Inmetro/posts/tabela-pbe-...",
+      "titulo": "https://www.facebook.com/Inmetro/posts/tabela-pbe-...",
+      "snippet": "No information is available for this page.",
+      "posicao": 1,
+      "provedor": "tavily",
+      "consulta": "Mitsubishi Triton PBE Inmetro consumo"
+    },
+    {
+      "url": "https://www.youtube.com/shorts/LInObotr09I",
+      "titulo": "REAL fuel consumption with 5 people! (Pump vs. Dashboard)",
+      "snippet": "TRITON 2026: REAL fuel consumption with 5 people! ⛽️ (Pump vs. Dashboard). Enchi a Triton 2026 com 5 pessoas e o consumo me surpreendeu.",
+      "posicao": 2,
+      "provedor": "tavily",
+      "consulta": "Mitsubishi Triton PBE Inmetro consumo"
+    }
+  ]
+}

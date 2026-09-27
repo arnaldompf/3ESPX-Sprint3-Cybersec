@@ -1,0 +1,15 @@
+{
+  "marca": "Ford",
+  "modelo": "Ranger",
+  "url_final": "https://www.ford.com.br/picapes/ranger/compare-as-versoes.html",
+  "tier": 1,
+  "tipo": "linha_vigente",
+  "status": "consultada",
+  "captured_at": "2026-09-10",
+  "text_path": "lineup.md",
+  "sha256": "765046dc13a09cf066a844e69c2ff71ec638022b1e38f92b0caff8c9e3a0ce27",
+  "derivado_de": "gabarito/raw/ford_ranger_linha_comparador.md (coleta de 2026-09-10) + gabarito/raw/ford_raptor_site_versao.md (a Raptor, da coleta de 2026-09-01)",
+  "gerado_por": "scripts/build_fixtures.py",
+  "versoes": 12,
+  "nota": "A Raptor vem da coleta de 2026-09-01 (a página da VERSÃO); as demais vêm do comparador de versões coletado em 2026-09-10, que publica o 'a partir de' de cada uma. A Raptor não aparece no comparador porque tem página de modelo própria (ranger-raptor), e é por isso que as duas datas convivem nesta linha."
+}

@@ -1,0 +1,13 @@
+{
+  "name": "specradar-qa",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Testes de regressão de tela do SpecRadar: um teste por defeito encontrado no ensaio de QA.",
+  "scripts": {
+    "test": "playwright test",
+    "golden": "playwright test --config playwright.golden.config.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1"
+  }
+}

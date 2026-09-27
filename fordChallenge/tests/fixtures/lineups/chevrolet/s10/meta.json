@@ -1,0 +1,14 @@
+{
+  "marca": "Chevrolet",
+  "modelo": "S10",
+  "url_final": "https://www.chevrolet.com.br/picapes/s10",
+  "tier": 1,
+  "tipo": "linha_vigente",
+  "status": "consultada",
+  "captured_at": "2026-09-01",
+  "text_path": "lineup.md",
+  "sha256": "f96cdde9e51a3b44af2dfa45460a76e113d286edee3e50cddc2f9f181003a031",
+  "derivado_de": "gabarito/raw/manus_s10_high_country.json (campo linha_vigente)",
+  "gerado_por": "scripts/build_fixtures.py",
+  "versoes": 7
+}

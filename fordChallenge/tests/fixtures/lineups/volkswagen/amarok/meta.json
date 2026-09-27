@@ -1,0 +1,14 @@
+{
+  "marca": "Volkswagen",
+  "modelo": "Amarok",
+  "url_final": "https://www.vw.com.br/pt/carros/amarok.html",
+  "tier": 1,
+  "tipo": "linha_vigente",
+  "status": "consultada",
+  "captured_at": "2026-09-01",
+  "text_path": "lineup.md",
+  "sha256": "69cf6b368d6cc29a3ebe95d794afc40fedb0a6ed945a092d054b4967646e81cf",
+  "derivado_de": "gabarito/raw/manus_amarok_v6_extreme.json (campo linha_vigente; preços com fonte na Autoesporte)",
+  "gerado_por": "scripts/build_fixtures.py",
+  "versoes": 3
+}

@@ -1,0 +1,129 @@
+# Critérios de comparabilidade entre duas versões.
+#
+# Ficam em arquivo, e não em código, por um motivo de produto: o gestor da Ford discorda
+# de um critério lendo esta lista, e a discordância vira uma linha alterada com data — não
+# um pedido de mudança de software. `versao` é o que aparece na resposta da API, para que
+# nenhuma comparação exibida hoje seja confundida com uma feita sob outros critérios.
+#
+# `docs/13` §3 e `specs/WP-32.md` fixam a régua: "critérios atendidos 5/6", nunca
+# "82% comparável". Porcentagem esconde o denominador, e o denominador é a informação —
+# 5 de 6 e 50 de 60 não são a mesma afirmação sobre um par de picapes.
+versao: 2026-09-09
+
+# Quantos critérios avaliáveis precisam bater para o par ser comparável.
+#
+# Quatro de seis, como a spec pede. E o combustível é **eliminatório** à parte: uma picape
+# a gasolina de desempenho e uma diesel de trabalho podem bater em cinco critérios e
+# continuarem incomparáveis para quem compra por consumo e carga — é a incoerência que
+# `docs/12` §2.3 registra (Raptor × fazendeiro).
+minimo_atendidos: 4
+combustivel_eliminatorio: true
+
+criterios:
+  - id: segmento
+    rotulo: segmento
+    campo: segmento
+    tipo: igualdade
+    descricao: >-
+      Picape média não se compara com picape compacta nem com SUV. É o critério mais
+      grosseiro e o mais decisivo.
+
+  - id: carroceria
+    rotulo: carroceria
+    campo: carroceria
+    tipo: igualdade
+    descricao: >-
+      Cabine dupla contra cabine simples muda carga, preço e público. Comparar as duas
+      como iguais faria a de cabine simples "ganhar" em preço por não ter os assentos.
+
+  - id: combustivel
+    rotulo: combustível
+    campo: combustivel
+    tipo: igualdade
+    descricao: >-
+      Diesel e gasolina não competem pelo mesmo comprador no Brasil: muda consumo, torque
+      em rotação baixa, preço do litro e revenda.
+
+  - id: tracao
+    rotulo: tração
+    campo: tipo_tracao
+    tipo: igualdade
+    descricao: 4x4 contra 4x2 muda capacidade off-road e preço.
+
+  - id: transmissao
+    rotulo: transmissão
+    # `tipo` é o nome canônico do campo dentro do grupo `transmissao` (`docs/03`); o grupo
+    # não faz parte do nome, e a tração tem o seu próprio `tipo_tracao`.
+    campo: tipo
+    tipo: igualdade
+    descricao: >-
+      Automática contra manual. Critério fraco entre topos de linha (quase todos são AT),
+      e mantido porque ele **separa** versão de entrada de versão de topo.
+
+  - id: faixa_de_preco
+    rotulo: faixa de preço
+    campo: preco_sugerido_brl
+    campo_alternativo: preco_fipe_brl
+    tipo: faixa_relativa
+    tolerancia: 0.20
+    descricao: >-
+      ±20% sobre o preço da versão Ford. Usa o preço oficial e cai para o da FIPE quando
+      o oficial não existe — a alternativa está declarada aqui, não escondida no código.
+
+  - id: finalidade
+    rotulo: finalidade
+    campo: finalidade
+    tipo: intersecao
+    descricao: >-
+      As etiquetas de uso (trabalho, desempenho, lazer). Precisam ter ao menos uma em
+      comum: uma picape de desempenho e uma de trabalho podem ter a mesma ficha e servirem
+      a compradores diferentes.
+
+# As etiquetas de finalidade por versão.
+#
+# **Isto é julgamento comercial, não dado extraído**, e por isso está aqui com data e sob a
+# responsabilidade de quem decide (o gestor, por `docs/12` §6.1) em vez de sair de uma
+# heurística sobre a ficha. Uma versão ausente desta lista fica sem finalidade e o critério
+# entra como sem dados — o que reduz o denominador à vista, em vez de fingir um empate.
+#
+# **`lazer` não vai em tudo, e essa é a parte que importa.** A primeira versão desta lista
+# dava `[desempenho, lazer]` à Raptor e `[trabalho, lazer]` à Hilux SRX Plus — as duas
+# passavam a ter algo em comum, e o critério que existe **exatamente** para separar esse par
+# (`docs/12` §2.3: Raptor × fazendeiro) virava decoração. A etiqueta agora responde a "por
+# que esta pessoa está comprando": a Raptor é comprada por desempenho off-road; a picape
+# diesel de topo, por trabalho — com conforto de família como uso secundário legítimo.
+# Uma etiqueta que serve a todos não separa ninguém.
+#
+# As chaves são o `nome_exato` da versão **já canônico** (`pipeline/version_names.py`): sem
+# o modelo repetido no começo e sem o qualificador de carroceria que é padrão do segmento.
+# As grafias antigas ficam abaixo, marcadas, porque um banco que ainda não passou pela
+# migração `0006` guarda os nomes velhos, e uma versão fora desta lista perde a finalidade
+# — o que mudaria o critério de comparabilidade em silêncio, que é exatamente o tipo de
+# mudança que esta rodada não pode fazer.
+finalidade_por_versao:
+  "Raptor 3.0 V6 Bi-turbo 4WD AT": [desempenho]
+  "Raptor 4WD AT": [desempenho]
+  "GR-Sport": [desempenho]
+  "SRX Plus AT": [trabalho, lazer]
+  "SRX AT": [trabalho, lazer]
+  "SRV AT": [trabalho]
+  "SR AT": [trabalho]
+  "STD Power Pack AT": [trabalho]
+  "High Country": [trabalho, lazer]
+  "LTZ": [trabalho, lazer]
+  "Z71": [trabalho, lazer]
+  "Trail Boss": [trabalho, lazer]
+  "WT AT": [trabalho]
+  "WT MT": [trabalho]
+  "Cabine Simples": [trabalho]
+  "V6 Extreme": [trabalho, lazer]
+  "V6 Highline": [trabalho, lazer]
+  "V6 Comfortline": [trabalho]
+  # Grafias anteriores à migração 0006, mantidas para bancos ainda não migrados.
+  "SRX Plus AT (Cabine Dupla)": [trabalho, lazer]
+  "S10 High Country": [trabalho, lazer]
+  "S10 LTZ": [trabalho, lazer]
+  "S10 Z71": [trabalho, lazer]
+  "S10 WT AT": [trabalho]
+  "S10 WT MT": [trabalho]
+  "S10 Cabine Simples": [trabalho]

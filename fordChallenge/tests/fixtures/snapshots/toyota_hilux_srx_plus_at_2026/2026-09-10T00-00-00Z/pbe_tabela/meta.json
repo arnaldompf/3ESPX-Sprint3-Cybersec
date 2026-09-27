@@ -1,0 +1,17 @@
+{
+  "source_id": "pbe_tabela",
+  "version_id": "toyota_hilux_srx_plus_at_2026",
+  "url_final": "https://www.gov.br/inmetro/pt-br/assuntos/regulamentacao/avaliacao-da-conformidade/programa-brasileiro-de-etiquetagem/tabelas-de-eficiencia-energetica/veiculos-automotivos-pbe-veicular",
+  "http_status": 200,
+  "tier": 2,
+  "tipo": "pbe",
+  "status": "consultada",
+  "captured_at": "2026-09-10",
+  "text_path": "page.md",
+  "sha256": "ac828b053bd82b41ac7b76c447dd2009cdc4918a1eba0a93bbdd15cb0afa4f47",
+  "bytes": 57525,
+  "arquivo_de_origem": "gabarito/raw/pbe_tabela_veiculos.md",
+  "gerado_por": "scripts/build_fixtures.py",
+  "origem": "coleta ao vivo de 2026-09-10 por scripts/coleta/coletar_faltantes.py (robots.txt consultado, 1 req/s, user-agent identificado)",
+  "nota": "tabela PBEV 2026 (18º ciclo, atualizada em 31/08/2026); uma linha por configuração publicada, com o consumo urbano e rodoviário medidos"
+}

@@ -1,0 +1,1480 @@
+{
+  "motor": "pdfplumber",
+  "tabelas": [
+    {
+      "pagina": 7,
+      "indice": 0,
+      "linhas": [
+        [
+          "FICHA TÉCNICA - TOYOTA HILUX 2026",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "COMBUSTÍVEL",
+          "Diesel",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CARROCERIA",
+          "Cabine Dupla",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "VERSÃO",
+          "STD Power Pack MT",
+          "STD Power Pack AT",
+          "SR AT",
+          "SRV AT",
+          "SRX AT",
+          "SRX Plus AT"
+        ],
+        [
+          "Motor a combustão",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Motor",
+          "2.8L 16V Turbo* Intercooler (*Turbo com geometria variável)",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Potência (cv/rpm)",
+          "204 / 3.400",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Torque (kgf.m/rpm)",
+          "42,8 / 3.400",
+          "50,9 / 2.800",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Cilindrada (cm3)",
+          "2755",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Tração",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "4×2, 4×4 e 4×4 reduzida com acionamento eletrônico, VSC (controle eletrônico de estabilidade) e A-TRC (controle eletrônico de tração) com bloqueio do diferencial.",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Transmissão",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "Manual de 6 velocidades",
+          "Automática de 6 velocidades sequencial",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Suspensão",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Dianteira",
+          "Independente, braços duplos triangulares, molas helicoidais e barra estabilizadora",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Traseira",
+          "Eixo rígido, molas semielípticas de duplo estágio",
+          "",
+          "",
+          "",
+          "Eixo rígido, molas semielípticas de duplo estágio ajustado (Light Duty Suspension)",
+          "Eixo rígido, molas semielípticas de duplo estágio e barra estabilizadora"
+        ],
+        [
+          "Direção",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "Hidráulica",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Freios",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Dianteiros",
+          "Discos ventilados com ABS e EBD (distribuição eletrônica de força de frenagem)",
+          "",
+          "",
+          "Discos ventilados com ABS, EBD (distribuição eletrônica de força de frenagem) e BAS (sistema de assistência em frenagem de emergência)",
+          "",
+          ""
+        ],
+        [
+          "Traseiros",
+          "Tambor com ABS e EBD",
+          "",
+          "",
+          "Tambor com ABS, EBD e BAS",
+          "",
+          "Disco ventilado com ABS, EBD e BAS"
+        ],
+        [
+          "Pneus e rodas",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Pneus",
+          "265/65 R17",
+          "",
+          "",
+          "265/60 R18",
+          "",
+          ""
+        ],
+        [
+          "Rodas",
+          "Aço estampado 17\"",
+          "",
+          "Liga leve 17\"",
+          "Liga leve 18\"",
+          "",
+          ""
+        ],
+        [
+          "Dimensões e capacidades",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Comprimento (mm)",
+          "5.325",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Largura sem espelho retrovisor (mm)",
+          "1.855",
+          "",
+          "",
+          "",
+          "",
+          "2.020"
+        ],
+        [
+          "Altura (mm)",
+          "1.815",
+          "",
+          "",
+          "",
+          "",
+          "1.830"
+        ],
+        [
+          "Entre eixos (mm)",
+          "3.085",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Peso em ordem de marcha (Kg)",
+          "2.125",
+          "2.130",
+          "2.115",
+          "2.125",
+          "",
+          "2.175"
+        ],
+        [
+          "Peso bruto total (Kg)",
+          "3.130",
+          "3.130",
+          "",
+          "",
+          "",
+          "3.180"
+        ],
+        [
+          "Capacidade de carga (Kg)",
+          "1.005",
+          "1.000",
+          "1.015",
+          "1.005",
+          "",
+          ""
+        ],
+        [
+          "Peso bruto total combinado (Kg)",
+          "6.630",
+          "",
+          "",
+          "",
+          "",
+          "6.680"
+        ],
+        [
+          "Capacidade do tanque (L)",
+          "80",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Dimensões e caçamba",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Comprimento (mm)",
+          "1.569",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Largura (mm)",
+          "1.645",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Altura (mm)",
+          "481",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Fora de estrada",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Vão livre mínimo do solo (mm)",
+          "286",
+          "",
+          "",
+          "",
+          "",
+          "323"
+        ],
+        [
+          "Ângulo de ataque",
+          "29°",
+          "",
+          "",
+          "",
+          "",
+          "30°"
+        ],
+        [
+          "Ângulo de saída",
+          "26°",
+          "",
+          "",
+          "",
+          "",
+          "24°"
+        ]
+      ],
+      "spans": {
+        "0:0": 7,
+        "1:1": 6,
+        "2:1": 6,
+        "4:0": 7,
+        "5:1": 6,
+        "6:1": 6,
+        "7:2": 5,
+        "8:1": 6,
+        "9:0": 7,
+        "10:0": 7,
+        "11:0": 7,
+        "12:2": 5,
+        "13:0": 7,
+        "14:1": 6,
+        "15:1": 4,
+        "16:0": 7,
+        "17:1": 6,
+        "18:0": 7,
+        "19:1": 3,
+        "19:4": 3,
+        "20:1": 3,
+        "20:4": 2,
+        "21:0": 7,
+        "22:1": 3,
+        "22:4": 3,
+        "23:1": 2,
+        "23:4": 3,
+        "24:0": 7,
+        "25:1": 6,
+        "26:1": 5,
+        "27:1": 5,
+        "28:1": 6,
+        "29:4": 2,
+        "30:2": 4,
+        "31:4": 3,
+        "32:1": 5,
+        "33:1": 6,
+        "34:0": 7,
+        "35:1": 6,
+        "36:1": 6,
+        "37:1": 6,
+        "38:0": 7,
+        "39:1": 5,
+        "40:1": 5,
+        "41:1": 5
+      }
+    },
+    {
+      "pagina": 8,
+      "indice": 0,
+      "linhas": [
+        [
+          "HILUX MY'26 - LISTA DE EQUIPAMENTOS",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "COMBUSTÍVEL",
+          "Diesel",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CARROCERIA",
+          "Cabine Dupla",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "VERSÃO",
+          "STD Power Pack MT / AT",
+          "SR AT",
+          "SRV AT",
+          "SRX AT",
+          "SRX Plus AT"
+        ],
+        [
+          "ESTILO",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Capota marítima",
+          "-",
+          "-",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Faróis",
+          "Halógenos",
+          "",
+          "LED",
+          "",
+          ""
+        ],
+        [
+          "Faróis de neblina dianteiros",
+          "-",
+          "LED",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Grade do radiador",
+          "Logo Toyota",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Lanternas de neblina traseiras",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Lanternas traseiras em LED",
+          "-",
+          "-",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Maçanetas externas",
+          "Cor Preta",
+          "Cor do veículo",
+          "Cromada",
+          "",
+          ""
+        ],
+        [
+          "Maçanetas internas",
+          "Cor Preta",
+          "Cromada",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Molduras nas caixas de roda Exclusivas SRX Plus",
+          "-",
+          "",
+          "",
+          "",
+          "•"
+        ],
+        [
+          "Nivelamento dos faróis dianteiros",
+          "Manual",
+          "",
+          "Automático",
+          "",
+          ""
+        ],
+        [
+          "Para barro",
+          "Dianteiro/Traseiro",
+          "",
+          "",
+          "",
+          "Dianteiro"
+        ],
+        [
+          "Para-choque dianteiro pintados na cor do veículo",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Para-choque traseiro",
+          "Preto",
+          "Cromado",
+          "Cromado",
+          "Cromado",
+          "Cromado"
+        ],
+        [
+          "Retrovisores externos Cor Preta Cromada",
+          "Cor Preta",
+          "",
+          "Cromado",
+          "",
+          ""
+        ],
+        [
+          "Santantonio",
+          "-",
+          "-",
+          "-",
+          "-",
+          "•"
+        ],
+        [
+          "CONFORTO/CONVENIÊNCIA",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "4 alto-falantes",
+          "•",
+          "-",
+          "-",
+          "-",
+          "-"
+        ],
+        [
+          "4 alto-falantes e 2 tweeters",
+          "•",
+          "•",
+          "-",
+          "-",
+          "-"
+        ],
+        [
+          "6 alto-falantes, 2 tweeters e 1 subwoofer - Sistema de som JBL®",
+          "-",
+          "-",
+          "-",
+          "•",
+          "•"
+        ],
+        [
+          "2 Entradas USB traseiras (carregamento)",
+          "-",
+          "-",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Acendimento automático dos faróis",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Apoio de braço traseiro com porta-copos",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Ar-condicionado manual integrado frio e quente",
+          "•",
+          "-",
+          "-",
+          "-",
+          "-"
+        ],
+        [
+          "Ar condicionado duas zonas integrado frio e quente com display digital",
+          "-",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Bancos dianteiros ventilados",
+          "-",
+          "-",
+          "-",
+          "•",
+          "•"
+        ],
+        [
+          "Banco do motorista com ajuste de altura",
+          "-",
+          "Manual",
+          "Elétrico",
+          "",
+          ""
+        ],
+        [
+          "Banco do motorista com ajuste de distância e inclinação",
+          "Manual",
+          "",
+          "Elétrico",
+          "",
+          ""
+        ],
+        [
+          "Banco traseiro com assento rebatível 60/40",
+          "-",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Caçamba com ganchos internos (4)",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Câmera de 360 graus (PVM)",
+          "-",
+          "-",
+          "-",
+          "•",
+          "-"
+        ],
+        [
+          "Câmera de Ré instalada na porta da caçamba",
+          "-",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Chave tipo canivete",
+          "•",
+          "•",
+          "-",
+          "-",
+          "-"
+        ],
+        [
+          "Coluna de direção com regulagem de altura e profundidade",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Comando interno de abertura da tampa do tanque de combustível",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Compartimento refrigerado no painel",
+          "-",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Computador de bordo com tela de 4,2\" de TFT com funções: autonomia, aviso das portas abertas, consumo médio e instantâneo de combustível, indicador de modo econômico, hodômetros total e parcial, temperatura externa, velocidade média do veículo, visualização de áudio",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ]
+      ],
+      "spans": {
+        "0:0": 6,
+        "1:1": 5,
+        "2:1": 5,
+        "4:0": 6,
+        "6:1": 2,
+        "6:3": 3,
+        "7:2": 4,
+        "8:1": 5,
+        "11:3": 3,
+        "12:2": 4,
+        "13:1": 4,
+        "14:1": 2,
+        "14:3": 3,
+        "15:1": 4,
+        "18:1": 2,
+        "18:3": 3,
+        "20:0": 6,
+        "30:3": 3,
+        "31:1": 2,
+        "31:3": 3
+      }
+    },
+    {
+      "pagina": 8,
+      "indice": 1,
+      "linhas": [
+        [
+          "ENTRADA",
+          "",
+          "PARCELAS INTERMEDIÁRIAS",
+          "",
+          "PARCELA RESIDUAL",
+          "",
+          "À VISTA"
+        ],
+        [
+          "%",
+          "R$",
+          "X",
+          "R$",
+          "%",
+          "R$",
+          "R$"
+        ]
+      ],
+      "spans": {
+        "0:0": 2,
+        "0:2": 2,
+        "0:4": 2
+      }
+    },
+    {
+      "pagina": 9,
+      "indice": 0,
+      "linhas": [
+        [
+          "HILUX MY'26 - LISTA DE EQUIPAMENTOS",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "COMBUSTÍVEL",
+          "Diesel",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CARROCERIA",
+          "Cabine Dupla",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "VERSÃO",
+          "STD Power Pack AT",
+          "SR AT",
+          "SRV AT",
+          "SRX AT",
+          "SRX Plus AT"
+        ],
+        [
+          "CONFORTO/CONVENIÊNCIA",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Console entre os bancos dianteiros com porta-copos, porta-objetos com tampa e descansa-braços",
+          "(Acabamento em PVC)",
+          "(Acabamento em couro)",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Controle de velocidade de cruzeiro",
+          "-",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Desembaçador do vidro traseiro",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Estribos laterais na cor preta",
+          "-",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Faróis com temporizador — follow me home",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Hodômetro parcial e total",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Limpador do para-brisa intermitente",
+          "•",
+          "• (com temporizador)",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Luz de leitura individual dianteira",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Modos de seleção de condução Eco e Power",
+          "-",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Pacote de couro (volante e manopla de câmbio)",
+          "-",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Para-sol do motorista com porta-documentos",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Para-sol do passageiro com espelho de cortesia",
+          "-",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Porta-luvas com chave",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Porta-objetos nas portas",
+          "4",
+          "4",
+          "4",
+          "4",
+          "4"
+        ],
+        [
+          "Porta-óculos no teto",
+          "-",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Porta-revistas no encosto dos bancos dianteiros",
+          "•",
+          "Com ganchos",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Protetor de caçamba",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Relógio digital",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Retrovisores externos com regulagem elétrica e indicador de direção",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Retrovisores externos eletrorretráteis",
+          "-",
+          "-",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Retrovisor interno eletrocrômico",
+          "-",
+          "-",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Revestimento dos bancos",
+          "Material Sintético",
+          "Tecido",
+          "Couro e material sintético1",
+          "Couro perfurado e material sintético1",
+          "Couro perfurado e material sintético1"
+        ],
+        [
+          "Saída de ar central para os bancos traseiros",
+          "-",
+          "-",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Seletor para troca de tração",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Sistema Multimídia com tela de 9\", entrada USB, conexão Bluetooth®, espelhamento Android Auto® e Apple CarPlay® sem cabos (Wireless Connectivity)",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Smart Entry: sistema inteligente de destravamento das portas por sensores",
+          "-",
+          "-",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Start Button/Push Start: sistema de partida sem chave",
+          "-",
+          "-",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Tacômetro (conta-giros)",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Tapetes genuínos",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Tomada de energia (12V) na cabine",
+          "1",
+          "1",
+          "2",
+          "1",
+          "1"
+        ],
+        [
+          "Vidros elétricos e sistema de abertura com um toque",
+          "Motorista",
+          "-",
+          "-",
+          "-",
+          "-"
+        ],
+        [
+          "Vidros elétricos e sistema de abertura e fechamento com um toque, com antiesmagamento",
+          "-",
+          "Motorista",
+          "Todos",
+          "",
+          ""
+        ],
+        [
+          "Volante com comandos integrados de telefone, áudio e vídeo",
+          "•",
+          "• (+ computador de bordo)",
+          "",
+          "• (+ computador de bordo e TSS³)",
+          ""
+        ]
+      ],
+      "spans": {
+        "0:0": 6,
+        "1:1": 5,
+        "2:1": 5,
+        "4:0": 6,
+        "5:2": 4,
+        "11:2": 4,
+        "20:2": 4,
+        "36:3": 3,
+        "37:2": 2,
+        "37:4": 2
+      }
+    },
+    {
+      "pagina": 9,
+      "indice": 1,
+      "linhas": [
+        [
+          "ENTRADA",
+          "",
+          "PARCELAS INTERMEDIÁRIAS",
+          "",
+          "PARCELA RESIDUAL",
+          "",
+          "À VISTA"
+        ],
+        [
+          "%",
+          "R$",
+          "X",
+          "R$",
+          "%",
+          "R$",
+          "R$"
+        ]
+      ],
+      "spans": {
+        "0:0": 2,
+        "0:2": 2,
+        "0:4": 2
+      }
+    },
+    {
+      "pagina": 10,
+      "indice": 0,
+      "linhas": [
+        [
+          "HILUX MY'26 - LISTA DE EQUIPAMENTOS",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "COMBUSTÍVEL",
+          "Diesel",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CARROCERIA",
+          "Cabine Dupla",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "VERSÃO",
+          "STD Power Pack AT",
+          "SR AT",
+          "SRV AT",
+          "SRX AT",
+          "SRX Plus AT"
+        ],
+        [
+          "SEGURANÇA",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "TOYOTA SAFETY SENSE",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Assistente de pré-colisão frontal (Pre-crash System - PCS) com alerta sonoro e visual e, se necessário, frenagem automática com reconhecimento para carros, pedestres e ciclistas",
+          "-",
+          "-",
+          "-",
+          "•",
+          "•"
+        ],
+        [
+          "Controle de velocidade de cruzeiro adaptativo (Adaptive Cruise Control - ACC)",
+          "-",
+          "-",
+          "-",
+          "•",
+          "•"
+        ],
+        [
+          "Sistema de Alerta de Mudança de Faixa (Lane Departure Alert – LDA)",
+          "-",
+          "-",
+          "-",
+          "•",
+          "•"
+        ],
+        [
+          "7 Airbags: 1 de joelho (motorista), 2 de cortina, 2 frontais e 2 laterais",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Alças de segurança",
+          "4",
+          "8",
+          "8",
+          "8",
+          "8"
+        ],
+        [
+          "Apoios de cabeça dianteiros com regulagem de altura",
+          "-",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Apoios de cabeça traseiros com regulagem de altura",
+          "3",
+          "3",
+          "3",
+          "3",
+          "3"
+        ],
+        [
+          "Assistente de descida (DAC)",
+          "-",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Assistente de reboque",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Assistente de subida (HAC)",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Bloqueio do diferencial traseiro (com acionamento elétrico)",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Cintos de segurança dianteiros de 3 pontos com regulagem de altura, pré-tensionador e limitador de força",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Cintos de segurança traseiros de 3 pontos (central e laterais)",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Imobilizador por código eletrônico na chave",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Luz auxiliar de freio em LED (Brake Light)",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Luz de condução diurna",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Luz de frenagem emergencial automática",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Sensores de estacionamento dianteiros (2) e traseiros (4)",
+          "-",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Serviços Conectados Toyota-",
+          "-",
+          "-",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Sistema auxiliar BAS (sistema de assistência em frenagem de emergência) nas 4 rodas",
+          "-",
+          "-",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Sistema auxiliar EBD (distribuição eletrônica de força de frenagem) nas 4 rodas",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Sistema de alarme perimétrico",
+          "•",
+          "•",
+          "-",
+          "-",
+          "-"
+        ],
+        [
+          "Sistema de alarme perimétrico + volumétrico",
+          "-",
+          "-",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Sistema de freios ABS (sistema de freio antiblocante) nas 4 rodas",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Sistema universal Isofix® para fixação de cadeirinha para crianças no banco traseiro",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Tampa traseira com chave",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Trava automática de portas ativada pelo movimento do veículo (acima de 20 km/h)",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Trava de segurança do estepe",
+          "-",
+          "-",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Trava (porca) de segurança das rodas",
+          "-",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Trava de segurança para crianças nas portas traseiras",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ],
+        [
+          "Travas elétricas com acionamento a distância e controle na chave para abertura e fechamento das 4 portas",
+          "•",
+          "•",
+          "•",
+          "•",
+          "•"
+        ]
+      ],
+      "spans": {
+        "0:0": 6,
+        "1:1": 5,
+        "2:1": 5,
+        "4:0": 6
+      }
+    }
+  ]
+}

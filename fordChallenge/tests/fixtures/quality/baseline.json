@@ -1,0 +1,2339 @@
+{
+  "description": "Capturas reais do teste defeituoso de 14/09/2026; nao sao gabarito de respostas corretas.",
+  "sources": [
+    {
+      "file": "source-0.txt",
+      "url": "https://www.ford.com/configure/chooseyourpath/ranger",
+      "sha256": "2c7ab53c7a00e418be668fc642a92351b21c8468a11e39fb404686d7730f82bc"
+    },
+    {
+      "file": "source-1.txt",
+      "url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+      "sha256": "76f4cdb80771f5e72fb90956e75551336d725d8e9f6ca27aaed902122333311a"
+    },
+    {
+      "file": "source-2.txt",
+      "url": "https://acessorios.vw.com.br/storage/app/media/pdfs/polo_price.pdf",
+      "sha256": "ce8bc11762717f944a6ae7b491f16b78e900e5e01f71164dca754a100ee08f16"
+    }
+  ],
+  "baseline": {
+    "baseline": [
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "marca",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "modelo",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "versao",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "ano_modelo",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "codigo_fipe",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "carroceria",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "segmento",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "motor_descricao",
+        "value_json": "\"3.0_v6_turbo_diesel\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Motor\n\n3.0 V6 Turbo Diesel"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "cilindros",
+        "value_json": "\"V6\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "# Limited 3.0 V6 Diesel 4WD AT 2027"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "deslocamento_l",
+        "value_json": 3,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Performance - Motor 3.0L V6 de 250cv com 600Nm"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "combustivel",
+        "value_json": "\"diesel\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "# Limited 3.0 V6 Diesel 4WD AT 2027"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "aspiracao",
+        "value_json": "\"turbo\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "3.0 V6 Turbo Diesel"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "potencia_cv",
+        "value_json": 250,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Potência\n\n250cv"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "potencia_rpm",
+        "value_json": 3250,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "250 cv @ 3.250rpm"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "torque_nm",
+        "value_json": 600,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Torque\n\n600Nm"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "torque_rpm",
+        "value_json": 1750,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "600 Nm @ 1.750 rpm"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "tipo",
+        "value_json": "\"automatica\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Transmissão\nAutomática de 10 velocidades"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "numero_marchas",
+        "value_json": 10,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Automática de 10 velocidades"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "paddle_shifters",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "tipo_tracao",
+        "value_json": "\"4x4\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Tração\n4WD"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "reduzida",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "bloqueio_diferencial",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "suspensao_dianteira",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "suspensao_traseira",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "amortecedores",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "direcao",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "freios_dianteiros",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "freios_traseiros",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "aceleracao_0_100_s",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "velocidade_maxima_kmh",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "consumo_urbano_kml",
+        "value_json": 8.3,
+        "status": "verificado",
+        "source_url": "https://www.gov.br/inmetro/pt-br/assuntos/regulamentacao/avaliacao-da-conformidade/programa-brasileiro-de-etiquetagem/tabelas-de-eficiencia-energetica/veiculos-automotivos-pbe-veicular",
+        "quote": "Picape FORD Nova Ranger 4x4 LTD 3.0 V6 - 24V Combustão A-10 S E D 73 67 ND A \\ 224 \\ \\ \\ \\ \\ 8,3 10,1 9,0 \\ \\ \\ \\ 3,02 \\ E E -"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "consumo_rodoviario_kml",
+        "value_json": 10.1,
+        "status": "verificado",
+        "source_url": "https://www.gov.br/inmetro/pt-br/assuntos/regulamentacao/avaliacao-da-conformidade/programa-brasileiro-de-etiquetagem/tabelas-de-eficiencia-energetica/veiculos-automotivos-pbe-veicular",
+        "quote": "Picape FORD Nova Ranger 4x4 LTD 3.0 V6 - 24V Combustão A-10 S E D 73 67 ND A \\ 224 \\ \\ \\ \\ \\ 8,3 10,1 9,0 \\ \\ \\ \\ 3,02 \\ E E -"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "modos_conducao",
+        "value_json": "[\"normal\", \"eco\", \"reboque\", \"escorregadio\", \"lama\", \"areia\"]",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "6 modos de condução selecionáveis – Normal, Eco, Rebocar/Transp, Escorregadio, Lama/Terra, Areia"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "modos_direcao",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "modos_escapamento",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "modos_amortecedor",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "farois_tipo",
+        "value_json": "\"Full LED\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Faróis FullLed"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "farois_neblina",
+        "value_json": "true",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Faróis de neblina em Led"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "rodas_aro_pol",
+        "value_json": 18,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Rodas de liga leve 18\""
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "rodas_material",
+        "value_json": "\"liga leve\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Rodas de liga leve 18\""
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "pneus_medida",
+        "value_json": "\"255/65 R18\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Pneus 255/65 R18 All Terrain"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "pneus_tipo",
+        "value_json": "\"AT\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Pneus 255/65 R18 All Terrain"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "comprimento_mm",
+        "value_json": 5370,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Comprimento do veículo (mm)\n5370"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "largura_mm",
+        "value_json": 2208,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Largura do veículo com espelhos (mm)\n2208"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "altura_mm",
+        "value_json": 1884,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Altura do veículo (mm)\n1884"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "entre_eixos_mm",
+        "value_json": 3270,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Distancia entre eixos (mm)\n3270"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "capacidade_carga_kg",
+        "value_json": 1023,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Capacidade de carga (kg)\n1023"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "capacidade_reboque_kg",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "tanque_l",
+        "value_json": 80,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Tanque de combistível (L)\n80"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "adas_nome_comercial",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "adas_itens",
+        "value_json": "[\"sensor_de_estacionamento\", \"farol_alto_automatico\", \"reconhecimento_de_placas\", \"permanencia_em_faixa\", \"controle_de_estabilidade\", \"frenagem_autonoma\"]",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Sensor de estacionamento dianteiro\n\nSensor de estacionamento traseiro\n\nFarol alto automático\n\nSistema de reconhecimento de sinais de trânsito\n\nAssistente de permanência em faixa\n\nControle Eletrônico de Estabilidade\n\nAssistente Autônomo de frenagem (com detecção de pedestres)"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "airbags_qtd",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "camera_360",
+        "value_json": "true",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes.html",
+        "quote": "Câmera 360°"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "preco_sugerido_brl",
+        "value_json": 346900,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "R$ 346.900"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "preco_data",
+        "value_json": "\"2026-09-10\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "R$ 346.900"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "preco_fipe_brl",
+        "value_json": 343735,
+        "status": "verificado",
+        "source_url": "https://parallelum.com.br/fipe/api/v1/carros/marcas/22/modelos/10761/anos/32000-3",
+        "quote": "\"Valor\":\"R$ 343.735,00\""
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "fipe_referencia",
+        "value_json": "\"2026-09\"",
+        "status": "verificado",
+        "source_url": "https://parallelum.com.br/fipe/api/v1/carros/marcas/22/modelos/10761/anos/32000-3",
+        "quote": "\"MesReferencia\":\"setembro de 2026\""
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "garantia_meses",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "marca",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "modelo",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "versao",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "ano_modelo",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "codigo_fipe",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "carroceria",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "segmento",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "motor_descricao",
+        "value_json": "\"V6\"",
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "Motor\nV6"
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "cilindros",
+        "value_json": "\"V6\"",
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "\"nome_exato\": \"V6 Comfortline\","
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "deslocamento_l",
+        "value_json": 3,
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "\"valor_normalizado\": \"3.0 L; V6; turbodiesel; TDI\","
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "combustivel",
+        "value_json": "\"diesel\"",
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "\"valor_normalizado\": \"3.0 L; V6; turbodiesel; TDI\","
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "aspiracao",
+        "value_json": "\"turbo\"",
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "\"valor_normalizado\": \"3.0 L; V6; turbodiesel; TDI\","
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "potencia_cv",
+        "value_json": 258,
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "Potência\n258 cv"
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "potencia_rpm",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "torque_nm",
+        "value_json": 580,
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "\"trecho\": \"A picape vem com o motor V6 3.0 TDI de 258 cv com 59,1 kgfm de torque\","
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "torque_rpm",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "tipo",
+        "value_json": "\"automatica\"",
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "Transmissão\nAutomática de 8 velocidades"
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "numero_marchas",
+        "value_json": 8,
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "\"trecho\": \"Transmissão Automática de 8 velocidades\","
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "paddle_shifters",
+        "value_json": "true",
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "\"valor_bruto\": \"Volante multifuncional esportivo em couro com troca de marchas por aletas no volante\","
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "tipo_tracao",
+        "value_json": "\"4x4 permanente\"",
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "Tração\n4Motion (4x4 Permanente)"
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "reduzida",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "bloqueio_diferencial",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "suspensao_dianteira",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "suspensao_traseira",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "amortecedores",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "direcao",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "freios_dianteiros",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "freios_traseiros",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "aceleracao_0_100_s",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "velocidade_maxima_kmh",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "consumo_urbano_kml",
+        "value_json": 8.1,
+        "status": "verificado",
+        "source_url": "https://www.gov.br/inmetro/pt-br/assuntos/regulamentacao/avaliacao-da-conformidade/programa-brasileiro-de-etiquetagem/tabelas-de-eficiencia-energetica/veiculos-automotivos-pbe-veicular",
+        "quote": "Picape VW AMAROK V6 EXTREME (MY26) 3.0 - 24V Combustão A - 8 S H D 80 33 ND A \\ 232 \\ \\ \\ \\ \\ 8,1 9,4 8,7 \\ \\ \\ \\ 3,14 \\ E E -"
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "consumo_rodoviario_kml",
+        "value_json": 9.4,
+        "status": "verificado",
+        "source_url": "https://www.gov.br/inmetro/pt-br/assuntos/regulamentacao/avaliacao-da-conformidade/programa-brasileiro-de-etiquetagem/tabelas-de-eficiencia-energetica/veiculos-automotivos-pbe-veicular",
+        "quote": "Picape VW AMAROK V6 EXTREME (MY26) 3.0 - 24V Combustão A - 8 S H D 80 33 ND A \\ 232 \\ \\ \\ \\ \\ 8,1 9,4 8,7 \\ \\ \\ \\ 3,14 \\ E E -"
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "modos_conducao",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "modos_direcao",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "modos_escapamento",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "modos_amortecedor",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "farois_tipo",
+        "value_json": "\"Full LED\"",
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "\"valor_bruto\": \"Faróis Full LED; grade frontal iluminada (light strip)\","
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "farois_neblina",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "rodas_aro_pol",
+        "value_json": 20,
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "\"valor_bruto\": \"Rodas de liga leve 20”\","
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "rodas_material",
+        "value_json": "\"liga leve\"",
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "\"valor_bruto\": \"Rodas de liga leve 20”\","
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "pneus_medida",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "pneus_tipo",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "comprimento_mm",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "largura_mm",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "altura_mm",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "entre_eixos_mm",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "capacidade_carga_kg",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "capacidade_reboque_kg",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "tanque_l",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "adas_nome_comercial",
+        "value_json": "\"Safer Tag\"",
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "\"valor_bruto\": \"Safer Tag – Assistente de condução passiva; aviso de colisão com pedestres e ciclistas; aviso de colisão frontal (Forward collision warning); sistema de aviso"
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "adas_itens",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "airbags_qtd",
+        "value_json": 6,
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "frontal e outros. Além de freios ABS off road, controle de estabilidade, 6 airbags — recursos que oferecem tranquilidade em qualquer jornada."
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "camera_360",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "preco_sugerido_brl",
+        "value_json": 379990,
+        "status": "verificado",
+        "source_url": "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2025/08/volkswagen-amarok-2026-precos-versoes-equipamentos.ghtml",
+        "quote": "* **Volkswagen Amarok Extreme** \\- R$ 379.990"
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "preco_data",
+        "value_json": "\"2025-08-26\"",
+        "status": "verificado",
+        "source_url": "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2025/08/volkswagen-amarok-2026-precos-versoes-equipamentos.ghtml",
+        "quote": "26/08/2025"
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "preco_fipe_brl",
+        "value_json": 339270,
+        "status": "verificado",
+        "source_url": "https://www.tabelafipebrasil.com/carros/VW---VOLKSWAGEN/AMAROK-EXTREME-CD-30-4X4-TB-DIES-AUT/2026-Diesel",
+        "quote": "Preço:\tR$ 339.270,00"
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "fipe_referencia",
+        "value_json": "\"2026-09\"",
+        "status": "verificado",
+        "source_url": "https://www.tabelafipebrasil.com/carros/VW---VOLKSWAGEN/AMAROK-EXTREME-CD-30-4X4-TB-DIES-AUT/2026-Diesel",
+        "quote": "Referência FIPE:\tSetembro 2026"
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "garantia_meses",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      }
+    ],
+    "human-live": [
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "marca",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "modelo",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "versao",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "ano_modelo",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "codigo_fipe",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "carroceria",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "segmento",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "motor_descricao",
+        "value_json": "\"3.0_v6_turbo_diesel\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Motor\n\n3.0 V6 Turbo Diesel"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "cilindros",
+        "value_json": "\"V6\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "# Limited 3.0 V6 Diesel 4WD AT 2027"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "deslocamento_l",
+        "value_json": 3,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Performance - Motor 3.0L V6 de 250cv com 600Nm"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "combustivel",
+        "value_json": "\"diesel\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "# Limited 3.0 V6 Diesel 4WD AT 2027"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "aspiracao",
+        "value_json": "\"turbo\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "3.0 V6 Turbo Diesel"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "potencia_cv",
+        "value_json": 250,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Potência\n\n250cv"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "potencia_rpm",
+        "value_json": 3250,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "250 cv @ 3.250rpm"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "torque_nm",
+        "value_json": 600,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Torque\n\n600Nm"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "torque_rpm",
+        "value_json": 1750,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "600 Nm @ 1.750 rpm"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "tipo",
+        "value_json": "\"automatica\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Transmissão\nAutomática de 10 velocidades"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "numero_marchas",
+        "value_json": 10,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Automática de 10 velocidades"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "paddle_shifters",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "tipo_tracao",
+        "value_json": "\"4x4\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Tração\n4WD"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "reduzida",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "amortecedores",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "direcao",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "freios_dianteiros",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "freios_traseiros",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "aceleracao_0_100_s",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "velocidade_maxima_kmh",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "consumo_urbano_kml",
+        "value_json": 8.3,
+        "status": "verificado",
+        "source_url": "https://www.gov.br/inmetro/pt-br/assuntos/regulamentacao/avaliacao-da-conformidade/programa-brasileiro-de-etiquetagem/tabelas-de-eficiencia-energetica/veiculos-automotivos-pbe-veicular",
+        "quote": "Picape FORD Nova Ranger 4x4 LTD 3.0 V6 - 24V Combustão A-10 S E D 73 67 ND A \\ 224 \\ \\ \\ \\ \\ 8,3 10,1 9,0 \\ \\ \\ \\ 3,02 \\ E E -"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "consumo_rodoviario_kml",
+        "value_json": 10.1,
+        "status": "verificado",
+        "source_url": "https://www.gov.br/inmetro/pt-br/assuntos/regulamentacao/avaliacao-da-conformidade/programa-brasileiro-de-etiquetagem/tabelas-de-eficiencia-energetica/veiculos-automotivos-pbe-veicular",
+        "quote": "Picape FORD Nova Ranger 4x4 LTD 3.0 V6 - 24V Combustão A-10 S E D 73 67 ND A \\ 224 \\ \\ \\ \\ \\ 8,3 10,1 9,0 \\ \\ \\ \\ 3,02 \\ E E -"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "modos_conducao",
+        "value_json": "[\"normal\", \"eco\", \"reboque\", \"escorregadio\", \"lama\", \"areia\"]",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "6 modos de condução selecionáveis – Normal, Eco, Rebocar/Transp, Escorregadio, Lama/Terra, Areia"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "modos_direcao",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "modos_escapamento",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "modos_amortecedor",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "farois_tipo",
+        "value_json": "\"Full LED\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Faróis FullLed"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "farois_neblina",
+        "value_json": "true",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Faróis de neblina em Led"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "rodas_aro_pol",
+        "value_json": 18,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Rodas de liga leve 18\""
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "rodas_material",
+        "value_json": "\"liga leve\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Rodas de liga leve 18\""
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "pneus_medida",
+        "value_json": "\"255/65 R18\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Pneus 255/65 R18 All Terrain"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "pneus_tipo",
+        "value_json": "\"AT\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Pneus 255/65 R18 All Terrain"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "comprimento_mm",
+        "value_json": 5370,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Comprimento do veículo (mm)\n5370"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "largura_mm",
+        "value_json": 2208,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Largura do veículo com espelhos (mm)\n2208"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "altura_mm",
+        "value_json": 1884,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Altura do veículo (mm)\n1884"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "entre_eixos_mm",
+        "value_json": 3270,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Distancia entre eixos (mm)\n3270"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "capacidade_carga_kg",
+        "value_json": 1023,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Capacidade de carga (kg)\n1023"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "capacidade_reboque_kg",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "tanque_l",
+        "value_json": 80,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Tanque de combistível (L)\n80"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "adas_itens",
+        "value_json": "[\"sensor_de_estacionamento\", \"farol_alto_automatico\", \"reconhecimento_de_placas\", \"permanencia_em_faixa\", \"controle_de_estabilidade\", \"frenagem_autonoma\"]",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "Sensor de estacionamento dianteiro\n\nSensor de estacionamento traseiro\n\nFarol alto automático\n\nSistema de reconhecimento de sinais de trânsito\n\nAssistente de permanência em faixa\n\nControle Eletrônico de Estabilidade\n\nAssistente Autônomo de frenagem (com detecção de pedestres)"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "camera_360",
+        "value_json": "true",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes.html",
+        "quote": "Câmera 360°"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "preco_sugerido_brl",
+        "value_json": 346900,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "R$ 346.900"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "preco_data",
+        "value_json": "\"2026-09-10\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+        "quote": "R$ 346.900"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "preco_fipe_brl",
+        "value_json": 343735,
+        "status": "verificado",
+        "source_url": "https://parallelum.com.br/fipe/api/v1/carros/marcas/22/modelos/10761/anos/32000-3",
+        "quote": "\"Valor\":\"R$ 343.735,00\""
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "fipe_referencia",
+        "value_json": "\"2026-09\"",
+        "status": "verificado",
+        "source_url": "https://parallelum.com.br/fipe/api/v1/carros/marcas/22/modelos/10761/anos/32000-3",
+        "quote": "\"MesReferencia\":\"setembro de 2026\""
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "marca",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "modelo",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "versao",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "ano_modelo",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "codigo_fipe",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "carroceria",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "segmento",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "motor_descricao",
+        "value_json": "\"V6\"",
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "Motor\nV6"
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "cilindros",
+        "value_json": "\"V6\"",
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "\"nome_exato\": \"V6 Comfortline\","
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "deslocamento_l",
+        "value_json": 3,
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "\"valor_normalizado\": \"3.0 L; V6; turbodiesel; TDI\","
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "combustivel",
+        "value_json": "\"diesel\"",
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "\"valor_normalizado\": \"3.0 L; V6; turbodiesel; TDI\","
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "aspiracao",
+        "value_json": "\"turbo\"",
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "\"valor_normalizado\": \"3.0 L; V6; turbodiesel; TDI\","
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "potencia_cv",
+        "value_json": 258,
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "Potência\n258 cv"
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "potencia_rpm",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "torque_nm",
+        "value_json": 580,
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "\"trecho\": \"A picape vem com o motor V6 3.0 TDI de 258 cv com 59,1 kgfm de torque\","
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "torque_rpm",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "tipo",
+        "value_json": "\"automatica\"",
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "Transmissão\nAutomática de 8 velocidades"
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "numero_marchas",
+        "value_json": 8,
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "\"trecho\": \"Transmissão Automática de 8 velocidades\","
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "paddle_shifters",
+        "value_json": "true",
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "\"valor_bruto\": \"Volante multifuncional esportivo em couro com troca de marchas por aletas no volante\","
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "tipo_tracao",
+        "value_json": "\"4x4 permanente\"",
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "Tração\n4Motion (4x4 Permanente)"
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "reduzida",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "bloqueio_diferencial",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "suspensao_dianteira",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "suspensao_traseira",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "amortecedores",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "direcao",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "freios_dianteiros",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "freios_traseiros",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "aceleracao_0_100_s",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "velocidade_maxima_kmh",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "consumo_urbano_kml",
+        "value_json": 8.1,
+        "status": "verificado",
+        "source_url": "https://www.gov.br/inmetro/pt-br/assuntos/regulamentacao/avaliacao-da-conformidade/programa-brasileiro-de-etiquetagem/tabelas-de-eficiencia-energetica/veiculos-automotivos-pbe-veicular",
+        "quote": "Picape VW AMAROK V6 EXTREME (MY26) 3.0 - 24V Combustão A - 8 S H D 80 33 ND A \\ 232 \\ \\ \\ \\ \\ 8,1 9,4 8,7 \\ \\ \\ \\ 3,14 \\ E E -"
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "consumo_rodoviario_kml",
+        "value_json": 9.4,
+        "status": "verificado",
+        "source_url": "https://www.gov.br/inmetro/pt-br/assuntos/regulamentacao/avaliacao-da-conformidade/programa-brasileiro-de-etiquetagem/tabelas-de-eficiencia-energetica/veiculos-automotivos-pbe-veicular",
+        "quote": "Picape VW AMAROK V6 EXTREME (MY26) 3.0 - 24V Combustão A - 8 S H D 80 33 ND A \\ 232 \\ \\ \\ \\ \\ 8,1 9,4 8,7 \\ \\ \\ \\ 3,14 \\ E E -"
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "modos_conducao",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "modos_direcao",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "modos_escapamento",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "modos_amortecedor",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "farois_tipo",
+        "value_json": "\"Full LED\"",
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "\"valor_bruto\": \"Faróis Full LED; grade frontal iluminada (light strip)\","
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "farois_neblina",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "rodas_aro_pol",
+        "value_json": 20,
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "\"valor_bruto\": \"Rodas de liga leve 20”\","
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "rodas_material",
+        "value_json": "\"liga leve\"",
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "\"valor_bruto\": \"Rodas de liga leve 20”\","
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "pneus_medida",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "pneus_tipo",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "comprimento_mm",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "largura_mm",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "altura_mm",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "entre_eixos_mm",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "capacidade_carga_kg",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "capacidade_reboque_kg",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "tanque_l",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "adas_nome_comercial",
+        "value_json": "\"Safer Tag\"",
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "\"valor_bruto\": \"Safer Tag – Assistente de condução passiva; aviso de colisão com pedestres e ciclistas; aviso de colisão frontal (Forward collision warning); sistema de aviso"
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "adas_itens",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "airbags_qtd",
+        "value_json": 6,
+        "status": "verificado",
+        "source_url": "https://www.vw.com.br/pt/carros/amarok.html",
+        "quote": "frontal e outros. Além de freios ABS off road, controle de estabilidade, 6 airbags — recursos que oferecem tranquilidade em qualquer jornada."
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "camera_360",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "preco_sugerido_brl",
+        "value_json": 379990,
+        "status": "verificado",
+        "source_url": "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2025/08/volkswagen-amarok-2026-precos-versoes-equipamentos.ghtml",
+        "quote": "* **Volkswagen Amarok Extreme** \\- R$ 379.990"
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "preco_data",
+        "value_json": "\"2025-08-26\"",
+        "status": "verificado",
+        "source_url": "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2025/08/volkswagen-amarok-2026-precos-versoes-equipamentos.ghtml",
+        "quote": "26/08/2025"
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "preco_fipe_brl",
+        "value_json": 339270,
+        "status": "verificado",
+        "source_url": "https://www.tabelafipebrasil.com/carros/VW---VOLKSWAGEN/AMAROK-EXTREME-CD-30-4X4-TB-DIES-AUT/2026-Diesel",
+        "quote": "Preço:\tR$ 339.270,00"
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "fipe_referencia",
+        "value_json": "\"2026-09\"",
+        "status": "verificado",
+        "source_url": "https://www.tabelafipebrasil.com/carros/VW---VOLKSWAGEN/AMAROK-EXTREME-CD-30-4X4-TB-DIES-AUT/2026-Diesel",
+        "quote": "Referência FIPE:\tSetembro 2026"
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "garantia_meses",
+        "value_json": "null",
+        "status": "nao_encontrado",
+        "source_url": null,
+        "quote": null
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "motor_descricao",
+        "value_json": "\"diesel_3.2_duratorq_tdci\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "Motor           Diesel 2.2 Duratorq-TDCi Diesel 3.2 Duratorq-TDCi"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "deslocamento_l",
+        "value_json": 2.2,
+        "status": "divergente",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "2.2L | Diesel 3.2L | Diesel"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "deslocamento_l",
+        "value_json": 3.2,
+        "status": "divergente",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "2.2L | Diesel 3.2L | Diesel"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "potencia_cv",
+        "value_json": 160,
+        "status": "divergente",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "t @ ên r c p i m a m ) áxima 160 cv @3.200 rpm 200 cv @3.000 rpm P P a a r"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "potencia_cv",
+        "value_json": 200,
+        "status": "divergente",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "c p i m a m ) áxima 160 cv @3.200 rpm 200 cv @3.000 rpm P P a a r r a a -"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "potencia_rpm",
+        "value_json": 3200,
+        "status": "divergente",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "t @ ên r c p i m a m ) áxima 160 cv @3.200 rpm 200 cv @3.000 rpm P P a a r"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "potencia_rpm",
+        "value_json": 3000,
+        "status": "divergente",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "c p i m a m ) áxima 160 cv @3.200 rpm 200 cv @3.000 rpm P P a a r r a a -"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "torque_nm",
+        "value_json": 385,
+        "status": "divergente",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "(N or m qu @ e r m pm áx ) imo 385 Nm @2.500 rpm 470 Nm @2.500 rpm Pneus 265/60 R18 - -"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "torque_nm",
+        "value_json": 470,
+        "status": "divergente",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "@ e r m pm áx ) imo 385 Nm @2.500 rpm 470 Nm @2.500 rpm Pneus 265/60 R18 - - - - - x"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "torque_rpm",
+        "value_json": 2500,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "(N or m qu @ e r m pm áx ) imo 385 Nm @2.500 rpm 470 Nm @2.500 rpm Pneus 265/60 R18 - -"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "numero_marchas",
+        "value_json": 6,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "a d l a d d e e 6 s Automática de 6 velocidades P P n n e e u u s s 2"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "bloqueio_diferencial",
+        "value_json": "true",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "Diferencial traseiro blocante x x x -  x  -  x x  x  x"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "suspensao_dianteira",
+        "value_json": "\"independente,_com_molas_helicoidais_e_barra_estabilizadora\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "Dianteira       Independente, com molas helicoidais e barra estabilizadora"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "suspensao_traseira",
+        "value_json": "\"Eixo r\\u00edgido com feixe de molas longitudinais\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "Traseira           Eixo rígido com feixe de molas longitudinais"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "farois_tipo",
+        "value_json": "\"LED\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "Faróis com projetores LED   - -  -  -  -  -  - x  x  x"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "rodas_aro_pol",
+        "value_json": 17,
+        "status": "divergente",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "Dianteira       Independente, com molas helicoidais e barra estabilizadora Rodas de liga leve 17\" - - - - x - x x - -"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "rodas_aro_pol",
+        "value_json": 16,
+        "status": "divergente",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "Rodas de liga leve 16”      - -  -  x  -  -  - -  -  -"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "pneus_medida",
+        "value_json": "\"265/60 R18\"",
+        "status": "divergente",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "áx ) imo 385 Nm @2.500 rpm 470 Nm @2.500 rpm Pneus 265/60 R18 - - - - - x - - - -"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "pneus_medida",
+        "value_json": "\"265/65 R17\"",
+        "status": "divergente",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "Tração         4x4    4x2 4x4 4x2     4x4       Pneus 265/65 R17            - -  -  -  -  -  x -  -  -"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "pneus_medida",
+        "value_json": "\"255/70 R16\"",
+        "status": "divergente",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "Metálicas                                                 Pneus 255/70 R16            x x  x  -  -  -  - -  -  -"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "pneus_tipo",
+        "value_json": "\"265/60 R18\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "Pneus 265/60 R18            - -  -  -  -  -  - -  x  x"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "comprimento_mm",
+        "value_json": 5354,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "Comprimento do 5.113         5.354"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "largura_mm",
+        "value_json": 2163,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "Largura do veículo         2.163"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "altura_mm",
+        "value_json": 1821,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "Altura do veículo 1.821      1.848  1.821  1.848"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "capacidade_carga_kg",
+        "value_json": 1001,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "Capacidade de carga 1.366 1.234 1.123 1168 1.076 1.168 1.040 1.014 1023 1.001"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "adas_nome_comercial",
+        "value_json": "\"Co-Pilot360\"",
+        "status": "verificado",
+        "source_url": "https://www.ford.com/configure/chooseyourpath/ranger",
+        "quote": "Ford Co-Pilot360 Technology"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "airbags_qtd",
+        "value_json": 7,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "Air bags (7): frontais, laterais, cortinas e joelho para o motorista - - - - x x x x x x"
+      },
+      {
+        "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+        "ano_modelo": 2027,
+        "field": "garantia_meses",
+        "value_json": 60,
+        "status": "verificado",
+        "source_url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2023/ranger/pdf/fbr-ranger-2023-ficha-tecnica.pdf",
+        "quote": "GARANTIA 5 anos de garantia sem limite de quilometragem."
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "rodas_aro_pol",
+        "value_json": 17,
+        "status": "divergente",
+        "source_url": "https://acessorios.vw.com.br/storage/app/media/pdfs/polo_price.pdf",
+        "quote": "Roda   de  liga leve  17\""
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "rodas_aro_pol",
+        "value_json": 16,
+        "status": "divergente",
+        "source_url": "https://acessorios.vw.com.br/storage/app/media/pdfs/polo_price.pdf",
+        "quote": "Roda   de liga  leve 16\""
+      },
+      {
+        "nome_exato": "V6 Extreme",
+        "ano_modelo": 2026,
+        "field": "rodas_aro_pol",
+        "value_json": 15,
+        "status": "divergente",
+        "source_url": "https://acessorios.vw.com.br/storage/app/media/pdfs/polo_price.pdf",
+        "quote": "Roda   de  liga leve  15\""
+      }
+    ]
+  }
+}

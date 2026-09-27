@@ -1,0 +1,123 @@
+# Os domínios que a pesquisa conhece — e o que cada um rende, medido.
+#
+# **Nada aqui foi escrito de memória.** Cada linha saiu de `scripts/research/sondar_fontes.py`,
+# que para cada site busca a página (Tavily restrita ao domínio), coleta (com escalada para o
+# navegador), converte em texto e conta **quantos campos o fast-path lê sem chamar o modelo**.
+# O relatório fica em `reports/research/sondagem_fontes.md`, com a data.
+#
+# `tipo` decide a ordem da coleta e o que esperar da página:
+#   oficial  — site da montadora (o tier 1 continua vindo de `classify.OFICIAIS`)
+#   registro — FIPE, PBE/Inmetro: número de terceiro com autoridade
+#   ficha    — página de ficha técnica de UMA versão; rende ≥ 12 campos por regra
+#   imprensa — matéria em prosa; rende menos, e o modelo precisa ler
+#
+# `navegador: true` quer dizer que o `fetch` simples não passa (403 ou página montada por
+# JavaScript) e a coleta vai direto ao Chromium. Custa ~15 s a mais por página.
+versao: 2026-09-13
+medido_em: reports/research/sondagem_fontes.md
+
+dominios:
+  # ----------------------------------------------------------------- ficha de terceiro
+  - dominio: icarros.com.br
+    tier: 3
+    tipo: ficha
+    navegador: false
+    campos_medidos: 16
+    nota: "catálogo por versão; o melhor custo-benefício da sondagem (4 s, 16 campos)"
+
+  - dominio: noticiasautomotivas.com.br
+    tier: 3
+    tipo: ficha
+    navegador: false
+    campos_medidos: 16
+    nota: "ficha em prosa densa, mas com todos os números; 3 s"
+
+  - dominio: quatrorodas.abril.com.br
+    tier: 3
+    tipo: ficha
+    navegador: true
+    campos_medidos: 16
+    nota: "exige navegador (paywall macio); 17 s por página, e vale"
+
+  - dominio: carrosegaragem.com.br
+    tier: 3
+    tipo: ficha
+    navegador: false
+    campos_medidos: 15
+    nota: "avaliação com ficha completa ao fim da matéria"
+
+  - dominio: carrosnaweb.com.br
+    tier: 3
+    tipo: ficha
+    navegador: true
+    campos_medidos: 12
+    nota: >-
+      ficha detalhada por versão, em tabela (122 pares rótulo/valor medidos). A busca
+      devolve a listagem (`catalogo.asp`) antes da ficha (`fichadetalhe.asp`), e o site
+      exige sessão: sem navegador, a ficha responde 500.
+
+  # ------------------------------------------------------------------------- imprensa
+  - dominio: mobiauto.com.br
+    tier: 3
+    tipo: imprensa
+    navegador: false
+    campos_medidos: 10
+    nota: "catálogo, mas a página da versão traz menos número que os de ficha"
+
+  - dominio: autopapo.uol.com.br
+    tier: 3
+    tipo: imprensa
+    navegador: false
+    campos_medidos: 9
+    nota: "matéria; a busca falhou numa das duas provas"
+
+  - dominio: kbb.com.br
+    tier: 3
+    tipo: imprensa
+    navegador: false
+    campos_medidos: 5
+    nota: "preço e ficha resumida; pouco número por página"
+
+  # ------------------------------------------ imprensa já conhecida antes da sondagem
+  - dominio: autoesporte.globo.com
+    tier: 3
+    tipo: ficha
+    navegador: false
+    nota: "ficha completa ao fim da matéria; é a fonte de 13 campos da Triton em 13/09"
+
+  - dominio: webmotors.com.br
+    tier: 3
+    tipo: imprensa
+    navegador: false
+    nota: "catálogo e anúncio; entrou antes da sondagem"
+
+  - dominio: automaisturbo.com.br
+    tier: 3
+    tipo: imprensa
+    navegador: false
+
+  - dominio: revistacarro.com.br
+    tier: 3
+    tipo: imprensa
+    navegador: false
+    nota: "bloqueou nas duas tentativas da Frontier em 13/09"
+
+  - dominio: uol.com.br
+    tier: 3
+    tipo: imprensa
+    navegador: false
+    nota: "guarda-chuva; as publicações do grupo entram por subdomínio"
+
+# Medidos e **reprovados**. Ficam escritos: sem isto, o próximo a olhar a lista gasta a
+# mesma meia hora para descobrir o mesmo.
+reprovados:
+  - dominio: motor1.uol.com.br
+    motivo: "403/CAPTCHA nas duas provas, inclusive com navegador"
+  - dominio: carro.info
+    motivo: "a busca não devolve nada deste domínio"
+  - dominio: fichasautomotivas.com.br
+    motivo: "a busca não devolve nada; o DNS não resolveu daqui"
+  - dominio: pbeveicular.inmetro.gov.br
+    motivo: >-
+      não aparece na busca — o PBE entra pelo conector de serviço
+      (`pipeline/connectors/pbe.py`), não pela pesquisa aberta

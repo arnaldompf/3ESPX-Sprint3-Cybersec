@@ -1,0 +1,169 @@
+# Regras de materialidade: uma mudança importa, ou é ruído de tabela?
+#
+# **Todo peso aqui é hipótese do MVP e é configurável.** Não há estudo por trás dos
+# números; eles são a primeira formulação de um julgamento comercial, escrita para poder
+# ser discutida com o gestor da Ford lendo este arquivo. Um sistema que dissesse
+# "materialidade ALTA" sem mostrar a régua estaria pedindo confiança que não ganhou.
+#
+# A régua funciona assim: cada regra que dispara soma o seu peso; a soma cai numa das
+# quatro faixas (`limiares`). O que a torna auditável é `rules_fired`, que a API devolve
+# com o nome de cada regra que somou — a nota nunca aparece sozinha.
+versao: 2026-09-09
+
+#: O que cada faixa significa, e o que ela pede de quem lê.
+#:
+#: `RUIDO` não é "ignorar": é "não interromper ninguém por isso". O alerta continua na
+#: lista, colapsado — some da fila de prioridade, não do sistema.
+#:
+#: **Os limiares estão calibrados para que a magnitude sozinha caia na faixa do mesmo
+#: nome.** `magnitude_alta` pesa 45, e por isso `ALTA` começa em 45; `magnitude_media` pesa
+#: 25 e `MEDIA` começa em 25; `magnitude_baixa` pesa 10 e `BAIXA` começa em 10. Sem esse
+#: alinhamento, uma alta de 8% num concorrente sem par cadastrado era classificada `MEDIA`,
+#: e — pior — uma variação de 1,5% caía em `RUIDO`, cuja definição é justamente "menos do
+#: que a fonte muda sozinha", contradizendo a regra de ruído que para em 1%. Régua que se
+#: contradiz não sobrevive à primeira pergunta do gestor.
+faixas:
+  ALTA:
+    minimo: 45
+    significado: >-
+      Mudança que altera a posição competitiva. Alguém precisa olhar hoje: o battlecard, o
+      argumentário ou a faixa de preço mudaram de conclusão.
+  MEDIA:
+    minimo: 25
+    significado: >-
+      Mudança real, sem inverter nada. Entra na revisão da semana.
+  BAIXA:
+    minimo: 10
+    significado: >-
+      Mudança pequena e sem efeito na comparação. Fica registrada, com evidência.
+  RUIDO:
+    minimo: 0
+    significado: >-
+      Variação dentro do que a fonte muda sozinha (arredondamento de tabela, reajuste
+      mínimo). Não interrompe ninguém e continua na lista, colapsada.
+
+regras:
+  # ------------------------------------------------------------------ magnitude
+  - id: magnitude_alta
+    peso: 45
+    tipo: delta_percentual
+    minimo_pct: 5.0
+    descricao: >-
+      Variação de 5% ou mais no valor. Em preço de picape são R$ 17 mil ou mais — número
+      que muda a conversa de financiamento.
+
+  - id: magnitude_media
+    peso: 25
+    tipo: delta_percentual
+    minimo_pct: 2.0
+    maximo_pct: 5.0
+    descricao: Variação entre 2% e 5%. Sentida na parcela, não na decisão.
+
+  - id: magnitude_baixa
+    peso: 10
+    tipo: delta_percentual
+    minimo_pct: 1.0
+    maximo_pct: 2.0
+    descricao: Variação entre 1% e 2%. Reajuste comum de tabela.
+
+  - id: ruido_de_tabela
+    peso: 0
+    tipo: delta_percentual
+    maximo_pct: 1.0
+    # `veta` faz esta regra DECIDIR, não somar: disparou, a faixa é RUIDO e ponto.
+    #
+    # Sem o veto, o peso da dimensão (+20) resgatava uma variação de 0,55% para BAIXA — e
+    # a regra que existe justamente para não interromper ninguém por arredondamento de
+    # tabela ficava inerte no caso que a motivou (o preço FIPE da Amarok).
+    veta: true
+    descricao: >-
+      Menos de 1%. É o que a tabela FIPE faz de um mês para o outro sem nenhuma decisão
+      comercial atrás. **Veta**: abaixo desse limiar nada mais importa, porque um alerta
+      que dispara por arredondamento treina o usuário a ignorar alertas.
+
+  # -------------------------------------------------- posição contra a Ford comparável
+  - id: price_band_entry
+    peso: 40
+    tipo: entrada_na_faixa
+    faixa_pct: 5.0
+    descricao: >-
+      O preço do concorrente **entrou** na faixa de ±5% da versão Ford comparável. É o
+      evento que mais muda a conversa de venda: dois veículos que estavam em faixas
+      diferentes passam a ser alternativas diretas para o mesmo orçamento.
+
+  - id: price_band_exit
+    peso: 20
+    tipo: saida_da_faixa
+    faixa_pct: 5.0
+    descricao: >-
+      O concorrente **saiu** da faixa de ±5%. Importa menos que entrar: deixar de ser
+      alternativa direta é boa notícia que ninguém precisa agir sobre hoje.
+
+  - id: gap_aumentou_contra_a_ford
+    peso: 20
+    tipo: gap_desfavoravel
+    minimo_brl: 5000.0
+    descricao: >-
+      A Ford ficou mais de R$ 5 mil mais caro em relação ao par comparável. O número é
+      hipótese: é a ordem de grandeza em que um gerente de vendas costuma pedir explicação.
+
+  # ------------------------------------------------------- inversão na matriz de paridade
+  - id: parity_flip_perdemos
+    peso: 35
+    tipo: parity_flip
+    para: gap
+    descricao: >-
+      Um campo em que a Ford ganhava ou empatava passou a ser **gap**. É o que faz um
+      argumentário aprovado ficar errado sem ninguém perceber.
+
+  - id: parity_flip_ganhamos
+    peso: 15
+    tipo: parity_flip
+    para: vantagem
+    descricao: >-
+      Um campo virou vantagem da Ford. Vale menos que perder — é argumento novo, não
+      risco — mas o argumentário precisa ser atualizado para usá-lo.
+
+  - id: parity_flip_desconhecido
+    peso: 10
+    tipo: parity_flip
+    para: desconhecido
+    descricao: >-
+      Um campo comparável virou `desconhecido` (a fonte parou de publicar, ou o valor
+      sumiu). Não é derrota; é perda de cobertura, e ela some da vista se ninguém contar.
+
+  # --------------------------------------------------------------- dimensão afetada
+  - id: dimensao_de_peso_alto
+    peso: 20
+    tipo: dimensao_afetada
+    # O vocabulário é o de `pipeline/radar/impact.py` (`DIMENSOES_POR_CAMPO`), que é quem
+    # preenche `dimensoes_afetadas` no alerta — e **não** o de `pipeline/fit/dimensions.yaml`,
+    # que usa outros nomes para ideias parecidas (`economia`, `capacidade`).
+    #
+    # A primeira versão desta regra escreveu `[preco, economia, capacidade]`, misturando os
+    # dois vocabulários: `economia` e `capacidade` nunca chegam do alerta, então a regra
+    # valia só para `preco` — e passava nos dois BDDs, que são de preço, sem nada acusar.
+    # Um teste guarda isto agora: dimensão que o `impact.py` não emite reprova a suíte.
+    dimensoes: [preco, custo_de_uso, carga]
+    descricao: >-
+      A mudança toca uma das três dimensões que mais aparecem como prioridade nos perfis de
+      picape de trabalho: preço, custo de uso e carga. Hipótese do MVP: quando a WP-26 tiver
+      histórico de perfis reais, esta lista sai de dado observado em vez de julgamento.
+
+  # --------------------------------------------------------------- comparabilidade
+  - id: par_nao_comparavel
+    peso: -15
+    tipo: par_nao_comparavel
+    descricao: >-
+      O par não passa nos critérios de comparabilidade (`pipeline/comparables.py`). Peso
+      **negativo**: uma mudança na Raptor a gasolina não muda a conversa de quem compara
+      picapes diesel de trabalho, e tratá-la como material encheria a fila de prioridade
+      com alertas que ninguém vai acionar.
+
+  - id: sem_par_cadastrado
+    peso: -5
+    tipo: sem_equivalente
+    descricao: >-
+      Não há versão Ford equivalente cadastrada para o concorrente. A mudança é real, mas
+      sem o par não há como dizer o que ela faz com a nossa posição — e afirmar impacto
+      alto sem essa conta seria palpite.

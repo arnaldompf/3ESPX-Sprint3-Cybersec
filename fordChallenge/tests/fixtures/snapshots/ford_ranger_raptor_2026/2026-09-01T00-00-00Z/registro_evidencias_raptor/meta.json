@@ -1,0 +1,17 @@
+{
+  "source_id": "registro_evidencias_raptor",
+  "version_id": "ford_ranger_raptor_2026",
+  "url_final": "https://www.ford.com.br/picapes/ranger-raptor/raptor-4wd-at/",
+  "http_status": 200,
+  "tier": 1,
+  "tipo": "registro_de_evidencia",
+  "status": "consultada",
+  "captured_at": "2026-09-01",
+  "text_path": "page.md",
+  "sha256": "72084af3e7167b1c939204a1303cf76ef6e4b3359d58534b3b0eb3ea1c3d50f3",
+  "bytes": 18156,
+  "arquivo_de_origem": "gabarito/raw/manus_raptor.json",
+  "gerado_por": "scripts/build_fixtures.py",
+  "origem": "registro verbatim da coleta de 2026-09-01 (execução do Manus seguindo o protocolo)",
+  "nota": "cobre FIPE, preço e aceleração, cujas páginas não foram salvas em HTML"
+}

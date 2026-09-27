@@ -1,0 +1,69 @@
+{
+  "version_id": "vw_amarok_v6_extreme_2026",
+  "descricao": "Volkswagen Amarok V6 Extreme 2026 — concorrente",
+  "captured_at": "2026-09-01",
+  "fontes": [
+    {
+      "source_id": "vw_site",
+      "url": "https://www.vw.com.br/pt/carros/amarok.html",
+      "tier": 1,
+      "tipo": "pagina_oficial",
+      "status": "consultada",
+      "tem_texto_salvo": true
+    },
+    {
+      "source_id": "autoesporte_amarok",
+      "url": "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2025/08/volkswagen-amarok-2026-precos-versoes-equipamentos.ghtml",
+      "tier": 3,
+      "tipo": "imprensa",
+      "status": "consultada",
+      "tem_texto_salvo": true
+    },
+    {
+      "source_id": "fipe_amarok",
+      "url": "https://www.tabelafipebrasil.com/carros/VW---VOLKSWAGEN/AMAROK-EXTREME-CD-30-4X4-TB-DIES-AUT/2026-Diesel",
+      "tier": 2,
+      "tipo": "fipe",
+      "status": "consultada",
+      "tem_texto_salvo": true
+    },
+    {
+      "source_id": "fipe_amarok_extreme",
+      "url": "https://parallelum.com.br/fipe/api/v1/carros/marcas/59/modelos/8532/anos/2026-3",
+      "tier": 2,
+      "tipo": "fipe",
+      "status": "consultada",
+      "tem_texto_salvo": true,
+      "nota": "resposta da API comunitária da FIPE; o corpo JSON é o texto salvo e a citação é o par `\"Valor\":\"R$ …\"` dentro dele",
+      "origem": "coleta ao vivo de 2026-09-10 por scripts/coleta/coletar_faltantes.py (robots.txt consultado, 1 req/s, user-agent identificado)"
+    },
+    {
+      "source_id": "pbe_tabela",
+      "url": "https://www.gov.br/inmetro/pt-br/assuntos/regulamentacao/avaliacao-da-conformidade/programa-brasileiro-de-etiquetagem/tabelas-de-eficiencia-energetica/veiculos-automotivos-pbe-veicular",
+      "tier": 2,
+      "tipo": "pbe",
+      "status": "consultada",
+      "tem_texto_salvo": true,
+      "nota": "tabela PBEV 2026 (18º ciclo, atualizada em 31/08/2026); uma linha por configuração publicada, com o consumo urbano e rodoviário medidos",
+      "origem": "coleta ao vivo de 2026-09-10 por scripts/coleta/coletar_faltantes.py (robots.txt consultado, 1 req/s, user-agent identificado)"
+    },
+    {
+      "source_id": "registro_evidencias_amarok",
+      "url": "https://www.vw.com.br/pt/carros/amarok.html",
+      "tier": 1,
+      "tipo": "registro_de_evidencia",
+      "status": "consultada",
+      "tem_texto_salvo": true,
+      "origem": "registro verbatim da coleta de 2026-09-01 (execução do Manus seguindo o protocolo)"
+    },
+    {
+      "source_id": "carrosnaweb_amarok_v6_extreme_2026",
+      "url": "https://www.carrosnaweb.com.br/fichadetalhe.asp?codigo=44849",
+      "tier": 3,
+      "tipo": "ficha",
+      "status": "consultada",
+      "tem_texto_salvo": true,
+      "nota": "código opaco por versão+ano-modelo; ano-modelo reconfirmado no cabeçalho pelo conector (pipeline/connectors/carrosnaweb.py); potência em cv vem como imagem"
+    }
+  ]
+}

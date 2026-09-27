@@ -1,0 +1,16 @@
+{
+  "source_id": "registro_evidencias_amarok",
+  "version_id": "vw_amarok_v6_extreme_2026",
+  "url_final": "https://www.vw.com.br/pt/carros/amarok.html",
+  "http_status": 200,
+  "tier": 1,
+  "tipo": "registro_de_evidencia",
+  "status": "consultada",
+  "captured_at": "2026-09-01",
+  "text_path": "page.md",
+  "sha256": "46175c72dbd60b44a8949bcba5dbe0d13f3db1f1adb08c322f4e06090613c8b9",
+  "bytes": 17573,
+  "arquivo_de_origem": "gabarito/raw/manus_amarok_v6_extreme.json",
+  "gerado_por": "scripts/build_fixtures.py",
+  "origem": "registro verbatim da coleta de 2026-09-01 (execução do Manus seguindo o protocolo)"
+}

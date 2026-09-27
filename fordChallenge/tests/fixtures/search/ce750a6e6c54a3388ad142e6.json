@@ -1,0 +1,49 @@
+{
+  "consulta": "site:fiat.com.br Toro Ranch 2.0 Turbodiesel AT9 4x4 ficha técnica",
+  "provedor": "replay",
+  "veiculo": "Fiat Toro Ranch 2.0 Turbodiesel AT9 4x4",
+  "gravado_em": "2026-09-13",
+  "gravado_de": "tavily",
+  "achados": [
+    {
+      "url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/226/2023/handbook-toro-2023_2023.pdf",
+      "titulo": "[PDF] Fiat Toro 3 Ed ‒ Produto ‒ 27.03.2023 / 09:22:37",
+      "snippet": "Freedom 2.0 Diesel Volcano 1.3 Turbo Flex Volcano 2.0 Diesel Ranch 2.0 Diesel Ultra 2.0 Diesel Sistema de arrefecimento do motor (litros): 5,6 5,6 6,5 5,6 6,5 6,5 6,5 Cárter do motor (litros): 4,5 4,5 4,4 4,5 4,4 4,4 4,4 Cárter do motor e filtro (litros): 4,8 4,8 4,8 4,8 4,8 4,8 4,8 Câmbio + diferencial (litros): 6,2 6,2 6,0 6,2 6,0 6,0 6,0 Diferencial traseiro (4x4) (litros): _ _ 0,6 _ 0,6 0,6 0,6 PTU - caixa de transferência (4x4) (litros): _ _ 0,405 _ 0,405 0,405 0,405 Circuito dos freios [..",
+      "posicao": 0,
+      "provedor": "tavily",
+      "consulta": "site:fiat.com.br Toro Ranch 2.0 Turbodiesel AT9 4x4 ficha técnica"
+    },
+    {
+      "url": "https://toro.fiat.com.br/monte.html",
+      "titulo": "Monte sua Toro | FIAT",
+      "snippet": "TORO VOLCANO TURBODIESEL 4x4 AT9 2027. Central multimídia com tela de 7' touchscreen; Apple CarPlay wireless e Android Auto wireless;",
+      "posicao": 1,
+      "provedor": "tavily",
+      "consulta": "site:fiat.com.br Toro Ranch 2.0 Turbodiesel AT9 4x4 ficha técnica"
+    },
+    {
+      "url": "https://toro.fiat.com.br",
+      "titulo": "Fiat Toro | Fiat",
+      "snippet": "Fiat Toro azul com sistema híbrido leve MHEV em estrada de terra ao pôr do sol · Motor da Fiat Toro com tampa superior identificada 2.2 Turbodiesel e alguns",
+      "posicao": 2,
+      "provedor": "tavily",
+      "consulta": "site:fiat.com.br Toro Ranch 2.0 Turbodiesel AT9 4x4 ficha técnica"
+    },
+    {
+      "url": "https://titano.fiat.com.br",
+      "titulo": "Titano | FIAT",
+      "snippet": "Robustez e capacidade off-road​. Nova tração 4x4 com opção integral permanente (AWD), bloqueio mecânico do diferencial traseiro e 4 diferentes modos de",
+      "posicao": 3,
+      "provedor": "tavily",
+      "consulta": "site:fiat.com.br Toro Ranch 2.0 Turbodiesel AT9 4x4 ficha técnica"
+    },
+    {
+      "url": "https://www.fiat.com.br/content/dam/fiat/home/pdfs/fiat-tabeladeru%C3%ADdo.pdf",
+      "titulo": "[PDF] Modelo Versão Motorização Ano Modelo Combustível Ruído ... - FIAT",
+      "snippet": "CARGO TETO BAIXO - ENTRE EIXOS 2850 MM. CARGO TETO BAIXO - ENTRE EIXOS 3200 MM. MULTI TETO BAIXO - ENTRE EIXOS 3200 MM. MULTI TETO ALTO - ENTRE EIXOS 3700",
+      "posicao": 4,
+      "provedor": "tavily",
+      "consulta": "site:fiat.com.br Toro Ranch 2.0 Turbodiesel AT9 4x4 ficha técnica"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+$ (cd fordChallenge/web && npm audit --package-lock-only)
+# 405 dependências | {'info': 0, 'low': 0, 'moderate': 4, 'high': 1, 'critical': 0, 'total': 5}
+  @vitest/mocker     moderate  GHSA-82fw-gwwq-j7x9   Vitest: Path Traversal / Arbitrary File Read via @vitest/mocker Redire  | correção: vitest@4.1.11
+  brace-expansion    high      GHSA-q2hr-2g5m-vwhr   brace-expansion: Quadratic-time expansion of the `{a},b}` rewrite caus  | correção: sim
+  react-router       moderate  GHSA-wrjc-x8rr-h8h6   React Router: Open redirect via backslash in <Link> and useNavigate (C  | correção: react-router-dom@7.18.4
+  react-router-dom   moderate  (via react-router)  | correção: react-router-dom@7.18.4
+  vitest             moderate  GHSA-82fw-gwwq-j7x9   Vitest: Path Traversal / Arbitrary File Read via @vitest/mocker Redire  | correção: vitest@4.1.11
+
+$ (cd fordChallenge/qa && npm audit --package-lock-only)
+# 4 dependências | {'info': 0, 'low': 0, 'moderate': 0, 'high': 0, 'critical': 0, 'total': 0}
+
+$ (cd fordChallenge/web && npm audit --package-lock-only --omit=dev)   # só o que vai para produção
+# {'info': 0, 'low': 0, 'moderate': 2, 'high': 0, 'critical': 0, 'total': 2}  → react-router, react-router-dom
+
+Resultado dos portões:
+  produção (--omit=dev --audit-level=moderate): REPROVADO — react-router (open redirect)
+  build/teste (--audit-level=high):              REPROVADO — brace-expansion (alta, só dev)
+  qa:                                            APROVADO

@@ -1,0 +1,116 @@
+# --- segredos (regra inviolável: segredos só em .env, nunca versionados) ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+# --- Python ---
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+htmlcov/
+uv.lock.bak
+
+# --- Node / web ---
+node_modules/
+dist/
+.vite/
+*.tsbuildinfo
+npm-debug.log*
+.npm/
+
+# --- dados coletados e derivados (nunca versionar snapshots) ---
+data/
+!data/.gitkeep
+!data/snapshots/.gitkeep
+
+# --- relatórios gerados ---
+reports/*.json
+reports/*.md
+!reports/.gitkeep
+
+# Os prints de tela inteiros (D-188, v2, v3): o portao REGENERA a cada `verify-quick`/
+# `web-smoke`, e a comparacao lado a lado e um artefato de trabalho, nao entrega de
+# repositorio publico. 8 prints representativos (um por tela) vivem versionados em
+# `docs/img/`; o resto se reproduz com `make web-smoke` / `python scripts/design/prints_v2.py`.
+reports/screens/
+reports/diagnostico_tela/
+
+# `playwright-cli` guarda snapshot de pagina e log de console a cada comando, num
+# arquivo por chamada. E rascunho do ciclo de autocorrecao visual, nao entrega.
+.playwright-cli/
+
+# Clones de terceiros do kit de design (17 MB): `awesome-design-md`, `taste-skill`,
+# `playwright-cli` e `vercel-agent-skills`. Sao dependencias externas com `.git` proprio, e
+# `design-kit/instalar_ferramentas_design.ps1` as reinstala em um comando. O que fica
+# versionado sao as SKILLS extraidas em `.claude/skills/` e `.agents/skills/`, que sao o que
+# o agente carrega, mais o `skills-lock.json` com o hash de cada uma.
+tools/design/
+# Clones de estudo (FASE A de 12/09/2026): lidos para aprender, nunca versionados.
+# O que se aproveita deles vira codigo nosso, com a licenca citada em docs/pesquisador/.
+tools/research/
+
+# Fotos originais entregues pelo time (PNG/JPG de varios MB): a versao que o app usa e o
+# WebP otimizado em `web/public/img/`, gerado por `scripts/design/preparar_imagens.py`.
+# Guarde os originais fora do repositorio (ver docs/img/CREDITOS ou reports/demo).
+imagens/
+
+# Kits de origem do bootstrap (specradar-kit*), preservados so como historico de montagem
+# (D-01). Nao sao codigo do produto; ver DECISOES_NOITE.md D-01 para o que tem la dentro.
+_kits/
+
+# Snapshots capturados manualmente fora do fluxo de coleta automatizada (rascunho de
+# investigacao, nao e fixture nem cache oficial).
+manual_snapshots/
+
+# Video da demo (Playwright), pesado (MB) e regenerado por
+# `bash scripts/verify/web-smoke.sh` / `scripts/demo/replay_demo.sh`.
+reports/demo/*.webm
+
+# --- banco local ---
+*.db
+*.sqlite
+*.sqlite3
+
+# --- ferramentas / SO ---
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+
+# --- estado local do Claude Code (settings.json do kit é versionado) ---
+.claude/.stop_gate_count
+.claude/settings.local.json
+
+# --- artefatos temporários da noite ---
+.tmp/
+*.log
+!scripts/**/*.log
+
+# --- QA (11/09/2026) ---
+# Artefatos do ensaio de qualidade: relatório HTML, traces e vídeos do Playwright.
+reports/qa-html/
+reports/qa-artefatos/
+qa/prints/*
+!qa/prints/.gitkeep
+
+# --- cache de coleta que escapou para a raiz ---
+#
+# Uma pasta com nome de data na raiz e sempre cache de busca gravado no lugar errado.
+# Aconteceu em 13/09/2026: `SEARCH_CACHE_DIR=` declarada vazia anulou o default
+# `data/search-cache`, `Path("")` virou `.`, e 37 arquivos JSON entraram num commit.
+# A causa foi corrigida (D-264); esta linha e a rede embaixo.
+/20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]/

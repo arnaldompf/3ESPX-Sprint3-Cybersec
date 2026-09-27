@@ -1,0 +1,15 @@
+{
+  "source_id": "autoesporte_globo_com_ad7cff25",
+  "version_id": "pesquisa_autoesporte_globo_com",
+  "url_final": "https://autoesporte.globo.com/carros/modelos/mitsubishi-l200-triton/",
+  "url": "https://autoesporte.globo.com/carros/modelos/mitsubishi-l200-triton",
+  "http_status": 200,
+  "tier": 3,
+  "tipo": "site_oficial",
+  "status": "consultada",
+  "captured_at": "2026-09-13",
+  "text_path": "doc.md",
+  "sha256": "72a898630f818f9fa86dfd417df10714b5d4151c8eeb6931119c96f225cd0abb",
+  "bytes": 597956,
+  "gerado_por": "scripts/gravar_replay_pesquisa.py"
+}

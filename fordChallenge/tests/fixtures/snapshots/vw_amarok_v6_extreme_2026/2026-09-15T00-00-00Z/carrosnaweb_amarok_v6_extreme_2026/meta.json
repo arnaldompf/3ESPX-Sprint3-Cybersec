@@ -1,0 +1,16 @@
+{
+  "source_id": "carrosnaweb_amarok_v6_extreme_2026",
+  "version_id": "vw_amarok_v6_extreme_2026",
+  "url_final": "https://www.carrosnaweb.com.br/fichadetalhe.asp?codigo=44849",
+  "http_status": 200,
+  "tier": 3,
+  "tipo": "ficha",
+  "status": "consultada",
+  "captured_at": "2026-09-15",
+  "text_path": "page.md",
+  "sha256": "fe976aca997ddf4ed6588c8a3ca603df22847000ec4f01e80a84bbc1a0b0c61e",
+  "bytes": 3304,
+  "arquivo_de_origem": "gabarito/raw/carrosnaweb_amarok_v6_extreme_2026.md",
+  "gerado_por": "scripts/build_fixtures.py",
+  "nota": "código opaco por versão+ano-modelo; ano-modelo reconfirmado no cabeçalho pelo conector (pipeline/connectors/carrosnaweb.py); potência em cv vem como imagem"
+}

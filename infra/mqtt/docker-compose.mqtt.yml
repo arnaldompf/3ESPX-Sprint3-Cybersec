@@ -1,0 +1,35 @@
+# Broker MQTT com TLS (mTLS) — perfil separado, não sobe com a stack principal.
+#
+#   bash infra/mqtt/gerar_certificados.sh localhost totem-sp-001 specradar-ingestor
+#   docker compose -f infra/mqtt/docker-compose.mqtt.yml up -d
+#
+# Teste de conexão com o certificado de um totem (deve funcionar):
+#   mosquitto_pub -h localhost -p 8883 --cafile infra/mqtt/certs/ca.crt \
+#     --cert infra/mqtt/certs/totem-sp-001.crt --key infra/mqtt/certs/totem-sp-001.key \
+#     -t specradar/totem/totem-sp-001/telemetria -m '{"cpu":12}'
+# Sem certificado, ou publicando na árvore de outro totem, o broker recusa.
+
+name: specradar-mqtt
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2.0.20
+    read_only: true
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    user: "1883:1883"
+    ports:
+      - "8883:8883"
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      - ./acl:/mosquitto/config/acl:ro
+      # Só os três arquivos do servidor, um a um: a chave da CA e as chaves dos totens nem
+      # entram no contêiner (e o diretório certs/ segue 0700 no host).
+      - ./certs/ca.crt:/mosquitto/certs/ca.crt:ro
+      - ./certs/servidor.crt:/mosquitto/certs/servidor.crt:ro
+      - ./certs/servidor.key:/mosquitto/certs/servidor.key:ro
+      - mqtt-dados:/mosquitto/data
+    restart: unless-stopped
+
+volumes:
+  mqtt-dados:

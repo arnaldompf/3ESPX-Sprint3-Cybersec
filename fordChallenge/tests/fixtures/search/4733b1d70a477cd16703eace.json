@@ -1,0 +1,73 @@
+{
+  "consulta": "Fiat Toro PBE Inmetro consumo",
+  "provedor": "replay",
+  "veiculo": "Fiat Toro Ranch 2.0 Turbodiesel AT9 4x4",
+  "gravado_em": "2026-09-13",
+  "gravado_de": "tavily",
+  "achados": [
+    {
+      "url": "https://www.gazetadopovo.com.br/automoveis/fiat-toro-freedom-18-flex-automatica-e-nota-a-no-inmetro-em-consumo-cjiqtjvjvavwsjgb759c0ct37",
+      "titulo": "Fiat Toro Freedom 1.8 flex automática é nota A no Inmetro ...",
+      "snippet": "Segundo a entidade, o Toro registrou as seguintes marcas no gasto de combustível: 5,8 km/l na cidade e 7,4 km/l na estrada quando abastecido com",
+      "posicao": 0,
+      "provedor": "tavily",
+      "consulta": "Fiat Toro PBE Inmetro consumo"
+    },
+    {
+      "url": "https://autopapo.com.br/noticia/teste-inmetro-motores-turbo",
+      "titulo": "Fiat 'culpa' Inmetro por consumo de Toro 1.3 turbo",
+      "snippet": "Comprei uma Toro 1.3 turbo, já rodei cerca de 480km no carro, na estrada ja cheguei a fazer média de 13.0 rodando a 70km e 12.5 rodando a 90km,",
+      "posicao": 1,
+      "provedor": "tavily",
+      "consulta": "Fiat Toro PBE Inmetro consumo"
+    },
+    {
+      "url": "https://www.vrum.com.br/noticias/tabela-consumo-inmetro-5-bizarrices",
+      "titulo": "Tabela de consumo do Inmetro tem bizarrices: veja 5 delas",
+      "snippet": "A Fiat sempre classificou a Toro como uma opção menor - e consequentemente mais prática nos centros urbanos - que caminhonetes médias, como Toyota Hilux e Chevrolet S10. Além do menor porte, há ainda diferenças estruturais, como a carroceria do tipo monobloco, que dispensa o tradicional chassi. Mas nada disso importa para o PBE, que coloca esses modelos todos juntos na categoria \"Picape\".\n\nQual consome mais combustível: ar-condicionado ou vidro aberto? Assista ao vídeo! [...] ## 5- Fiat Toro ent",
+      "posicao": 2,
+      "provedor": "tavily",
+      "consulta": "Fiat Toro PBE Inmetro consumo"
+    },
+    {
+      "url": "https://www.gov.br/inmetro/pt-br/assuntos/regulamentacao/avaliacao-da-conformidade/programa-brasileiro-de-etiquetagem/tabelas-de-eficiencia-energetica/veiculos-automotivos-pbe-veicular/pbe-veicular-2024-1.pdf/@@download/file",
+      "titulo": "PROGRAMA BRASILEIRO DE ETIQUETAGEM VEICULAR",
+      "snippet": "1.3 MT 1.3-8V Combustão M-5 S E F 22 151 2 A 0 100 \\ 9.1 10.0 12.6 14.1 \\ \\ 1.60 \\ B C -Utilitário Esportivo Compacto FIAT FASTBACK DRIVE 1.0-12V T Combustão CVT-7 S E F 50 206 6 B 0 102 \\ 8.4 10.2 11.9 14.6 \\ \\ 1.65 \\ B C -Gasolina ou Diesel Elétrico (km/le) quando VE ou VEHP Consumo Energético (MJ/km) Autonomia no modo Elétrico (km) Classificação PBE Selo CONPET de Eficiência Energética ((A+B).A) . [...] 1 A \\ 214 \\ \\ \\ 6.0 7.2 \\ \\ 3.48 \\ E E -Picape FIAT TORO ENDUR T270 AT6 1.3-16V T Combustã",
+      "posicao": 3,
+      "provedor": "tavily",
+      "consulta": "Fiat Toro PBE Inmetro consumo"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=G45qGFYtRX8",
+      "titulo": "POOR Fuel Economy: 2024 Fiat Toro Freedom T270",
+      "snippet": "Is the 2026 Fiat Toro Freedom economical or does it consume too much fuel? ... Consumo real da Fiat Toro diesel - Mais de 4.000 km rodados.",
+      "posicao": 4,
+      "provedor": "tavily",
+      "consulta": "Fiat Toro PBE Inmetro consumo"
+    },
+    {
+      "url": "https://bncamazonas.com.br/ta_na_midia/inmetro-lista-de-carros-com-maior-eficiencia-energetica",
+      "titulo": "Inmetro divulga lista de carros com maior eficiência energética",
+      "snippet": "A classificação do PBEV leva em conta o consumo energético dos veículos, medido em megajoules por quilômetro (MJ/km). Quanto menor esse índice,",
+      "posicao": 5,
+      "provedor": "tavily",
+      "consulta": "Fiat Toro PBE Inmetro consumo"
+    },
+    {
+      "url": "https://www.youtube.com/shorts/CDy8LJqcNhU",
+      "titulo": "Fiat Toro - Motor, consumo e versões #@_torque_maximo_",
+      "snippet": "Fiat Toro - Motor, consumo e versões #@_torque_maximo_ ... This content isn't available. Skip video.",
+      "posicao": 6,
+      "provedor": "tavily",
+      "consulta": "Fiat Toro PBE Inmetro consumo"
+    },
+    {
+      "url": "https://insideevs.uol.com.br/news/537314/ranking-carros-eletricos-consumo-brasil",
+      "titulo": "Veja os 10 carros elétricos mais eficientes em consumo no ...",
+      "snippet": "Com um consumo médio equivalente de 36,5 km/l na cidade ele não faz feio perante outros elétricos mais recentes. A autonomia declarada fica",
+      "posicao": 7,
+      "provedor": "tavily",
+      "consulta": "Fiat Toro PBE Inmetro consumo"
+    }
+  ]
+}

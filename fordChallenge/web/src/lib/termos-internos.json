@@ -1,0 +1,114 @@
+{
+  "_leia_me": [
+    "O vocabulário que não pode chegar à tela de quem usa o SpecRadar.",
+    "",
+    "Esta lista é a fonte única de dois portões, e é JSON de propósito: `qa/` é um pacote",
+    "npm separado, sem o alias `@/` do web, e duplicar a lista em dois arquivos seria",
+    "garantir que elas divirjam.",
+    "",
+    "  * a varredura ESTÁTICA (`web/src/test/termos-internos.test.tsx`) lê os literais de",
+    "    string dos .tsx. Pega o jargão escrito à mão, em milissegundos, inclusive em ramos",
+    "    caros de alcançar num navegador — foi assim que 'religar o processador de fila'",
+    "    ficou meses num ramo que só aparece com o worker parado;",
+    "  * a varredura RENDERIZADA (`qa/e2e/transversal.spec.ts`) lê o `innerText` das telas",
+    "    e de alguns estados. Pega o que entra por DADO, vindo da API — foi assim que 'é o",
+    "    caso negativo do resolvedor' chegou à recusa da GR-Sport sem estar em nenhum .tsx.",
+    "",
+    "Nenhuma das duas alcança o que a outra alcança. Por isso são duas.",
+    "",
+    "Regra para mexer aqui: exceção sem motivo escrito ao lado vira lixo em três meses."
+  ],
+
+  "proibidos": [
+    {
+      "termo": "resolvedor",
+      "regex": "\\bresolvedor(es)?\\b",
+      "porque": "nome do passo 0 do pipeline. Quem vende picape não sabe o que é."
+    },
+    {
+      "termo": "gabarito",
+      "regex": "\\bgabarito\\b",
+      "porque": "verdade-terra do eval. É instrumento nosso, não fato sobre o veículo."
+    },
+    {
+      "termo": "pendente_coleta",
+      "regex": "\\bpendente_coleta\\b",
+      "porque": "estado interno de coleta; a tela tem `não encontrado` e `não disponível`."
+    },
+    {
+      "termo": "worker",
+      "regex": "\\bworkers?\\b",
+      "porque": "processo do servidor. O usuário vê 'documento', não 'worker'."
+    },
+    {
+      "termo": "processador de fila",
+      "regex": "processador\\s+de\\s+fila",
+      "porque": "jargão de operação. 'fila' sozinho é português comum e continua valendo."
+    },
+    {
+      "termo": "religar/reiniciar o serviço",
+      "regex": "\\b(religar|reiniciar)\\s+(o\\s+)?(processador|servi[çc]o|worker|fila)",
+      "porque": "manda o usuário operar a máquina; não é problema dele nem vocabulário dele."
+    },
+    {
+      "termo": "fixture",
+      "regex": "\\bfixtures?\\b",
+      "porque": "arquivo de teste. Não existe do lado de fora."
+    },
+    {
+      "termo": "conector",
+      "regex": "\\bconector(es)?\\b",
+      "porque": "peça do pipeline. 'fonte' é a palavra que o usuário entende."
+    },
+    {
+      "termo": "LLM/prompt/token",
+      "regex": "\\b(LLM|prompt|tokens?)\\b",
+      "porque": "docs/12 §6.6: nada de como o dado foi extraído na tela de quem vende."
+    },
+    {
+      "termo": "None",
+      "regex": "\\bNone\\b",
+      "sensivel_a_maiuscula": true,
+      "porque": "nulo do Python vazando em texto. Sensível a maiúscula de propósito: `leading-none` e `pointer-events-none` do Tailwind não são vazamento."
+    },
+    {
+      "termo": "traceback",
+      "regex": "\\btraceback\\b",
+      "porque": "pilha de exceção do Python. Se chegou à tela, o erro não foi tratado em lugar nenhum."
+    },
+    {
+      "termo": "observação da coleta",
+      "regex": "observa[çc][ãa]o\\s+da\\s+coleta",
+      "porque": "rótulo com que a nota de desenvolvedor entrava na frase do usuário (12/09/2026)."
+    }
+  ],
+
+  "arquivos_isentos": [
+    {
+      "caminho": "src/components/EvidenceDrawer.tsx",
+      "porque": "a gaveta de evidência mostra tier, snapshot e nome canônico de propósito: é o produto."
+    },
+    {
+      "caminho": "src/pages/Saude.tsx",
+      "porque": "tela interna de analista, declarada como tal na própria tela; tier é o assunto dela."
+    }
+  ],
+
+  "seletores_isentos": [
+    {
+      "seletor": "[data-testid=\"gaveta-evidencia\"]",
+      "porque": "URL, hash de snapshot e nome canônico são a prova; higienizá-los destruiria a tela."
+    },
+    {
+      "seletor": "[data-testid=\"trecho-literal\"]",
+      "porque": "citação verbatim da fonte. O que a fonte escreveu não é nosso para reescrever."
+    }
+  ],
+
+  "rotas_isentas": [
+    {
+      "rota": "/app/saude",
+      "porque": "mesma razão de Saude.tsx: painel de analista sobre tier, fonte bloqueada e divergência."
+    }
+  ]
+}

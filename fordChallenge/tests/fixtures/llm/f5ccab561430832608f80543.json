@@ -1,0 +1,81 @@
+{
+  "chave": "f5ccab561430832608f80543",
+  "meta": {
+    "origem": "derivada de gabarito_v1.json (valor e trecho verbatim da verdade-terra humana), porque nao havia ANTHROPIC_API_KEY",
+    "version_id": "vw_amarok_v6_extreme_2026",
+    "source_id": "autoesporte_amarok",
+    "modelo": "claude-haiku-4-5-20251001",
+    "campos_pedidos": [
+      "aceleracao_0_100_s",
+      "adas_itens",
+      "airbags_qtd",
+      "altura_mm",
+      "amortecedores",
+      "ano_modelo",
+      "bloqueio_diferencial",
+      "camera_360",
+      "capacidade_carga_kg",
+      "capacidade_reboque_kg",
+      "carroceria",
+      "codigo_fipe",
+      "comprimento_mm",
+      "consumo_rodoviario_kml",
+      "consumo_urbano_kml",
+      "deslocamento_l",
+      "direcao",
+      "entre_eixos_mm",
+      "farois_neblina",
+      "farois_tipo",
+      "freios_dianteiros",
+      "freios_traseiros",
+      "garantia_meses",
+      "largura_mm",
+      "marca",
+      "modelo",
+      "modos_amortecedor",
+      "modos_conducao",
+      "modos_direcao",
+      "modos_escapamento",
+      "motor_descricao",
+      "numero_marchas",
+      "paddle_shifters",
+      "pneus_medida",
+      "pneus_tipo",
+      "potencia_rpm",
+      "preco_data",
+      "reduzida",
+      "rodas_aro_pol",
+      "rodas_material",
+      "segmento",
+      "suspensao_dianteira",
+      "suspensao_traseira",
+      "tanque_l",
+      "tipo_tracao",
+      "torque_rpm",
+      "versao"
+    ],
+    "campos_respondidos": [
+      "adas_itens",
+      "preco_data"
+    ],
+    "gerado_por": "scripts/record_llm_fixtures.py"
+  },
+  "dados": {
+    "adas_itens": {
+      "raw_value": "['aviso de colisão com pedestres e ciclistas', 'Forward collision warning', 'Lane alert']",
+      "value": [
+        "aviso de colisão com pedestres e ciclistas",
+        "Forward collision warning",
+        "Lane alert"
+      ],
+      "unit": null,
+      "evidence_quote": "Safer Tag – Assistente de condução passiva"
+    },
+    "preco_data": {
+      "raw_value": "2025-08-26",
+      "value": "2025-08-26",
+      "unit": null,
+      "evidence_quote": "Extreme (R$ 379.990)"
+    }
+  }
+}

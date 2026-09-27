@@ -1,0 +1,15 @@
+{
+  "source_id": "chevrolet_site",
+  "version_id": "chevrolet_s10_high_country_2027",
+  "url_final": "https://www.chevrolet.com.br/picapes/s10",
+  "http_status": 200,
+  "tier": 1,
+  "tipo": "pagina_oficial",
+  "status": "consultada",
+  "captured_at": "2026-09-01",
+  "text_path": "page.md",
+  "sha256": "aae3a68660afb02f183d5bfc477f06c103291cef09695d242573218b9c125ddb",
+  "bytes": 9034,
+  "arquivo_de_origem": "gabarito/raw/chevrolet_s10_site.md",
+  "gerado_por": "scripts/build_fixtures.py"
+}

@@ -1,0 +1,25 @@
+{
+  "consulta": "Ford Ranger Raptor 3.0 V6 Bi-turbo 4WD AT ficha técnica quatro rodas",
+  "provedor": "replay",
+  "veiculo": "Ford Ranger Raptor 3.0 V6 Bi-turbo 4WD AT",
+  "achados": [
+    {
+      "url": "https://www.ford.com.br/picapes/ranger-raptor/raptor-4wd-at/",
+      "titulo": "Ford Ranger",
+      "snippet": "",
+      "posicao": 0
+    },
+    {
+      "url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2025/ranger-raptor/pdf/fbr-ranger-raptor-ficha-tecnica.pdf",
+      "titulo": "Ford Ranger",
+      "snippet": "",
+      "posicao": 1
+    },
+    {
+      "url": "https://autoesporte.globo.com/teste-ford-ranger-raptor-e-picape-que-acelera-mais-que-muito-esportivo.ghtml",
+      "titulo": "Ford Ranger",
+      "snippet": "",
+      "posicao": 2
+    }
+  ]
+}

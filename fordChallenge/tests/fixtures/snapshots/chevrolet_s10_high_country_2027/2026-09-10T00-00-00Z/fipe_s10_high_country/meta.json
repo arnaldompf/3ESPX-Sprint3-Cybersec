@@ -1,0 +1,17 @@
+{
+  "source_id": "fipe_s10_high_country",
+  "version_id": "chevrolet_s10_high_country_2027",
+  "url_final": "https://parallelum.com.br/fipe/api/v1/carros/marcas/23/modelos/7305/anos/2027-3",
+  "http_status": 200,
+  "tier": 2,
+  "tipo": "fipe",
+  "status": "consultada",
+  "captured_at": "2026-09-10",
+  "text_path": "page.md",
+  "sha256": "f65301c289ca0886f9428b77611bff5a6ba71333df3d6e8d3a764b85d99678b0",
+  "bytes": 395,
+  "arquivo_de_origem": "gabarito/raw/fipe_api_s10_high_country.md",
+  "gerado_por": "scripts/build_fixtures.py",
+  "origem": "coleta ao vivo de 2026-09-10 por scripts/coleta/coletar_faltantes.py (robots.txt consultado, 1 req/s, user-agent identificado)",
+  "nota": "resposta da API comunitária da FIPE; o corpo JSON é o texto salvo e a citação é o par `\"Valor\":\"R$ …\"` dentro dele"
+}

@@ -1,0 +1,8 @@
+$ cd fordChallenge && REPLAY_MODE=1 LLM_FAKE=1 uv run pytest -q   # suíte da solução
+FAILED tests/api/test_benchmark_export.py::TestOsArquivos::test_gera_os_seis_arquivos
+FAILED tests/api/test_benchmark_export.py::TestAStackFord::test_o_parquet_abre_e_tem_o_esquema_fixo
+FAILED tests/api/test_ratelimit.py::TestOArquivoDaTelaNaoGastaACotaDaApi::test_o_estatico_nao_toma_429_com_limite_baixo
+3 failed, 2930 passed, 68 skipped, 1 deselected in 570.63s (0:09:30)
+
+Causa das 3 falhas: ambiente, não código — 2 exigem o extra 'export' (pyarrow/openpyxl)
+e 1 exige o build do front (web/dist). O job 'testes' do pipeline instala/compila ambos.

@@ -1,0 +1,337 @@
+/* SpecRadar — sistema de design v2.
+ *
+ * A v1 saiu datada: abas em pílula sobre barra azul, papel bege, cantos de 4 px, controles
+ * com aparência padrão do navegador, corpo de 13 px. O diagnóstico do humano foi "site de
+ * 2012". Esta folha implementa `design-kit/010_DESIGN.md`: produto SaaS sóbrio, navegação
+ * lateral, superfícies brancas sobre canvas cinza, um único azul de ação, grade de 8.
+ *
+ * Os tokens são variáveis CSS **e** entram no `tailwind.config.js`. Duas razões para as
+ * duas coisas: a variável permite trocar a família tipográfica em tempo de execução (é
+ * como o ensaio das três fontes foi medido, `reports/screens/v2/tipografia/`), e o token
+ * no Tailwind permite `bg-superficie` em vez de `bg-[var(--surface)]` espalhado.
+ *
+ * `overflow-x: hidden` NÃO entra aqui, de propósito: esconderia o scroll horizontal em vez
+ * de resolver, e o critério de 390 px passaria com o layout quebrado por baixo. O teste de
+ * viewport mede `scrollWidth`, que o `hidden` não muda.
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+
+  /* ---------------------------------------------------------------- superfícies
+     Quatro degraus, do fundo ao topo. A hierarquia é feita por superfície e borda de
+     1 px, não por sombra: é o que separa "produto" de "cartão flutuante de 2012". */
+  --canvas: #f6f7f9;
+  --surface: #ffffff;
+  --surface-2: #f1f3f6;
+  --border: #e4e7ec;
+  --border-strong: #cbd1da;
+
+  /* ---------------------------------------------------------------------- tinta */
+  --ink: #0f172a;
+  --ink-2: #475467;
+  --ink-3: #98a2b3;
+
+  /* ------------------------------------------------------------------ identidade
+     Um azul de ação. `brand-700` é rota ativa e link; `brand-600` é o botão primário;
+     `brand-50` é o fundo do item ativo. A cor de INFERÊNCIA nunca vira botão. */
+  --brand-950: #06143f;
+  --brand-700: #1d3fbf;
+  --brand-600: #2453e6;
+  --brand-600-hover: #1d45c7;
+  --brand-50: #eef2ff;
+
+  /* ------------------------------------------------------- etiquetas epistêmicas
+     Cor E ícone E palavra, sempre os três: cor sozinha não serve a quem não distingue
+     verde de laranja, e a etiqueta é a informação mais importante da tela. */
+  --fato: #15803d;
+  --fato-fundo: #ecfdf3;
+  --inferencia: #1d4ed8;
+  --inferencia-fundo: #eff4ff;
+  --simulacao: #c2410c;
+  --simulacao-fundo: #fff4ed;
+
+  /* A quarta marca, e a unica que NAO qualifica um valor: SEM DADO.
+     Cinza neutro, de proposito. Verde, azul e laranja dizem alguma coisa sobre um
+     numero; um campo vazio nao tem numero sobre o que dizer. `#475467` sobre `#f1f3f6`
+     da ~7:1 de contraste, que e o que um pill de 12px em caixa alta exige.
+     NAO reusa `--nao-sabemos` (ambar): aquele e o "nao sabemos" da PARIDADE, e misturar
+     os dois faria a Matriz e a Ficha falarem a mesma cor sobre coisas diferentes. */
+  --sem-dado: #475467;
+  --sem-dado-fundo: #f1f3f6;
+
+  /* A quinta marca: CATALOGO. Marca, modelo, versao, ano e FIPE sao a identidade da
+     versao consultada, e estao no nosso cadastro porque alguem os cadastrou — nao
+     porque um extrator os leu numa pagina. Nao e FATO (nao ha trecho verbatim), nao e
+     INFERENCIA (nada foi inferido) e nao e SEM DADO (o valor existe). Azul-acinzentado:
+     proximo do azul de acao, porque e informacao nossa, e dessaturado, porque nao carrega
+     a forca de uma evidencia. */
+  --catalogo: #363f72;
+  --catalogo-fundo: #f0f2f9;
+
+  /* ------------------------------------------------------------------- paridade
+     "não sabemos" tem o mesmo peso visual dos outros três. É regra de produto. */
+  --ganhamos: #15803d;
+  --ganhamos-fundo: #ecfdf3;
+  --empate: #475467;
+  --empate-fundo: #f2f4f7;
+  --perdemos: #b42318;
+  --perdemos-fundo: #fef3f2;
+  --nao-sabemos: #b54708;
+  --nao-sabemos-fundo: #fffaeb;
+
+  /* ------------------------------------------------ prioridade e saúde do dado */
+  --alta: #b42318;
+  --media: #b54708;
+  --baixa: #475467;
+  --ruido: #98a2b3;
+
+  /* ------------------------------------------------------------------ tipografia
+     A família da interface é variável para o ensaio das três candidatas poder trocá-la
+     sem recompilar. O vencedor está escrito aqui; o porquê, em DECISOES_NOITE D-194. */
+  --fonte-ui: 'Schibsted Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --fonte-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* ------------------------------------------------------------ forma e profundidade */
+  --raio-controle: 6px;
+  --raio-cartao: 8px;
+  --sombra-cartao: 0 1px 2px rgba(16, 24, 40, 0.04);
+  --sombra-flutuante: 0 8px 32px rgba(16, 24, 40, 0.12);
+
+  /* -------------------------------------------------------------------- medidas */
+  --sidebar: 248px;
+  --sidebar-recolhida: 64px;
+  --barra-superior: 56px;
+  --gaveta: 440px;
+  --conteudo: 1200px;
+
+  /* Camadas nomeadas: `z-[9999]` espalhado é como uma gaveta acaba atrás de um cabeçalho. */
+  --z-barra: 20;
+  --z-sidebar: 30;
+  --z-veu: 40;
+  --z-gaveta: 50;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  /* Quem pediu menos movimento recebe menos movimento — inclusive o brilho do skeleton. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background-color: var(--canvas);
+  color: var(--ink);
+  font-family: var(--fonte-ui);
+  font-size: 14px;
+  line-height: 22px;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+/* Toque, em três linhas que só se notam quando faltam:
+   `manipulation` mata o atraso de 300 ms que o navegador guarda esperando um duplo toque
+   para dar zoom; o realce de toque some porque cada controle já tem o seu estado de
+   pressionado; e a seleção de texto continua livre em todo o resto. */
+button,
+a,
+label,
+summary,
+[role='button'] {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Títulos não deixam palavra órfã na última linha. */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+/* O triângulo do `<details>` sai: em toda expansão desta interface o gatilho é um texto
+   com seta Phosphor própria, e o marcador nativo aparece como um terceiro símbolo solto
+   ao lado dele. `list-style: none` cobre Firefox; o pseudo-elemento, os WebKit. */
+summary {
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Todo número que veio de uma fonte aparece em mono, e alinhado: `tabular-nums` faz os
+   dígitos ocuparem a mesma largura, que é o que deixa uma coluna de preços legível. */
+.mono {
+  font-family: var(--fonte-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+}
+
+/* Foco visível em tudo que recebe teclado. O reset do Tailwind remove o outline do
+   navegador, e tela sem foco visível é inutilizável sem mouse. */
+:focus-visible {
+  outline: 2px solid var(--brand-600);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Pular para o conteúdo: primeiro tab da página, invisível até receber foco. */
+.pular-para-conteudo {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+}
+
+.pular-para-conteudo:focus {
+  left: 8px;
+  top: 8px;
+  background: var(--surface);
+  color: var(--brand-700);
+  padding: 8px 12px;
+  border-radius: var(--raio-controle);
+  border: 1px solid var(--border-strong);
+}
+
+/* O brilho do skeleton. Lento de propósito: rápido vira pisca-pisca e chama mais atenção
+   do que o conteúdo que vai substituí-lo. */
+@keyframes brilho-do-skeleton {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton {
+  background-image: linear-gradient(
+    90deg,
+    var(--surface-2) 0%,
+    #e8ebf0 50%,
+    var(--surface-2) 100%
+  );
+  background-size: 200% 100%;
+  animation: brilho-do-skeleton 1.6s ease-in-out infinite;
+  border-radius: var(--raio-controle);
+}
+
+/* A rolagem da gaveta não empurra a página atrás dela. Sem isto, chegar ao fim da lista de
+   evidências passa a rolar o documento por baixo do painel — e a pessoa perde o lugar em
+   que estava lendo. */
+.rolagem-presa {
+  overscroll-behavior: contain;
+}
+
+/* A barra de rolagem das tabelas largas e das gavetas: fina e discreta, para não competir
+   com o dado. Só onde o conteúdo realmente transborda. */
+.rolagem-discreta {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+
+.rolagem-discreta::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.rolagem-discreta::-webkit-scrollbar-thumb {
+  background-color: var(--border-strong);
+  border-radius: 999px;
+}
+
+.rolagem-discreta::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ----------------------------------------------------------------------- movimento
+   O pouco que existe, e a pergunta que o governa: "isto explica alguma coisa?".
+   Fade de rota explica que a tela trocou; a gaveta deslizando explica de onde ela veio;
+   a linha aparecendo em sequencia explica que a lista chegou agora. Fora disso, o
+   `030_ANTI_PADROES.md` §19 e §20 proibem — nada em hover alem de cor, nada de seta
+   animada, nada de brilho, nada de parallax.
+
+   Todas as animacoes daqui sao `opacity` e `transform`, que o compositor resolve sem
+   recalcular layout. Nenhuma anima `width`, `height` ou `top`.
+
+   O bloco de `prefers-reduced-motion` la em cima zera a duracao de todas elas de uma vez;
+   por isso nenhuma precisa repetir a media query. */
+
+@keyframes entra-de-baixo {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+@keyframes entra-da-direita {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+}
+
+@keyframes surge {
+  from {
+    opacity: 0;
+  }
+}
+
+/* `backwards`, e nao `both`, em toda animacao que mexe em `transform`.
+   ---------------------------------------------------------------------------------
+   Estas regras tem so o keyframe `from`. Com `both`, o navegador MANTEM a propriedade
+   animada no estilo computado depois do fim: `transform: matrix(1, 0, 0, 1, 0, 0)` —
+   identidade, mas diferente de `none`. E `transform != none` faz o elemento virar
+   containing block de todo `position: fixed` descendente, para sempre.
+   Foi assim que a gaveta de evidencia passou a se ancorar em `.rota-entra` (a altura da
+   pagina, dando `top: -1344px` com a pagina rolada) e a do "Por que?" em `.linha-entra`
+   (a altura da linha da fila: 62 px). Medido em 12/09/2026, e visto por quem usou o
+   sistema antes de a suite ver.
+   `backwards` preserva o estado do primeiro keyframe durante o `animation-delay` — que e
+   o que `.linha-entra` precisa para nao piscar antes da vez dela — e devolve o elemento
+   ao estilo base quando termina. Nada muda na tela: o estado base JA E o destino da
+   animacao. O que muda e o gatilho, que deixa de ficar armado.
+   Isto nao substitui o `createPortal` da `Gaveta` (o transform continua vivo durante os
+   150–480 ms da animacao): e a segunda linha de defesa, e a que protege a proxima
+   superficie flutuante que alguem escrever aqui dentro. */
+
+/* Troca de rota: 150 ms. Curto o bastante para nao atrasar quem navega rapido, longo o
+   bastante para o olho registrar que a tela e outra. */
+.rota-entra {
+  animation: entra-de-baixo 150ms ease-out backwards;
+}
+
+/* A gaveta desliza 200 ms; o veu so aparece. O veu mais lento que a gaveta faria a
+   sombra chegar depois do painel, que e o contrario do que a fisica sugere. */
+.gaveta-entra {
+  animation: entra-da-direita 200ms ease-out backwards;
+}
+
+/* `both` fica: `surge` so mexe em `opacity`, que nao ancora `fixed` nenhum. */
+.veu-entra {
+  animation: surge 150ms ease-out both;
+}
+
+/* Linha de lista ou de tabela, aparecendo em sequencia. O atraso vem por `style`
+   (`--atraso`), calculado em `lib/movimento.ts`: 30 ms por linha, no maximo dez. */
+.linha-entra {
+  animation: entra-de-baixo 180ms ease-out backwards;
+  animation-delay: var(--atraso, 0ms);
+}

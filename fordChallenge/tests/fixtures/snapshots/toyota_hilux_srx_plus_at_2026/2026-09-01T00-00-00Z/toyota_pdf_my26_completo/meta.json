@@ -1,0 +1,16 @@
+{
+  "source_id": "toyota_pdf_my26_completo",
+  "version_id": "toyota_hilux_srx_plus_at_2026",
+  "url_final": "https://media.toyota.com.br/d400f124-b3ac-4d73-a885-5d6828812f11.pdf",
+  "http_status": 200,
+  "tier": 1,
+  "tipo": "pdf_oficial",
+  "status": "consultada",
+  "captured_at": "2026-09-01",
+  "text_path": "doc.md",
+  "sha256": "b216bd11be7861928a5d4b96a81414f74d5f1f9ac69d2cca3ccd6509282cd765",
+  "bytes": 83562,
+  "arquivo_de_origem": "tests/fixtures/pdf/toyota_hilux_my26/doc.md",
+  "gerado_por": "scripts/build_fixtures.py",
+  "nota": "extracao das 10 paginas pelo pipeline (pipeline/parse/pdf.py, motor pdfplumber), com layout de tabela preservado. E o doc.md que a coleta real produz; a fonte parcial ao lado cobre so as paginas 6-7."
+}

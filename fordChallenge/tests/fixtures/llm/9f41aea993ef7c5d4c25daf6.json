@@ -1,0 +1,45 @@
+{
+  "chave": "9f41aea993ef7c5d4c25daf6",
+  "meta": {
+    "origem": "derivada de gabarito_v1.json (valor e trecho verbatim da verdade-terra humana), porque nao havia ANTHROPIC_API_KEY",
+    "version_id": "toyota_hilux_srx_plus_at_2026",
+    "source_id": "toyota_pdf_my26_completo",
+    "modelo": "claude-sonnet-5",
+    "campos_pedidos": [
+      "aceleracao_0_100_s",
+      "adas_itens",
+      "amortecedores",
+      "cilindros",
+      "modos_amortecedor",
+      "modos_conducao",
+      "modos_direcao",
+      "modos_escapamento",
+      "paddle_shifters",
+      "pneus_tipo",
+      "potencia_cv",
+      "potencia_rpm",
+      "preco_fipe_brl",
+      "preco_sugerido_brl",
+      "suspensao_dianteira",
+      "suspensao_traseira",
+      "tipo_tracao",
+      "torque_nm",
+      "torque_rpm"
+    ],
+    "campos_respondidos": [
+      "modos_conducao"
+    ],
+    "gerado_por": "scripts/record_llm_fixtures.py"
+  },
+  "dados": {
+    "modos_conducao": {
+      "raw_value": "['eco', 'power']",
+      "value": [
+        "eco",
+        "power"
+      ],
+      "unit": null,
+      "evidence_quote": "Modos de seleção de condução Eco e Power"
+    }
+  }
+}

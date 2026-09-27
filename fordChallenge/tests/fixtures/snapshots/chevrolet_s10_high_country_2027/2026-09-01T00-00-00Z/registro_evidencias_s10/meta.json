@@ -1,0 +1,16 @@
+{
+  "source_id": "registro_evidencias_s10",
+  "version_id": "chevrolet_s10_high_country_2027",
+  "url_final": "https://www.chevrolet.com.br/picapes/s10",
+  "http_status": 200,
+  "tier": 1,
+  "tipo": "registro_de_evidencia",
+  "status": "consultada",
+  "captured_at": "2026-09-01",
+  "text_path": "page.md",
+  "sha256": "12580415d06c90bbf62c107c52a419eb17a122e30c94b4e370089e632df7139d",
+  "bytes": 14245,
+  "arquivo_de_origem": "gabarito/raw/manus_s10_high_country.json",
+  "gerado_por": "scripts/build_fixtures.py",
+  "origem": "registro verbatim da coleta de 2026-09-01 (execução do Manus seguindo o protocolo)"
+}

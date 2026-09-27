@@ -1,0 +1,26 @@
+# Gitleaks 8.30.1 (binário oficial, checksum SHA-256 conferido) — 01/10/2026
+# Escopo: os 867 arquivos que entrariam no commit (git ls-files --others --exclude-standard)
+
+$ gitleaks dir . --redact                      # 1ª varredura, regras padrão
+  generic-api-key  fordChallenge/tests/api/conftest.py:104   JWT_SECRET", "REDACTED"
+  generic-api-key  fordChallenge/tests/conftest.py:141   JWT_SECRET", "REDACTED"
+  leaks found: 2
+
+Triagem: os dois são JWT_SECRET de fixtures de teste da solução, com o próprio texto
+declarando que não são de produção. Falso positivo → allowlist por regex, com data,
+em .gitleaks.toml (revisado no PR).
+
+$ gitleaks dir . --config .gitleaks.toml --redact   # após a triagem
+  no leaks found
+
+# Prova de que a varredura pega segredo real: o .env local da solução (fora do commit,
+# bloqueado pelo .gitignore). Valores mascarados.
+$ gitleaks dir fordChallenge/.env --redact
+  generic-api-key  .env:69   JWT_SECRET=REDACTED
+  generic-api-key  .env:106   LLM_API_KEY=REDACTED
+  generic-api-key  .env:135   LLM_API_KEY_ALT=REDACTED
+  generic-api-key  .env:149   DEMO_PASSWORD=REDACTED
+  leaks found: 4
+
+Se alguém forçar o .env no commit (git add -f), o job "segredos" do pipeline reprova o PR,
+e o hook de pre-commit da raiz (.pre-commit-config.yaml) barra antes mesmo do commit.

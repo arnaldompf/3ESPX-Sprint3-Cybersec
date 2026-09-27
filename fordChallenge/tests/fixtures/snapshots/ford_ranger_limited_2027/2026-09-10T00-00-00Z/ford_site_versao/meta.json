@@ -1,0 +1,16 @@
+{
+  "source_id": "ford_site_versao",
+  "version_id": "ford_ranger_limited_2027",
+  "url_final": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+  "http_status": 200,
+  "tier": 1,
+  "tipo": "pagina_oficial",
+  "status": "consultada",
+  "captured_at": "2026-09-10",
+  "text_path": "page.md",
+  "sha256": "12f06a3152e2801367a4e70d801f679786d204ed1003b55bb3b87a340d62494e",
+  "bytes": 9723,
+  "arquivo_de_origem": "gabarito/raw/ford_ranger_limited_site_versao.md",
+  "gerado_por": "scripts/build_fixtures.py",
+  "origem": "coleta ao vivo de 2026-09-10 por scripts/coleta/coletar_faltantes.py (robots.txt consultado, 1 req/s, user-agent identificado)"
+}

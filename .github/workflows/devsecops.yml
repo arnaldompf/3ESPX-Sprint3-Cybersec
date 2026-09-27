@@ -1,0 +1,304 @@
+# Pipeline DevSecOps do SpecRadar (Ford Challenge) — Sprint 3 de Cybersecurity.
+#
+# Fluxo (diagrama em docs/SPRINT3_CYBERSECURITY.md §1):
+#
+#   commit/PR ─┬─ 1. segredos (Gitleaks) ──────────┐
+#              ├─ 2. SAST (Semgrep) ───────────────┤
+#              ├─ 3. SCA (pip-audit, npm audit) ───┼─► 6. container (build + Trivy + SBOM)
+#              ├─ 4. testes (pytest + vitest) ─────┤        │
+#              └─ 5. IaC (Trivy config + Hadolint) ┘        ▼
+#                                         7. DAST (OWASP ZAP baseline contra o contêiner)
+#                                                           │  só na main
+#                                                           ▼
+#                              8. publicar (GHCR + assinatura Cosign) ─► 9. deploy (aprovação manual)
+#
+# Regra do portão: nenhum job de segurança usa `|| true`. Achado de severidade alta ou
+# crítica reprova o PR; exceção só por arquivo versionado e revisado
+# (.gitleaks.toml, .semgrepignore, .trivyignore), com justificativa e data de validade.
+
+name: DevSecOps
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    # Toda segunda, 06:00 UTC: CVE nova aparece sem ninguém commitar nada.
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+# Menor privilégio: o token do workflow só lê. Cada job pede o que precisa a mais.
+permissions:
+  contents: read
+
+concurrency:
+  group: devsecops-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  SOLUCAO: fordChallenge
+  REPLAY_MODE: "1"
+  LLM_FAKE: "1"
+  PYTHONUTF8: "1"
+  IMAGEM: ghcr.io/${{ github.repository_owner }}/specradar
+
+jobs:
+  # ------------------------------------------------------------------ 1. segredos
+  segredos:
+    name: Secret scanning (Gitleaks)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # histórico inteiro: segredo apagado num commit continua no anterior
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_CONFIG: .gitleaks.toml
+
+  # ------------------------------------------------------------------ 2. SAST
+  sast:
+    name: SAST (Semgrep)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write # publica o SARIF na aba Security do GitHub
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Semgrep (Python, TypeScript, OWASP Top 10 + regras do projeto)
+        run: |
+          uvx semgrep scan --metrics off \
+            --config p/python --config p/typescript --config p/owasp-top-ten \
+            --config .semgrep/ \
+            --severity ERROR --error \
+            --sarif --output semgrep.sarif \
+            $SOLUCAO/api $SOLUCAO/pipeline $SOLUCAO/web/src seguranca
+      - name: Publicar SARIF
+        if: always()
+        continue-on-error: true # repositório privado sem Advanced Security não aceita SARIF
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: semgrep.sarif
+          category: semgrep
+
+  # ------------------------------------------------------------------ 3. SCA
+  sca:
+    name: SCA (pip-audit + npm audit)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Dependências Python travadas no uv.lock
+        run: |
+          uv export --project $SOLUCAO --frozen --no-dev --no-hashes --no-emit-project \
+            --extra postgres --format requirements-txt > requirements-auditoria.txt
+      - name: pip-audit (PyPI Advisory / OSV) sobre as versões exatas do lock
+        # --no-deps --disable-pip: o lock já fixa tudo; auditar sem reinstalar nada.
+        run: uvx pip-audit -r requirements-auditoria.txt --no-deps --disable-pip --strict --desc
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: npm audit — dependências de produção do web (reprova a partir de moderada)
+        # O que vai para o navegador do usuário: até moderada (ex.: open redirect) bloqueia.
+        run: cd $SOLUCAO/web && npm audit --package-lock-only --omit=dev --audit-level=moderate
+      - name: npm audit — ferramentas de build/teste (reprova em alta/crítica)
+        # Dependência de dev roda no CI com acesso ao código e aos secrets: supply chain.
+        if: always()
+        run: |
+          (cd $SOLUCAO/web && npm audit --package-lock-only --audit-level=high)
+          (cd $SOLUCAO/qa  && npm audit --package-lock-only --audit-level=high)
+
+  # ------------------------------------------------------------------ 4. testes
+  testes:
+    name: Testes (solução + camada de segurança + tela)
+    runs-on: ubuntu-latest
+    services:
+      db:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: specradar
+          POSTGRES_PASSWORD: ${{ github.run_id }}-ci # efêmera, morre com o job
+          POSTGRES_DB: specradar
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U specradar -d specradar"
+          --health-interval 5s --health-timeout 3s --health-retries 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Dependências
+        run: |
+          uv sync --project $SOLUCAO --frozen --extra postgres --extra export
+          (cd $SOLUCAO/web && npm ci --ignore-scripts && npm run build)
+      - name: Gerar JWT_SECRET efêmero
+        run: echo "JWT_SECRET=$(openssl rand -base64 48)" >> "$GITHUB_ENV"
+      - name: Testes da solução (pytest)
+        working-directory: ${{ env.SOLUCAO }}
+        env:
+          DATABASE_URL: postgresql+psycopg://specradar:${{ github.run_id }}-ci@localhost:5432/specradar
+        run: uv run pytest -q
+      - name: Testes da camada de segurança (rate limit, SSRF, cripto, backup, eventos)
+        run: uv run --project $SOLUCAO pytest
+      - name: Testes de tela (vitest)
+        working-directory: ${{ env.SOLUCAO }}/web
+        run: npm test
+
+  # ------------------------------------------------------------------ 5. IaC
+  iac:
+    name: IaC (Trivy config + Hadolint)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Hadolint (boas práticas do Dockerfile)
+        uses: hadolint/hadolint-action@v3.1.0
+        with:
+          dockerfile: infra/Dockerfile
+          failure-threshold: warning
+      - name: Trivy config (Dockerfile, compose, Caddy) — reprova em alta/crítica
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          scan-type: config
+          scan-ref: infra
+          severity: HIGH,CRITICAL
+          exit-code: "1"
+
+  # ------------------------------------------------------------------ 6. container
+  container:
+    name: Container (build + Trivy + SBOM)
+    needs: [segredos, sast, sca, testes, iac]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - name: Build da imagem endurecida
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: infra/Dockerfile
+          load: true
+          tags: specradar:${{ github.sha }}
+      - name: Trivy image — reprova em CVE alta/crítica com correção disponível
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: specradar:${{ github.sha }}
+          severity: HIGH,CRITICAL
+          ignore-unfixed: true
+          exit-code: "1"
+          format: sarif
+          output: trivy-imagem.sarif
+      - name: Publicar SARIF
+        if: always()
+        continue-on-error: true
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: trivy-imagem.sarif
+          category: trivy-imagem
+      - name: SBOM CycloneDX (inventário do que vai para produção)
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: specradar:${{ github.sha }}
+          format: cyclonedx
+          output: sbom-specradar.cdx.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sbom
+          path: sbom-specradar.cdx.json
+      - name: Exportar imagem para o DAST
+        run: docker save specradar:${{ github.sha }} -o imagem.tar
+      - uses: actions/upload-artifact@v4
+        with:
+          name: imagem
+          path: imagem.tar
+          retention-days: 1
+
+  # ------------------------------------------------------------------ 7. DAST
+  dast:
+    name: DAST (OWASP ZAP baseline)
+    needs: container
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: imagem
+      - name: Subir a API endurecida (SQLite efêmero, autenticação e rate limit ligados)
+        run: |
+          docker load -i imagem.tar
+          docker run -d --name specradar -p 8000:8000 \
+            -e DATABASE_URL=sqlite:////app/data/dast.db \
+            -e AUTH_ENABLED=1 -e RATE_LIMIT_ENABLED=1 \
+            -e JWT_SECRET="$(openssl rand -base64 48)" \
+            specradar:${{ github.sha }}
+          for i in $(seq 1 30); do
+            curl -fsS http://localhost:8000/api/v1/health && break
+            sleep 2
+          done
+      - name: ZAP baseline (passivo, sem ataque destrutivo)
+        uses: zaproxy/action-baseline@v0.14.0
+        with:
+          target: http://localhost:8000/api/v1/health
+          rules_file_name: .zap/regras.tsv
+          allow_issue_writing: false
+          fail_action: true
+
+  # ------------------------------------------------------------------ 8. publicar
+  publicar:
+    name: Publicar e assinar imagem
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: dast
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: write # assinatura keyless do Cosign (OIDC), sem chave privada guardada
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - id: build
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: infra/Dockerfile
+          push: true
+          tags: ${{ env.IMAGEM }}:${{ github.sha }}
+      - uses: sigstore/cosign-installer@v3
+      - name: Assinar pelo digest (não pela tag, que é mutável)
+        run: cosign sign --yes "${IMAGEM}@${{ steps.build.outputs.digest }}"
+
+  # ------------------------------------------------------------------ 9. deploy
+  deploy:
+    name: Deploy (produção, com aprovação)
+    needs: publicar
+    runs-on: ubuntu-latest
+    # O environment `producao` exige aprovação manual de um revisor no GitHub
+    # (Settings → Environments → Required reviewers) e guarda os secrets de produção.
+    environment: producao
+    steps:
+      - uses: sigstore/cosign-installer@v3
+      - name: Verificar assinatura antes de implantar
+        run: |
+          cosign verify "${IMAGEM}:${{ github.sha }}" \
+            --certificate-identity-regexp "^https://github.com/${{ github.repository }}/" \
+            --certificate-oidc-issuer https://token.actions.githubusercontent.com
+      - name: Implantar
+        # Alvo de produção ainda não provisionado (fase atual do Challenge). Aqui entra o
+        # `docker compose -f infra/docker-compose.yml pull && up -d` no host de produção,
+        # via SSH com chave em secret do environment.
+        run: echo "Imagem ${IMAGEM}:${{ github.sha }} verificada e liberada para deploy."

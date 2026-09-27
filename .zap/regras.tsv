@@ -1,0 +1,6 @@
+10035	IGNORE	(Strict-Transport-Security: enviado pelo Caddy, que termina o TLS; a API atrás dele fala HTTP interno)
+10049	IGNORE	(Storable and Cacheable Content: resposta de /health é pública e sem dado)
+10036	FAIL	(Server leaks version information)
+10038	FAIL	(Content Security Policy header not set)
+10020	FAIL	(Anti-clickjacking header)
+10021	FAIL	(X-Content-Type-Options header missing)

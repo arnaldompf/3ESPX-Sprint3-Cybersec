@@ -1,0 +1,15 @@
+{
+  "source_id": "toyota_site_cd",
+  "version_id": "toyota_hilux_gr_sport_2026_inexistente",
+  "url_final": "https://www.toyota.com.br/modelos/hilux-cabine-dupla",
+  "http_status": 200,
+  "tier": 1,
+  "tipo": "pagina_oficial",
+  "status": "consultada",
+  "captured_at": "2026-09-01",
+  "text_path": "page.md",
+  "sha256": "2f9ae1e569a2301d0cfdbf4f2f35b8218d1de4fc7e3cf450fdb2b29aa2cd73ef",
+  "bytes": 12531,
+  "arquivo_de_origem": "gabarito/raw/toyota_hilux_site.md",
+  "gerado_por": "scripts/build_fixtures.py"
+}

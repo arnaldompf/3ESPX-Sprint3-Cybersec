@@ -1,0 +1,27 @@
+# Instalar (uma vez, opcional em dev):  uvx pre-commit install
+# Nesta noite os hooks NAO foram instalados na maquina (nao ha ninguem para aprovar
+# downloads de hook); o CI roda ruff e gitleaks de todo modo.
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.14.5
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.29.0
+    hooks:
+      - id: gitleaks
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-added-large-files
+        args: [--maxkb=2048]
+      - id: check-merge-conflict
+      - id: end-of-file-fixer
+        exclude: ^(_kits/|gabarito/raw/)
+      - id: trailing-whitespace
+        exclude: ^(_kits/|gabarito/raw/)
+      - id: detect-private-key

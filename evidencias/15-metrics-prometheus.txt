@@ -1,0 +1,34 @@
+# GET /metrics da API endurecida após o tráfego de teste (buckets do histograma omitidos)
+# HELP specradar_coleta_metricas_falhou 1 quando um coletor de metricas falhou.
+# TYPE specradar_coleta_metricas_falhou gauge
+specradar_coleta_metricas_falhou{coletor="eval"} 0
+specradar_coleta_metricas_falhou{coletor="jobs"} 0
+# HELP specradar_eventos_seguranca_total Eventos de seguranca: acesso_negado, limite_excedido, alteracao_critica, ssrf_bloqueado.
+# TYPE specradar_eventos_seguranca_total counter
+specradar_eventos_seguranca_total{tipo="acesso_negado"} 55
+specradar_eventos_seguranca_total{tipo="alteracao_critica"} 1
+specradar_eventos_seguranca_total{tipo="limite_excedido"} 26
+# HELP specradar_http_latencia_segundos Latencia das requisicoes HTTP.
+# TYPE specradar_http_latencia_segundos histogram
+specradar_http_latencia_segundos_sum{rota="/api/v1/auth/login"} 0.306783
+specradar_http_latencia_segundos_count{rota="/api/v1/auth/login"} 9
+specradar_http_latencia_segundos_sum{rota="/api/v1/auth/me"} 0.084961
+specradar_http_latencia_segundos_count{rota="/api/v1/auth/me"} 49
+specradar_http_latencia_segundos_sum{rota="/api/v1/health"} 0.130041
+specradar_http_latencia_segundos_count{rota="/api/v1/health"} 4
+specradar_http_latencia_segundos_sum{rota="/api/v1/users"} 0.071055
+specradar_http_latencia_segundos_count{rota="/api/v1/users"} 5
+specradar_http_latencia_segundos_sum{rota="bloqueada_pelo_rate_limit"} 0.003756
+specradar_http_latencia_segundos_count{rota="bloqueada_pelo_rate_limit"} 22
+# HELP specradar_http_requisicoes_total Requisicoes HTTP atendidas.
+# TYPE specradar_http_requisicoes_total counter
+specradar_http_requisicoes_total{metodo="GET",rota="/api/v1/auth/me",status="200"} 1
+specradar_http_requisicoes_total{metodo="GET",rota="/api/v1/auth/me",status="401"} 48
+specradar_http_requisicoes_total{metodo="GET",rota="/api/v1/health",status="200"} 4
+specradar_http_requisicoes_total{metodo="GET",rota="/api/v1/users",status="200"} 1
+specradar_http_requisicoes_total{metodo="GET",rota="/api/v1/users",status="401"} 3
+specradar_http_requisicoes_total{metodo="GET",rota="bloqueada_pelo_rate_limit",status="429"} 22
+specradar_http_requisicoes_total{metodo="POST",rota="/api/v1/auth/login",status="200"} 1
+specradar_http_requisicoes_total{metodo="POST",rota="/api/v1/auth/login",status="401"} 4
+specradar_http_requisicoes_total{metodo="POST",rota="/api/v1/auth/login",status="429"} 4
+specradar_http_requisicoes_total{metodo="POST",rota="/api/v1/users",status="201"} 1

@@ -1,0 +1,922 @@
+{
+  "versao": "1.0",
+  "gerado_em": "2026-09-08",
+  "fonte": "docs/03_SCHEMA_CANONICO.md (sinônimos-semente) + erros reais registrados em gabarito/README.md (Lições que viraram requisito)",
+  "nota": "Termos são comparados após normalização (minúsculas, sem acento, espaços colapsados). 'marca' restringe o sinônimo a uma montadora quando o termo é comercial.",
+  "campos": [
+    {
+      "campo_canonico": "marca",
+      "grupo": "identificacao",
+      "termos": [
+        "marca",
+        "fabricante",
+        "montadora",
+        "brand"
+      ]
+    },
+    {
+      "campo_canonico": "modelo",
+      "grupo": "identificacao",
+      "termos": [
+        "modelo",
+        "nameplate",
+        "model"
+      ]
+    },
+    {
+      "campo_canonico": "versao",
+      "grupo": "identificacao",
+      "termos": [
+        "versao",
+        "versão",
+        "trim",
+        "acabamento",
+        "configuracao"
+      ]
+    },
+    {
+      "campo_canonico": "ano_modelo",
+      "grupo": "identificacao",
+      "termos": [
+        "ano modelo",
+        "ano-modelo",
+        "model year",
+        "my"
+      ]
+    },
+    {
+      "campo_canonico": "codigo_fipe",
+      "grupo": "identificacao",
+      "termos": [
+        "codigo fipe",
+        "código fipe",
+        "cod fipe",
+        "fipe code"
+      ]
+    },
+    {
+      "campo_canonico": "carroceria",
+      "grupo": "identificacao",
+      "termos": [
+        "carroceria",
+        "tipo de carroceria",
+        "cabine",
+        "cabine dupla",
+        "cd",
+        "body style"
+      ]
+    },
+    {
+      "campo_canonico": "segmento",
+      "grupo": "identificacao",
+      "termos": [
+        "segmento",
+        "categoria",
+        "classe",
+        "picape media",
+        "picape intermediaria"
+      ]
+    },
+    {
+      "campo_canonico": "motor_descricao",
+      "grupo": "motorizacao",
+      "termos": [
+        "motor",
+        "descricao do motor",
+        "motorizacao",
+        "propulsor",
+        "engine"
+      ]
+    },
+    {
+      "campo_canonico": "cilindros",
+      "grupo": "motorizacao",
+      "termos": [
+        "cilindros",
+        "numero de cilindros",
+        "arranjo de cilindros",
+        "configuracao do motor",
+        "v6",
+        "4 cilindros em linha"
+      ]
+    },
+    {
+      "campo_canonico": "deslocamento_l",
+      "grupo": "motorizacao",
+      "termos": [
+        "deslocamento",
+        "cilindrada",
+        "volume do motor",
+        "litragem",
+        "displacement"
+      ]
+    },
+    {
+      "campo_canonico": "combustivel",
+      "grupo": "motorizacao",
+      "termos": [
+        "combustivel",
+        "combustível",
+        "tipo de combustivel",
+        "fuel",
+        "diesel",
+        "gasolina",
+        "flex"
+      ]
+    },
+    {
+      "campo_canonico": "aspiracao",
+      "grupo": "motorizacao",
+      "termos": [
+        "aspiracao",
+        "aspiração",
+        "turbo",
+        "biturbo",
+        "bi-turbo",
+        "turbocompressor",
+        "aspirado",
+        "induction"
+      ]
+    },
+    {
+      "campo_canonico": "potencia_cv",
+      "grupo": "motorizacao",
+      "termos": [
+        "potencia",
+        "potência",
+        "potencia maxima",
+        "cavalos",
+        "cv",
+        "hp",
+        "kw",
+        "horsepower",
+        "power"
+      ]
+    },
+    {
+      "campo_canonico": "potencia_rpm",
+      "grupo": "motorizacao",
+      "termos": [
+        "rotacao de potencia maxima",
+        "potencia a",
+        "rpm de potencia",
+        "potencia maxima rpm"
+      ]
+    },
+    {
+      "campo_canonico": "torque_nm",
+      "grupo": "motorizacao",
+      "termos": [
+        "torque",
+        "torque maximo",
+        "conjugado",
+        "kgfm",
+        "kgf.m",
+        "mkgf",
+        "nm",
+        "n.m",
+        "lb-ft"
+      ]
+    },
+    {
+      "campo_canonico": "torque_rpm",
+      "grupo": "motorizacao",
+      "termos": [
+        "rotacao de torque maximo",
+        "torque a",
+        "rpm de torque",
+        "torque maximo rpm"
+      ]
+    },
+    {
+      "campo_canonico": "tipo",
+      "grupo": "transmissao",
+      "termos": [
+        "transmissao",
+        "transmissão",
+        "cambio",
+        "câmbio",
+        "tipo de cambio",
+        "caixa de marchas",
+        "at",
+        "automatico",
+        "automatica",
+        "manual",
+        "gearbox"
+      ]
+    },
+    {
+      "campo_canonico": "numero_marchas",
+      "grupo": "transmissao",
+      "termos": [
+        "numero de marchas",
+        "marchas",
+        "velocidades",
+        "relacoes",
+        "10 velocidades",
+        "speeds"
+      ]
+    },
+    {
+      "campo_canonico": "paddle_shifters",
+      "grupo": "transmissao",
+      "termos": [
+        "paddle shifters",
+        "paddle shift",
+        "paddles",
+        "aletas",
+        "aletas no volante",
+        "aletas de troca de marcha",
+        "borboletas",
+        "borboletas no volante",
+        "trocas no volante",
+        "trocas sequenciais no volante"
+      ]
+    },
+    {
+      "campo_canonico": "tipo_tracao",
+      "grupo": "tracao",
+      "termos": [
+        "tracao",
+        "tração",
+        "tipo de tracao",
+        "4x4",
+        "4x2",
+        "4wd",
+        "awd",
+        "4motion",
+        "traction",
+        "drivetrain"
+      ]
+    },
+    {
+      "campo_canonico": "reduzida",
+      "grupo": "tracao",
+      "termos": [
+        "reduzida",
+        "caixa de reducao",
+        "marcha reduzida",
+        "low range",
+        "4l"
+      ]
+    },
+    {
+      "campo_canonico": "bloqueio_diferencial",
+      "grupo": "tracao",
+      "termos": [
+        "bloqueio de diferencial",
+        "bloqueio do diferencial",
+        "diferencial blocante",
+        "locker",
+        "e-locker",
+        "bloqueio traseiro"
+      ]
+    },
+    {
+      "campo_canonico": "suspensao_dianteira",
+      "grupo": "chassi",
+      "termos": [
+        "suspensao dianteira",
+        "suspensão dianteira",
+        "eixo dianteiro",
+        "front suspension"
+      ]
+    },
+    {
+      "campo_canonico": "suspensao_traseira",
+      "grupo": "chassi",
+      "termos": [
+        "suspensao traseira",
+        "suspensão traseira",
+        "eixo traseiro",
+        "feixe de molas",
+        "rear suspension"
+      ]
+    },
+    {
+      "campo_canonico": "amortecedores",
+      "grupo": "chassi",
+      "termos": [
+        "amortecedores",
+        "amortecedor",
+        "shock",
+        "shocks",
+        "shock absorbers",
+        "fox",
+        "live valve",
+        "amortecedores especiais"
+      ]
+    },
+    {
+      "campo_canonico": "direcao",
+      "grupo": "chassi",
+      "termos": [
+        "direcao",
+        "direção",
+        "tipo de direcao",
+        "assistencia de direcao",
+        "steering",
+        "direcao eletrica",
+        "direcao hidraulica"
+      ]
+    },
+    {
+      "campo_canonico": "freios_dianteiros",
+      "grupo": "chassi",
+      "termos": [
+        "freios dianteiros",
+        "freio dianteiro",
+        "disco dianteiro",
+        "front brakes"
+      ]
+    },
+    {
+      "campo_canonico": "freios_traseiros",
+      "grupo": "chassi",
+      "termos": [
+        "freios traseiros",
+        "freio traseiro",
+        "disco traseiro",
+        "tambor traseiro",
+        "rear brakes"
+      ]
+    },
+    {
+      "campo_canonico": "aceleracao_0_100_s",
+      "grupo": "desempenho",
+      "termos": [
+        "aceleracao",
+        "aceleração",
+        "0 a 100",
+        "0-100",
+        "0 a 100 km/h",
+        "tempo de aceleracao",
+        "0 to 60"
+      ]
+    },
+    {
+      "campo_canonico": "velocidade_maxima_kmh",
+      "grupo": "desempenho",
+      "termos": [
+        "velocidade maxima",
+        "velocidade máxima",
+        "vel max",
+        "top speed"
+      ]
+    },
+    {
+      "campo_canonico": "consumo_urbano_kml",
+      "grupo": "desempenho",
+      "termos": [
+        "consumo urbano",
+        "consumo na cidade",
+        "cidade km/l",
+        "urban fuel economy"
+      ]
+    },
+    {
+      "campo_canonico": "consumo_rodoviario_kml",
+      "grupo": "desempenho",
+      "termos": [
+        "consumo rodoviario",
+        "consumo rodoviário",
+        "consumo na estrada",
+        "estrada km/l",
+        "highway fuel economy"
+      ]
+    },
+    {
+      "campo_canonico": "modos_conducao",
+      "grupo": "modos",
+      "termos": [
+        "modos de conducao",
+        "modos de condução",
+        "modos de direcao do veiculo",
+        "drive modes",
+        "modos de terreno",
+        "terrain management",
+        "gov (modos)",
+        "modos de pilotagem"
+      ]
+    },
+    {
+      "campo_canonico": "modos_direcao",
+      "grupo": "modos",
+      "termos": [
+        "modos de direcao",
+        "modos de direção",
+        "modos de volante",
+        "modos do volante",
+        "modos de esterco",
+        "modos de assistencia da direcao",
+        "steering modes",
+        "peso da direcao"
+      ]
+    },
+    {
+      "campo_canonico": "modos_escapamento",
+      "grupo": "modos",
+      "termos": [
+        "modos de escapamento",
+        "modos do escapamento",
+        "escape ativo",
+        "exhaust modes",
+        "som do escapamento"
+      ]
+    },
+    {
+      "campo_canonico": "modos_amortecedor",
+      "grupo": "modos",
+      "termos": [
+        "modos de amortecedor",
+        "modos do amortecedor",
+        "modos de suspensao",
+        "damper modes",
+        "suspension modes",
+        "regulagem dos amortecedores"
+      ]
+    },
+    {
+      "campo_canonico": "farois_tipo",
+      "grupo": "exterior",
+      "termos": [
+        "farois",
+        "faróis",
+        "tipo de farol",
+        "iluminacao dianteira",
+        "headlights",
+        "matrix led",
+        "full led",
+        "halogeno"
+      ]
+    },
+    {
+      "campo_canonico": "farois_neblina",
+      "grupo": "exterior",
+      "termos": [
+        "farol de neblina",
+        "farois de neblina",
+        "neblina",
+        "fog lights",
+        "auxiliar de neblina"
+      ]
+    },
+    {
+      "campo_canonico": "rodas_aro_pol",
+      "grupo": "exterior",
+      "termos": [
+        "aro",
+        "aro das rodas",
+        "diametro da roda",
+        "rodas de 17",
+        "wheel size",
+        "polegadas da roda"
+      ]
+    },
+    {
+      "campo_canonico": "rodas_material",
+      "grupo": "exterior",
+      "termos": [
+        "material das rodas",
+        "rodas de liga",
+        "liga leve",
+        "aco",
+        "alloy wheels"
+      ]
+    },
+    {
+      "campo_canonico": "pneus_medida",
+      "grupo": "exterior",
+      "termos": [
+        "medida dos pneus",
+        "pneus",
+        "pneu",
+        "tamanho do pneu",
+        "tire size",
+        "285/70 r17"
+      ]
+    },
+    {
+      "campo_canonico": "pneus_tipo",
+      "grupo": "exterior",
+      "termos": [
+        "tipo de pneu",
+        "pneu at",
+        "all terrain",
+        "mud terrain",
+        "pneu rodoviario",
+        "ht",
+        "at",
+        "mt"
+      ]
+    },
+    {
+      "campo_canonico": "comprimento_mm",
+      "grupo": "dimensoes",
+      "termos": [
+        "comprimento",
+        "comprimento total",
+        "length"
+      ]
+    },
+    {
+      "campo_canonico": "largura_mm",
+      "grupo": "dimensoes",
+      "termos": [
+        "largura",
+        "largura total",
+        "width"
+      ]
+    },
+    {
+      "campo_canonico": "altura_mm",
+      "grupo": "dimensoes",
+      "termos": [
+        "altura",
+        "altura total",
+        "height"
+      ]
+    },
+    {
+      "campo_canonico": "entre_eixos_mm",
+      "grupo": "dimensoes",
+      "termos": [
+        "entre eixos",
+        "entre-eixos",
+        "distancia entre eixos",
+        "wheelbase"
+      ]
+    },
+    {
+      "campo_canonico": "capacidade_carga_kg",
+      "grupo": "dimensoes",
+      "termos": [
+        "capacidade de carga",
+        "carga util",
+        "carga útil",
+        "payload",
+        "capacidade da cacamba",
+        "1000 kg"
+      ]
+    },
+    {
+      "campo_canonico": "capacidade_reboque_kg",
+      "grupo": "dimensoes",
+      "termos": [
+        "capacidade de reboque",
+        "reboque",
+        "capacidade de tracionar",
+        "towing",
+        "peso rebocavel"
+      ]
+    },
+    {
+      "campo_canonico": "tanque_l",
+      "grupo": "dimensoes",
+      "termos": [
+        "tanque",
+        "capacidade do tanque",
+        "volume do tanque",
+        "fuel tank"
+      ]
+    },
+    {
+      "campo_canonico": "adas_nome_comercial",
+      "grupo": "seguranca",
+      "termos": [
+        "pacote adas",
+        "nome do pacote de seguranca",
+        "pacote de assistencias",
+        "adas",
+        "tss",
+        "toyota safety sense",
+        "safer tag",
+        "co-pilot360",
+        "copilot360",
+        "iq.drive",
+        "iq drive",
+        "gm safety"
+      ]
+    },
+    {
+      "campo_canonico": "adas_itens",
+      "grupo": "seguranca",
+      "termos": [
+        "itens de adas",
+        "assistencias de conducao",
+        "itens de seguranca ativa",
+        "adas items",
+        "assistentes de direcao"
+      ]
+    },
+    {
+      "campo_canonico": "airbags_qtd",
+      "grupo": "seguranca",
+      "termos": [
+        "airbags",
+        "quantidade de airbags",
+        "numero de airbags",
+        "bolsas de ar"
+      ]
+    },
+    {
+      "campo_canonico": "camera_360",
+      "grupo": "seguranca",
+      "termos": [
+        "camera 360",
+        "câmera 360",
+        "visao 360",
+        "multi-view camera",
+        "camera de visao periferica",
+        "surround view"
+      ]
+    },
+    {
+      "campo_canonico": "preco_sugerido_brl",
+      "grupo": "comercial",
+      "termos": [
+        "preco",
+        "preço",
+        "preco sugerido",
+        "preco publico sugerido",
+        "a partir de",
+        "msrp",
+        "valor"
+      ]
+    },
+    {
+      "campo_canonico": "preco_data",
+      "grupo": "comercial",
+      "termos": [
+        "data do preco",
+        "preco em",
+        "vigencia do preco"
+      ]
+    },
+    {
+      "campo_canonico": "preco_fipe_brl",
+      "grupo": "comercial",
+      "termos": [
+        "preco fipe",
+        "valor fipe",
+        "tabela fipe",
+        "fipe"
+      ]
+    },
+    {
+      "campo_canonico": "fipe_referencia",
+      "grupo": "comercial",
+      "termos": [
+        "referencia fipe",
+        "mes de referencia fipe",
+        "fipe referencia"
+      ]
+    },
+    {
+      "campo_canonico": "garantia_meses",
+      "grupo": "comercial",
+      "termos": [
+        "garantia",
+        "prazo de garantia",
+        "garantia de fabrica",
+        "warranty"
+      ]
+    }
+  ],
+  "valores": {
+    "modos_conducao": {
+      "esportivo": "sport",
+      "sport": "sport",
+      "esporte": "sport",
+      "normal": "normal",
+      "eco": "eco",
+      "conforto": "conforto",
+      "comfort": "conforto",
+      "escorregadio": "escorregadio",
+      "slippery": "escorregadio",
+      "neve": "escorregadio",
+      "lama": "lama",
+      "lama/terra": "lama",
+      "lama e terra": "lama",
+      "mud": "lama",
+      "mud/ruts": "lama",
+      "areia": "areia",
+      "sand": "areia",
+      "baja": "baja",
+      "rock crawl": "rock_crawl",
+      "rock_crawl": "rock_crawl",
+      "pedras": "rock_crawl",
+      "off-road": "off_road",
+      "off road": "off_road",
+      "offroad": "off_road",
+      "terra": "terra",
+      "reboque": "reboque",
+      "tow/haul": "reboque",
+      "trailer": "reboque",
+      "power": "power",
+      "pwr": "power",
+      "rebocar/transp": "reboque",
+      "rebocar": "reboque",
+      "rebocar/transporte": "reboque",
+      "tow": "reboque"
+    },
+    "modos_direcao": {
+      "normal": "normal",
+      "conforto": "conforto",
+      "comfort": "conforto",
+      "esportivo": "sport",
+      "sport": "sport",
+      "off-road": "off_road",
+      "off road": "off_road",
+      "offroad": "off_road",
+      "baja": "baja"
+    },
+    "modos_escapamento": {
+      "silencioso": "silencioso",
+      "quiet": "silencioso",
+      "normal": "normal",
+      "esportivo": "sport",
+      "sport": "sport",
+      "baja": "baja"
+    },
+    "modos_amortecedor": {
+      "normal": "normal",
+      "conforto": "conforto",
+      "comfort": "conforto",
+      "esportivo": "sport",
+      "sport": "sport",
+      "off-road": "off_road",
+      "off road": "off_road",
+      "offroad": "off_road",
+      "baja": "baja"
+    },
+    "tipo_tracao": {
+      "4x2": "4x2",
+      "4x4": "4x4",
+      "4wd": "4x4",
+      "4 wd": "4x4",
+      "awd": "awd",
+      "4motion": "4x4 permanente",
+      "tracao integral permanente": "4x4 permanente",
+      "4x4 permanente": "4x4 permanente",
+      "4x4 sob demanda": "4x4 sob demanda",
+      "4x4 seletor": "4x4 sob demanda",
+      "part-time 4x4": "4x4 sob demanda",
+      "full-time 4x4": "4x4 permanente"
+    },
+    "tipo": {
+      "at": "automatica",
+      "automatico": "automatica",
+      "automatica": "automatica",
+      "automatico de 10 velocidades": "automatica",
+      "mt": "manual",
+      "manual": "manual",
+      "automatizada": "automatizada",
+      "dct": "automatizada",
+      "cvt": "cvt"
+    },
+    "farois_tipo": {
+      "matrix led": "Matrix LED",
+      "full led": "Full LED",
+      "led": "LED",
+      "halogeno": "halógeno",
+      "halógeno": "halógeno",
+      "bi-led": "Bi-LED"
+    },
+    "pneus_tipo": {
+      "at": "AT",
+      "all terrain": "AT",
+      "all-terrain": "AT",
+      "mt": "MT",
+      "mud terrain": "MT",
+      "ht": "HT",
+      "highway terrain": "HT",
+      "rodoviario": "HT"
+    },
+    "adas_nome_comercial": {
+      "tss": "Toyota Safety Sense",
+      "toyota safety sense": "Toyota Safety Sense",
+      "safer tag": "Safer Tag",
+      "co-pilot360": "Co-Pilot360",
+      "copilot360": "Co-Pilot360",
+      "iq.drive": "IQ.Drive",
+      "iq drive": "IQ.Drive"
+    },
+    "combustivel": {
+      "diesel": "diesel",
+      "gasolina": "gasolina",
+      "flex": "flex",
+      "etanol": "etanol",
+      "hibrido": "hibrido"
+    },
+    "aspiracao": {
+      "turbo": "turbo",
+      "biturbo": "biturbo",
+      "bi-turbo": "biturbo",
+      "bi turbo": "biturbo",
+      "twin-turbo": "biturbo",
+      "aspirado": "aspirado",
+      "naturalmente aspirado": "aspirado"
+    },
+    "adas_itens": {
+      "frenagem autonoma": "frenagem_autonoma",
+      "frenagem automatica": "frenagem_autonoma",
+      "frenagem automatica de emergencia": "frenagem_autonoma",
+      "frenagem autonoma dianteira e em marcha a re": "frenagem_autonoma",
+      "assistente autonomo de frenagem": "frenagem_autonoma",
+      "pre-crash system": "frenagem_autonoma",
+      "pre-crash system (pcs) com frenagem automatica (carros, pedestres, ciclistas)": "frenagem_autonoma",
+      "pcs": "frenagem_autonoma",
+      "aeb": "frenagem_autonoma",
+      "autonomous emergency braking": "frenagem_autonoma",
+      "frenagem pos colisao": "frenagem_pos_colisao",
+      "alerta de colisao": "alerta_de_colisao",
+      "aviso de colisao": "alerta_de_colisao",
+      "aviso de colisao com pedestres e ciclistas": "alerta_de_colisao",
+      "forward collision warning": "alerta_de_colisao",
+      "alerta de colisao frontal": "alerta_de_colisao",
+      "alerta de saida de faixa": "alerta_de_faixa",
+      "lane departure alert": "alerta_de_faixa",
+      "lane departure alert (lda)": "alerta_de_faixa",
+      "lda": "alerta_de_faixa",
+      "lane alert": "alerta_de_faixa",
+      "assistente de permanencia em faixa": "permanencia_em_faixa",
+      "assistente ativo de permanencia em faixa": "permanencia_em_faixa",
+      "sistema auxiliar de permanencia em faixa": "permanencia_em_faixa",
+      "permanencia e centralizacao em faixa": "permanencia_em_faixa",
+      "assistente de permanencia e centralizacao em faixa": "permanencia_em_faixa",
+      "lane keeping assist": "permanencia_em_faixa",
+      "adaptive cruise control": "acc",
+      "adaptive cruise control (acc)": "acc",
+      "acc": "acc",
+      "acc stop and go": "acc",
+      "controle de cruzeiro adaptativo": "acc",
+      "piloto automatico adaptativo": "acc",
+      "blis": "alerta_de_ponto_cego",
+      "alerta de ponto cego": "alerta_de_ponto_cego",
+      "blind spot": "alerta_de_ponto_cego",
+      "monitor de ponto cego": "alerta_de_ponto_cego",
+      "alerta de trafego cruzado": "trafego_cruzado",
+      "alerta de trafego cruzado traseiro": "trafego_cruzado",
+      "rear cross traffic alert": "trafego_cruzado",
+      "camera 360": "camera_360",
+      "camera 360 (pvm)": "camera_360",
+      "pvm": "camera_360",
+      "panoramic view monitor": "camera_360",
+      "camera de visao panoramica": "camera_360",
+      "camera de re": "camera_de_re",
+      "sensores dianteiro/traseiro": "sensor_de_estacionamento",
+      "sensores de estacionamento dianteiro e traseiro": "sensor_de_estacionamento",
+      "sensores dianteiros (2) e traseiros (4)": "sensor_de_estacionamento",
+      "sensor de estacionamento dianteiro": "sensor_de_estacionamento",
+      "sensor de estacionamento traseiro": "sensor_de_estacionamento",
+      "farol alto automatico": "farol_alto_automatico",
+      "auto high beam": "farol_alto_automatico",
+      "acendimento automatico dos farois": "farol_alto_automatico",
+      "sistema de reconhecimento de sinais de transito": "reconhecimento_de_placas",
+      "reconhecimento de sinais de transito": "reconhecimento_de_placas",
+      "road sign assist": "reconhecimento_de_placas",
+      "assistente de manobras evasivas": "manobras_evasivas",
+      "pro trailer": "assistente_de_reboque",
+      "pro trailer assistente de reboque": "assistente_de_reboque",
+      "pro trailer backup assist": "assistente_de_reboque",
+      "controle eletronico de estabilidade": "controle_de_estabilidade",
+      "assistente de partida em rampas": "assistente_de_rampa",
+      "limitador de velocidade": "limitador_de_velocidade",
+      "controle automatico em descidas": "controle_de_descida"
+    }
+  },
+  "unidades": {
+    "potencia": {
+      "cv": "cv",
+      "ps": "cv",
+      "hp": "cv",
+      "bhp": "cv",
+      "kw": "cv"
+    },
+    "torque": {
+      "nm": "Nm",
+      "n.m": "Nm",
+      "kgfm": "Nm",
+      "kgf.m": "Nm",
+      "kgm": "Nm",
+      "mkgf": "Nm",
+      "lb-ft": "Nm",
+      "lbft": "Nm"
+    },
+    "comprimento": {
+      "mm": "mm",
+      "cm": "mm",
+      "m": "mm",
+      "pol": "mm",
+      "in": "mm"
+    },
+    "volume": {
+      "l": "l",
+      "lt": "l",
+      "ml": "l",
+      "cc": "l",
+      "gal": "l"
+    }
+  }
+}

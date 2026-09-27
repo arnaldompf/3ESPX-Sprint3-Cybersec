@@ -1,0 +1,415 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://specradar.local/schema/canonical_spec.schema.json",
+  "title": "StandardSpec",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "identificacao",
+    "motorizacao",
+    "transmissao",
+    "tracao",
+    "chassi",
+    "desempenho",
+    "modos",
+    "exterior",
+    "dimensoes",
+    "seguranca",
+    "comercial",
+    "extras",
+    "meta"
+  ],
+  "$defs": {
+    "Evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_id",
+        "source_url",
+        "tier",
+        "quote",
+        "captured_at"
+      ],
+      "properties": {
+        "evidence_id": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "tier": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "quote": {
+          "type": "string",
+          "maxLength": 300
+        },
+        "raw_value": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "captured_at": {
+          "type": "string"
+        },
+        "snapshot_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "page": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "tipo_de_afirmacao": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "declarado",
+            "medido",
+            "listado",
+            null
+          ]
+        }
+      }
+    },
+    "SpecField": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "status",
+        "confidence",
+        "evidences"
+      ],
+      "properties": {
+        "value": {},
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "verificado",
+            "nao_verificado",
+            "nao_disponivel",
+            "nao_encontrado",
+            "divergente",
+            "pendente"
+          ]
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "evidences": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          }
+        },
+        "conflicts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "value",
+              "evidence"
+            ],
+            "properties": {
+              "value": {},
+              "evidence": {
+                "$ref": "#/$defs/Evidence"
+              }
+            }
+          }
+        },
+        "sources_checked": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "origem": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "nao_disponivel",
+                  "nao_encontrado",
+                  "pendente"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "verificado",
+                  "divergente"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "evidences": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Group": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/SpecField"
+      }
+    }
+  },
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "identificacao": {
+      "type": "object",
+      "required": [
+        "marca",
+        "modelo",
+        "versao",
+        "ano_modelo",
+        "codigo_fipe",
+        "carroceria",
+        "segmento"
+      ],
+      "additionalProperties": {
+        "$ref": "#/$defs/SpecField"
+      }
+    },
+    "motorizacao": {
+      "type": "object",
+      "required": [
+        "motor_descricao",
+        "cilindros",
+        "deslocamento_l",
+        "combustivel",
+        "aspiracao",
+        "potencia_cv",
+        "potencia_rpm",
+        "torque_nm",
+        "torque_rpm"
+      ],
+      "additionalProperties": {
+        "$ref": "#/$defs/SpecField"
+      }
+    },
+    "transmissao": {
+      "type": "object",
+      "required": [
+        "tipo",
+        "numero_marchas",
+        "paddle_shifters"
+      ],
+      "additionalProperties": {
+        "$ref": "#/$defs/SpecField"
+      }
+    },
+    "tracao": {
+      "type": "object",
+      "required": [
+        "tipo_tracao",
+        "reduzida",
+        "bloqueio_diferencial"
+      ],
+      "additionalProperties": {
+        "$ref": "#/$defs/SpecField"
+      }
+    },
+    "chassi": {
+      "type": "object",
+      "required": [
+        "suspensao_dianteira",
+        "suspensao_traseira",
+        "amortecedores",
+        "direcao",
+        "freios_dianteiros",
+        "freios_traseiros"
+      ],
+      "additionalProperties": {
+        "$ref": "#/$defs/SpecField"
+      }
+    },
+    "desempenho": {
+      "type": "object",
+      "required": [
+        "aceleracao_0_100_s",
+        "velocidade_maxima_kmh",
+        "consumo_urbano_kml",
+        "consumo_rodoviario_kml"
+      ],
+      "additionalProperties": {
+        "$ref": "#/$defs/SpecField"
+      }
+    },
+    "modos": {
+      "type": "object",
+      "required": [
+        "modos_conducao",
+        "modos_direcao",
+        "modos_escapamento",
+        "modos_amortecedor"
+      ],
+      "additionalProperties": {
+        "$ref": "#/$defs/SpecField"
+      }
+    },
+    "exterior": {
+      "type": "object",
+      "required": [
+        "farois_tipo",
+        "farois_neblina",
+        "rodas_aro_pol",
+        "rodas_material",
+        "pneus_medida",
+        "pneus_tipo"
+      ],
+      "additionalProperties": {
+        "$ref": "#/$defs/SpecField"
+      }
+    },
+    "dimensoes": {
+      "type": "object",
+      "required": [
+        "comprimento_mm",
+        "largura_mm",
+        "altura_mm",
+        "entre_eixos_mm",
+        "capacidade_carga_kg",
+        "capacidade_reboque_kg",
+        "tanque_l"
+      ],
+      "additionalProperties": {
+        "$ref": "#/$defs/SpecField"
+      }
+    },
+    "seguranca": {
+      "type": "object",
+      "required": [
+        "adas_nome_comercial",
+        "adas_itens",
+        "airbags_qtd",
+        "camera_360"
+      ],
+      "additionalProperties": {
+        "$ref": "#/$defs/SpecField"
+      }
+    },
+    "comercial": {
+      "type": "object",
+      "required": [
+        "preco_sugerido_brl",
+        "preco_data",
+        "preco_fipe_brl",
+        "fipe_referencia",
+        "garantia_meses"
+      ],
+      "additionalProperties": {
+        "$ref": "#/$defs/SpecField"
+      }
+    },
+    "extras": {
+      "$ref": "#/$defs/Group"
+    },
+    "meta": {
+      "type": "object",
+      "required": [
+        "generated_at",
+        "job_id",
+        "version_resolution",
+        "sources_checked"
+      ],
+      "properties": {
+        "generated_at": {
+          "type": "string"
+        },
+        "job_id": {
+          "type": "string"
+        },
+        "version_resolution": {
+          "type": "object",
+          "required": [
+            "status"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "encontrada",
+                "versao_inexistente",
+                "ambigua"
+              ]
+            },
+            "matched_version": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "alternatives": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "sources_checked": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

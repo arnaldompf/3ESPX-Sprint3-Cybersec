@@ -1,0 +1,23 @@
+# O contexto de build só leva o que a imagem precisa. Segredo e dado local nunca entram.
+.git
+**/.env
+**/.env.*
+**/.venv
+**/node_modules
+**/__pycache__
+**/.pytest_cache
+**/.ruff_cache
+**/dist
+fordChallenge/data
+fordChallenge/reports
+fordChallenge/tests
+fordChallenge/qa
+fordChallenge/gabarito/raw
+backups
+docs
+evidencias
+observabilidade
+tests
+*.srbak
+*.pem
+*.key

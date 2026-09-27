@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Combina com `--canvas`, o fundo real da pagina: a barra do navegador movel
+         desenha esta cor, e um azul escuro aqui criaria uma faixa que a tela nao tem. -->
+    <meta name="theme-color" content="#F6F7F9" />
+    <link rel="icon" type="image/svg+xml" href="/app/favicon.svg" />
+    <!-- As fontes sao servidas pelo proprio app (`web/public/fonts`), nunca por CDN: a CSP
+         e `default-src 'none'` com `font-src 'self'`, e a apresentacao acontece numa sala
+         que pode nao ter internet. O `<link>` em vez de `@import` no CSS porque `@import`
+         serializa o download atras da folha principal. -->
+    <link rel="preload" as="font" type="font/woff2" href="/app/fonts/SchibstedGrotesk-latin.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/app/fonts/JetBrainsMono-latin.woff2" crossorigin />
+    <link rel="stylesheet" href="/app/fonts/fontes.css" />
+    <meta
+      name="description"
+      content="SpecRadar: ficha tecnica com evidencia, para quem vende picape."
+    />
+    <title>SpecRadar</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "source_id": "fipe_hilux_srx_plus",
+  "version_id": "toyota_hilux_srx_plus_at_2026",
+  "url_final": "https://parallelum.com.br/fipe/api/v1/carros/marcas/56/modelos/10926/anos/2026-3",
+  "http_status": 200,
+  "tier": 2,
+  "tipo": "fipe",
+  "status": "consultada",
+  "captured_at": "2026-09-10",
+  "text_path": "page.md",
+  "sha256": "ed90310294da55b4d4b2289d0463b7794112f4b255cf323c9c2b3bcd27f89ee7",
+  "bytes": 388,
+  "arquivo_de_origem": "gabarito/raw/fipe_api_hilux_srx_plus.md",
+  "gerado_por": "scripts/build_fixtures.py",
+  "origem": "coleta ao vivo de 2026-09-10 por scripts/coleta/coletar_faltantes.py (robots.txt consultado, 1 req/s, user-agent identificado)",
+  "nota": "resposta da API comunitária da FIPE; o corpo JSON é o texto salvo e a citação é o par `\"Valor\":\"R$ …\"` dentro dele"
+}

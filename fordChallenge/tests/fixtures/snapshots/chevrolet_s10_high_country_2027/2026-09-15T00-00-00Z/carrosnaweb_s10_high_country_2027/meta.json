@@ -1,0 +1,16 @@
+{
+  "source_id": "carrosnaweb_s10_high_country_2027",
+  "version_id": "chevrolet_s10_high_country_2027",
+  "url_final": "https://www.carrosnaweb.com.br/fichadetalhe.asp?codigo=47930",
+  "http_status": 200,
+  "tier": 3,
+  "tipo": "ficha",
+  "status": "consultada",
+  "captured_at": "2026-09-15",
+  "text_path": "page.md",
+  "sha256": "30923f0ebc3bcae379bee2f7d354559960e33c36c7c6bf9325a4a17bc786c7f0",
+  "bytes": 3319,
+  "arquivo_de_origem": "gabarito/raw/carrosnaweb_s10_high_country_2027.md",
+  "gerado_por": "scripts/build_fixtures.py",
+  "nota": "código opaco por versão+ano-modelo; ano-modelo reconfirmado no cabeçalho pelo conector (pipeline/connectors/carrosnaweb.py); potência em cv vem como imagem"
+}

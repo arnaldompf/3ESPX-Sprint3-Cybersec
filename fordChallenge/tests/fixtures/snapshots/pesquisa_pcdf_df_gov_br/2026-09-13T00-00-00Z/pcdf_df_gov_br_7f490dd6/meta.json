@@ -1,0 +1,15 @@
+{
+  "source_id": "pcdf_df_gov_br_7f490dd6",
+  "version_id": "pesquisa_pcdf_df_gov_br",
+  "url_final": "https://www.pcdf.df.gov.br/transparencia/licitacoes/pregao/9923/pregao-eletronico-n-09-2021-contratacao-de-concessionaria-autorizada-pela-montadora-hpe-automotores-do-brasil-mitsubishi-motors-para-15-viaturas-da-marca-mitsubishi-modelo-l200-triton-sport-gls-2-4-d-4x4-at-modelos-2020-2020",
+  "url": "https://www.pcdf.df.gov.br/transparencia/licitacoes/pregao/9923/pregao-eletronico-n-09-2021-contratacao-de-concessionaria-autorizada-pela-montadora-hpe-automotores-do-brasil-mitsubishi-motors-para-15-viaturas-da-marca-mitsubishi-modelo-l200-triton-sport-gls-2-4-d-4x4-at-modelos-2020-2020",
+  "http_status": 200,
+  "tier": 2,
+  "tipo": "site_oficial",
+  "status": "consultada",
+  "captured_at": "2026-09-13",
+  "text_path": "doc.md",
+  "sha256": "affbdbdecbdb752f664244f935cf2caa8bfb606e74313900ab24d81096d65224",
+  "bytes": 44601,
+  "gerado_por": "scripts/gravar_replay_pesquisa.py"
+}

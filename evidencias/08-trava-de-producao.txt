@@ -1,0 +1,13 @@
+$ APP_ENV=producao uvicorn seguranca.app_segura:app   # com a configuração padrão da demo
+    raise ConfiguracaoInsegura(
+seguranca.app_segura.ConfiguracaoInsegura: Configuração insegura para APP_ENV=producao:
+- AUTH_ENABLED=false: a API aceitaria qualquer requisição sem token
+- RATE_LIMIT_ENABLED=false: login e API sem limite de requisições
+- JWT_SECRET ausente ou com menos de 32 bytes
+- CORS_ORIGINS contém origem sem TLS: http://localhost:5173
+- CORS_ORIGINS contém origem sem TLS: http://127.0.0.1:5173
+- DATABASE_URL aponta para SQLite; produção usa Postgres
+- METRICS_TOKEN ausente: /metrics ficaria só com a regra de rede
+
+A API não sobe.
+código de saída: 1

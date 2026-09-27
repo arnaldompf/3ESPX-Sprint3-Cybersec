@@ -1,0 +1,57 @@
+{
+  "consulta": "site:ram.com.br filetype:pdf Rampage",
+  "provedor": "replay",
+  "veiculo": "RAM Rampage Laramie 2.0 Turbodiesel AT9 4x4",
+  "gravado_em": "2026-09-13",
+  "gravado_de": "tavily",
+  "achados": [
+    {
+      "url": "https://www.ram.com.br/content/dam/mopar/services/catalogo/ram/Ram-rampage-Cat%C3%A1logo-de-Acess%C3%B3rios-e-Servi%C3%A7os.pdf",
+      "titulo": "[PDF] ACESSÓRIOS ORIGINAIS E SERVIÇOS - Ram",
+      "snippet": "19 M O P A R 3 D L A B RAM: A 1ª MARCA A TRAZER INOVAÇÃO 3D CARNEIRO VINTAGE SUPORTE PARA CARREGADOR DE CELULAR DIVISÓRIA INTERNA SUPORTE PARA CARREGADOR SEM FIO LOGOMARCA RAM LIXEIRINHA COM GANCHOS DESENHOS GRATUITOS DOWNLOAD NO SITE DA RAM Agora você pode imprimir seus próprios acessórios para a sua Rampage, com sua impressora 3D. Escolha seu acessório preferido, baixe o arquivo que deseja e depois é só levar até uma loja especializada ou imprimir em casa, personalizando o acessório com a cor ",
+      "posicao": 0,
+      "provedor": "tavily",
+      "consulta": "site:ram.com.br filetype:pdf Rampage"
+    },
+    {
+      "url": "https://www.ram.com.br/content/dam/ram/u-connect/240108_CARRO_CONECTADO_FOLHETO.pdf?amp%3Futm_source=get%2Ffeed%2Ffeed%2Ffeed%2Ffeed%2F6%2F10%2F12%2F14%2F7%2F5%2F13%2Ffeed%2Ffeed%2Ffeed%2F%3Butm_medium%3Dlink",
+      "titulo": "[PDF] tim carro conectado - Ram",
+      "snippet": "PLANOS WI-FI COM ATÉ 40GB wazeR SEM DESCONTAR DA INTERNET. ASSINATURAS INCLUSAS. Playkids. OLA. AYA. BOOKS. PODCASTS. 5GB. AYA. BOOKS. 10GB. 40GB.",
+      "posicao": 1,
+      "provedor": "tavily",
+      "consulta": "site:ram.com.br filetype:pdf Rampage"
+    },
+    {
+      "url": "https://www.ram.com.br/content/dam/ram/acessorios/catalogo/1500/Catalogo-RAM-1500-2022.pdf?mvs=671&year=2024&utm_campaing=CNHSocial",
+      "titulo": "[PDF] ACESSÓRIOS - Ram",
+      "snippet": "ACESSÓRIOS Central de Relacionamento Ram: (31) 2123 8000 0800 730 7060 www.ram.com.br. Mopar é a marca responsável por Peças, Acessórios e Serviços da Ram.",
+      "posicao": 2,
+      "provedor": "tavily",
+      "consulta": "site:ram.com.br filetype:pdf Rampage"
+    },
+    {
+      "url": "https://www.ram.com.br/content/dam/ram/pdf/ram-pacote-de-servicoes-de-contratacao.pdf?utm=",
+      "titulo": "[PDF] Pacotes de serviços para contratação - Ram",
+      "snippet": "WhatsApp Ram: 2123 8000 (Opção Ram Connect) Telefone: 0800 007 7128 (Central de Serviços Conectados) Via sua concessionária de preferência.",
+      "posicao": 3,
+      "provedor": "tavily",
+      "consulta": "site:ram.com.br filetype:pdf Rampage"
+    },
+    {
+      "url": "https://www.ram.com.br/content/dam/ram/u-connect/Ram%20Connect_Pacotes%20e%20Servi%C3%A7os.pdf",
+      "titulo": "[PDF] Janeiro /2024 - Ram",
+      "snippet": "WhatsApp Ram: 2123 8000 (Opção Ram Connect) Telefone: 0800 007 7128 (Central de Serviços Conectados) Via sua concessionária de preferência.",
+      "posicao": 4,
+      "provedor": "tavily",
+      "consulta": "site:ram.com.br filetype:pdf Rampage"
+    },
+    {
+      "url": "https://www.ram.com.br/content/dam/ram/products/handbooks/rampage/2024/handbook-2024-2025-rampage.pdf",
+      "titulo": "Manual do Proprietário - Ram",
+      "snippet": "Caso deseje conhecimento aprofundado, informações detalhadas das funções e sistemas do veículo, a STELLANTIS oferece a possibilidade de consultar um manual específico no formato eletrônico, o Manual de Uso e Manutenção online. Acesse o manual online no site www.ram.com.br -> Proprietários -> Manual do veículo para consultar as publicações de bordo de todos os veículos da marca. [...] É recomendável lê-lo com atenção antes de se preparar para a primeira vez na condução, de modo a familiarizar-se ",
+      "posicao": 5,
+      "provedor": "tavily",
+      "consulta": "site:ram.com.br filetype:pdf Rampage"
+    }
+  ]
+}

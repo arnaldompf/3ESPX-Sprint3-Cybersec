@@ -1,0 +1,31 @@
+# Alertas sobre logs (Loki ruler). Diretório `fake/` = tenant padrão com auth_enabled=false.
+groups:
+  - name: specradar-logs-seguranca
+    rules:
+      - alert: ForcaBrutaNoLogin
+        # auth.login_falhou é emitido pela solução (api/app/routers/auth.py) com o motivo.
+        expr: sum(count_over_time({servico="api", event="auth.login_falhou"}[5m])) > 10
+        labels: { severidade: alta, componente: autenticacao }
+        annotations:
+          resumo: "Mais de 10 logins falhos em 5 min"
+
+      - alert: RefreshTokenReutilizado
+        # Reuso de refresh rotacionado = token vazado. A solução já revoga a família inteira;
+        # o alerta existe para a investigação começar (quem, de onde, o que foi acessado).
+        expr: sum(count_over_time({servico="api", event="auth.refresh_reusado"}[10m])) > 0
+        labels: { severidade: critica, componente: autenticacao }
+        annotations:
+          resumo: "Refresh token reutilizado — provável roubo de sessão"
+
+      - alert: ErroNaoTratado
+        expr: sum(count_over_time({servico="api", event="http.erro_nao_tratado"}[5m])) > 5
+        labels: { severidade: alta, componente: api }
+        annotations:
+          resumo: "Mais de 5 exceções não tratadas em 5 min"
+
+      - alert: TentativaDeSSRFNoWorker
+        # O bloqueio de SSRF acontece no worker, que não expõe /metrics: o sinal é o log.
+        expr: sum(count_over_time({servico="worker", event="seguranca.ssrf_bloqueado"}[10m])) > 0
+        labels: { severidade: critica, componente: pipeline }
+        annotations:
+          resumo: "Worker tentou acessar endereço interno (SSRF bloqueado)"

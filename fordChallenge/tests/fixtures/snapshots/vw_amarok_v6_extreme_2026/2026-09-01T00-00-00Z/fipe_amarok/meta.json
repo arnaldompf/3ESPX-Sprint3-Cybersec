@@ -1,0 +1,15 @@
+{
+  "source_id": "fipe_amarok",
+  "version_id": "vw_amarok_v6_extreme_2026",
+  "url_final": "https://www.tabelafipebrasil.com/carros/VW---VOLKSWAGEN/AMAROK-EXTREME-CD-30-4X4-TB-DIES-AUT/2026-Diesel",
+  "http_status": 200,
+  "tier": 2,
+  "tipo": "fipe",
+  "status": "consultada",
+  "captured_at": "2026-09-01",
+  "text_path": "page.md",
+  "sha256": "9cbff45ba74fb2437b943e881d1222dc0e404627586bf003c1e784427fd9cb35",
+  "bytes": 12648,
+  "arquivo_de_origem": "gabarito/raw/fipe_amarok_extreme_2026.md",
+  "gerado_por": "scripts/build_fixtures.py"
+}

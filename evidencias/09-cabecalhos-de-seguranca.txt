@@ -1,0 +1,12 @@
+$ curl -sD - http://127.0.0.1:8765/api/v1/health
+HTTP/1.1 200 OK
+date: Thu, 01 Oct 2026 07:06:22 GMT
+content-length: 313
+content-type: application/json
+x-content-type-options: nosniff
+x-frame-options: DENY
+referrer-policy: no-referrer
+content-security-policy: default-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'
+x-request-id: bf84ac5cdb5a4fd5be030626ae935131
+x-response-time-ms: 1.59
+

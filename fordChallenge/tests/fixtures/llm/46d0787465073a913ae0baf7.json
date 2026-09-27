@@ -1,0 +1,71 @@
+{
+  "chave": "46d0787465073a913ae0baf7",
+  "meta": {
+    "origem": "derivada de gabarito_v1.json (valor e trecho verbatim da verdade-terra humana), porque nao havia ANTHROPIC_API_KEY",
+    "version_id": "ford_ranger_raptor_2026",
+    "source_id": "registro_evidencias_raptor",
+    "modelo": "claude-haiku-4-5-20251001",
+    "campos_pedidos": [
+      "adas_nome_comercial",
+      "airbags_qtd",
+      "altura_mm",
+      "amortecedores",
+      "ano_modelo",
+      "bloqueio_diferencial",
+      "capacidade_carga_kg",
+      "capacidade_reboque_kg",
+      "carroceria",
+      "codigo_fipe",
+      "comprimento_mm",
+      "consumo_rodoviario_kml",
+      "consumo_urbano_kml",
+      "direcao",
+      "entre_eixos_mm",
+      "freios_dianteiros",
+      "freios_traseiros",
+      "garantia_meses",
+      "largura_mm",
+      "marca",
+      "modelo",
+      "modos_direcao",
+      "motor_descricao",
+      "paddle_shifters",
+      "pneus_tipo",
+      "potencia_rpm",
+      "preco_data",
+      "reduzida",
+      "segmento",
+      "suspensao_dianteira",
+      "suspensao_traseira",
+      "tanque_l",
+      "torque_rpm",
+      "versao"
+    ],
+    "campos_respondidos": [
+      "amortecedores",
+      "pneus_tipo",
+      "preco_data"
+    ],
+    "gerado_por": "scripts/record_llm_fixtures.py"
+  },
+  "dados": {
+    "amortecedores": {
+      "raw_value": "FOX Racing 2.5 Live Valve",
+      "value": "FOX Racing 2.5 Live Valve",
+      "unit": null,
+      "evidence_quote": "Amortecedores FOX 2.5” Racing com tecnologia Live Valve"
+    },
+    "pneus_tipo": {
+      "raw_value": "AT",
+      "value": "AT",
+      "unit": null,
+      "evidence_quote": "Pneus 285/70 R17 General Grabber; Rodas de liga leve 17\""
+    },
+    "preco_data": {
+      "raw_value": "2026-09-01",
+      "value": "2026-09-01",
+      "unit": null,
+      "evidence_quote": "Raptor 3.0 V6 Bi-turbo 4WD AT 2026 (AOD6) ... R$ 499.000"
+    }
+  }
+}

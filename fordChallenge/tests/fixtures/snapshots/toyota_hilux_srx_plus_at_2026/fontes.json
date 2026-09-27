@@ -1,0 +1,71 @@
+{
+  "version_id": "toyota_hilux_srx_plus_at_2026",
+  "descricao": "Toyota Hilux SRX Plus AT (Cabine Dupla) 2026 — concorrente",
+  "captured_at": "2026-09-01",
+  "fontes": [
+    {
+      "source_id": "toyota_pdf_my26",
+      "url": "https://media.toyota.com.br/d400f124-b3ac-4d73-a885-5d6828812f11.pdf",
+      "tier": 1,
+      "tipo": "pdf_oficial",
+      "status": "consultada",
+      "tem_texto_salvo": true,
+      "nota": "páginas 6-7 da lista de equipamentos MY26, com o layout de tabela preservado"
+    },
+    {
+      "source_id": "toyota_pdf_my26_completo",
+      "url": "https://media.toyota.com.br/d400f124-b3ac-4d73-a885-5d6828812f11.pdf",
+      "tier": 1,
+      "tipo": "pdf_oficial",
+      "status": "consultada",
+      "tem_texto_salvo": true,
+      "nota": "extracao das 10 paginas pelo pipeline (pipeline/parse/pdf.py, motor pdfplumber), com layout de tabela preservado. E o doc.md que a coleta real produz; a fonte parcial ao lado cobre so as paginas 6-7."
+    },
+    {
+      "source_id": "toyota_site_cd",
+      "url": "https://www.toyota.com.br/modelos/hilux-cabine-dupla",
+      "tier": 1,
+      "tipo": "pagina_oficial",
+      "status": "consultada",
+      "tem_texto_salvo": true
+    },
+    {
+      "source_id": "fipe_srx_plus",
+      "url": "https://www.tabelafipebrasil.com/carros/TOYOTA/HILUX-CD-SRX-PLUS-4X4-28-TDI-DIE-AUT",
+      "tier": 2,
+      "tipo": "fipe",
+      "status": "pendente_coleta",
+      "tem_texto_salvo": false,
+      "nota": "preço e FIPE seguem pendentes no gabarito v1"
+    },
+    {
+      "source_id": "fipe_hilux_srx_plus",
+      "url": "https://parallelum.com.br/fipe/api/v1/carros/marcas/56/modelos/10926/anos/2026-3",
+      "tier": 2,
+      "tipo": "fipe",
+      "status": "consultada",
+      "tem_texto_salvo": true,
+      "nota": "resposta da API comunitária da FIPE; o corpo JSON é o texto salvo e a citação é o par `\"Valor\":\"R$ …\"` dentro dele",
+      "origem": "coleta ao vivo de 2026-09-10 por scripts/coleta/coletar_faltantes.py (robots.txt consultado, 1 req/s, user-agent identificado)"
+    },
+    {
+      "source_id": "pbe_tabela",
+      "url": "https://www.gov.br/inmetro/pt-br/assuntos/regulamentacao/avaliacao-da-conformidade/programa-brasileiro-de-etiquetagem/tabelas-de-eficiencia-energetica/veiculos-automotivos-pbe-veicular",
+      "tier": 2,
+      "tipo": "pbe",
+      "status": "consultada",
+      "tem_texto_salvo": true,
+      "nota": "tabela PBEV 2026 (18º ciclo, atualizada em 31/08/2026); uma linha por configuração publicada, com o consumo urbano e rodoviário medidos",
+      "origem": "coleta ao vivo de 2026-09-10 por scripts/coleta/coletar_faltantes.py (robots.txt consultado, 1 req/s, user-agent identificado)"
+    },
+    {
+      "source_id": "carrosnaweb_hilux_srx_plus_2026",
+      "url": "https://www.carrosnaweb.com.br/fichadetalhe.asp?codigo=41190",
+      "tier": 3,
+      "tipo": "ficha",
+      "status": "consultada",
+      "tem_texto_salvo": true,
+      "nota": "código opaco por versão+ano-modelo; ano-modelo reconfirmado no cabeçalho pelo conector (pipeline/connectors/carrosnaweb.py); potência em cv vem como imagem"
+    }
+  ]
+}

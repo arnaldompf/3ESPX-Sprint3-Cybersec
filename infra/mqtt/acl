@@ -1,0 +1,17 @@
+# ACL do broker. `%u` = CN do certificado do cliente (use_identity_as_username).
+#
+# Árvore de tópicos:
+#   specradar/totem/<id>/telemetria   heartbeat, versão do app, uso de CPU/memória
+#   specradar/totem/<id>/eventos      consulta iniciada/concluída (sem dado do cliente)
+#   specradar/totem/<id>/comandos     comandos do backend para o totem (só leitura no totem)
+
+# Dispositivos: publicam só na PRÓPRIA árvore e leem só os PRÓPRIOS comandos.
+pattern write specradar/totem/%u/telemetria
+pattern write specradar/totem/%u/eventos
+pattern read  specradar/totem/%u/comandos
+
+# Serviço de ingestão do backend (certificado CN=specradar-ingestor).
+user specradar-ingestor
+topic read  specradar/totem/+/telemetria
+topic read  specradar/totem/+/eventos
+topic write specradar/totem/+/comandos

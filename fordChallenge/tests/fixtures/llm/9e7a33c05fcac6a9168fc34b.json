@@ -1,0 +1,81 @@
+{
+  "chave": "9e7a33c05fcac6a9168fc34b",
+  "meta": {
+    "origem": "derivada de gabarito_v1.json (valor e trecho verbatim da verdade-terra humana), porque nao havia ANTHROPIC_API_KEY",
+    "version_id": "vw_amarok_v6_extreme_2026",
+    "source_id": "vw_site",
+    "modelo": "claude-sonnet-5",
+    "campos_pedidos": [
+      "aceleracao_0_100_s",
+      "adas_itens",
+      "altura_mm",
+      "amortecedores",
+      "ano_modelo",
+      "bloqueio_diferencial",
+      "camera_360",
+      "capacidade_carga_kg",
+      "capacidade_reboque_kg",
+      "carroceria",
+      "codigo_fipe",
+      "comprimento_mm",
+      "consumo_rodoviario_kml",
+      "consumo_urbano_kml",
+      "deslocamento_l",
+      "direcao",
+      "entre_eixos_mm",
+      "farois_neblina",
+      "freios_dianteiros",
+      "freios_traseiros",
+      "garantia_meses",
+      "largura_mm",
+      "marca",
+      "modelo",
+      "modos_amortecedor",
+      "modos_conducao",
+      "modos_direcao",
+      "modos_escapamento",
+      "motor_descricao",
+      "pneus_medida",
+      "pneus_tipo",
+      "potencia_rpm",
+      "preco_data",
+      "reduzida",
+      "segmento",
+      "suspensao_dianteira",
+      "suspensao_traseira",
+      "tanque_l",
+      "torque_rpm",
+      "versao"
+    ],
+    "campos_respondidos": [
+      "aceleracao_0_100_s",
+      "adas_itens",
+      "deslocamento_l"
+    ],
+    "gerado_por": "scripts/record_llm_fixtures.py"
+  },
+  "dados": {
+    "deslocamento_l": {
+      "raw_value": "3.0",
+      "value": 3.0,
+      "unit": null,
+      "evidence_quote": "A picape vem com o motor V6 3.0 TDI de 258 cv com 59,1 kgfm de torque"
+    },
+    "aceleracao_0_100_s": {
+      "raw_value": "8.0",
+      "value": 8.0,
+      "unit": null,
+      "evidence_quote": "indo de 0 a 100 km/h em 8 segundos"
+    },
+    "adas_itens": {
+      "raw_value": "['aviso de colisão com pedestres e ciclistas', 'Forward collision warning', 'Lane alert']",
+      "value": [
+        "aviso de colisão com pedestres e ciclistas",
+        "Forward collision warning",
+        "Lane alert"
+      ],
+      "unit": null,
+      "evidence_quote": "Safer Tag – Assistente de condução passiva"
+    }
+  }
+}

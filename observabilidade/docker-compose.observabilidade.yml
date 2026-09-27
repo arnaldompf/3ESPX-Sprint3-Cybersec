@@ -1,0 +1,95 @@
+# Stack de observabilidade do SpecRadar: Prometheus (métricas), Loki + Alloy (logs),
+# Alertmanager (alertas) e Grafana (dashboards). Sobe ao lado de infra/docker-compose.yml:
+#
+#   docker compose -f infra/docker-compose.yml up -d --build
+#   docker compose -f observabilidade/docker-compose.observabilidade.yml up -d
+#   # Grafana: http://127.0.0.1:3000  (usuário admin, senha em infra/segredos/grafana_admin)
+#
+# Nenhuma porta fica exposta fora da máquina (127.0.0.1). O Prometheus entra na rede
+# interna `specradar_dados` para raspar a API sem que o /metrics seja público.
+
+name: specradar-observabilidade
+
+x-endurecimento: &endurecimento
+  security_opt: ["no-new-privileges:true"]
+  restart: unless-stopped
+
+services:
+  prometheus:
+    <<: *endurecimento
+    image: prom/prometheus:v3.1.0
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.retention.time=30d
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./prometheus/alertas.yml:/etc/prometheus/alertas.yml:ro
+      - prometheus-dados:/prometheus
+    secrets: [metrics_token]
+    ports: ["127.0.0.1:9090:9090"]
+    networks: [observabilidade, specradar_dados]
+
+  alertmanager:
+    <<: *endurecimento
+    image: prom/alertmanager:v0.28.0
+    volumes:
+      - ./alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml:ro
+    secrets: [webhook_plantao, webhook_time]
+    ports: ["127.0.0.1:9093:9093"]
+    networks: [observabilidade]
+
+  loki:
+    <<: *endurecimento
+    image: grafana/loki:3.3.2
+    command: -config.file=/etc/loki/loki.yml
+    volumes:
+      - ./loki/loki.yml:/etc/loki/loki.yml:ro
+      - ./loki/regras:/etc/loki/regras:ro
+      - loki-dados:/loki
+    networks: [observabilidade]
+
+  alloy:
+    <<: *endurecimento
+    image: grafana/alloy:v1.5.1
+    command: run /etc/alloy/config.alloy
+    volumes:
+      - ./alloy/config.alloy:/etc/alloy/config.alloy:ro
+      # Socket do Docker em leitura: necessário para ler logs dos contêineres. É acesso
+      # privilegiado ao host — por isso o Alloy não expõe porta e fica só na rede interna.
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks: [observabilidade]
+
+  grafana:
+    <<: *endurecimento
+    image: grafana/grafana:11.4.0
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD__FILE: /run/secrets/grafana_admin
+      GF_USERS_ALLOW_SIGN_UP: "false"
+      GF_AUTH_ANONYMOUS_ENABLED: "false"
+      GF_ANALYTICS_REPORTING_ENABLED: "false"
+      GF_SECURITY_COOKIE_SECURE: "true"
+      GF_SECURITY_DISABLE_GRAVATAR: "true"
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/dashboards:/var/lib/grafana/dashboards:ro
+      - grafana-dados:/var/lib/grafana
+    secrets: [grafana_admin]
+    ports: ["127.0.0.1:3000:3000"]
+    networks: [observabilidade]
+
+networks:
+  observabilidade: {}
+  specradar_dados:
+    external: true # criada por infra/docker-compose.yml (projeto `specradar`, rede `dados`)
+
+volumes:
+  prometheus-dados:
+  loki-dados:
+  grafana-dados:
+
+secrets:
+  metrics_token: { file: ../infra/segredos/metrics_token }
+  grafana_admin: { file: ../infra/segredos/grafana_admin }
+  webhook_plantao: { file: ../infra/segredos/webhook_plantao }
+  webhook_time: { file: ../infra/segredos/webhook_time }

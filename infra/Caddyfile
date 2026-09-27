@@ -1,0 +1,44 @@
+# Proxy reverso com TLS na borda do SpecRadar.
+#
+# * HTTPS automático (Let's Encrypt em domínio público; CA interna em `localhost`);
+# * só TLS 1.2 e 1.3; HTTP na porta 80 só redireciona para HTTPS;
+# * HSTS aqui, e não na API (a API fala HTTP interno; ver fordChallenge/api/app/middleware.py);
+# * `/metrics` e `/docs` não são publicados: métricas são do Prometheus (rede interna) e a
+#   documentação interativa não precisa estar aberta para a internet;
+# * corpo limitado a 10 MB (upload de PDF de ficha técnica) — OWASP API4.
+
+{
+	admin off
+	servers {
+		protocols h1 h2
+	}
+}
+
+{$SPECRADAR_DOMINIO:localhost} {
+	tls {
+		protocols tls1.2 tls1.3
+	}
+
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		Permissions-Policy "geolocation=(), camera=(), microphone=()"
+		-Server
+		-Via
+	}
+
+	@internas path /metrics /metrics/* /docs /docs/* /openapi.json
+	respond @internas 404
+
+	request_body {
+		max_size 10MB
+	}
+
+	reverse_proxy 172.30.0.20:8000 {
+		header_up X-Forwarded-For {remote_host}
+	}
+
+	log {
+		output stdout
+		format json
+	}
+}

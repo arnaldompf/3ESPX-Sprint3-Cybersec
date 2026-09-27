@@ -1,0 +1,80 @@
+{
+  "version_id": "ford_ranger_raptor_2026",
+  "descricao": "Ford Ranger Raptor 3.0 V6 Bi-turbo 4WD AT 2026 — referência Ford",
+  "captured_at": "2026-09-01",
+  "fontes": [
+    {
+      "source_id": "ford_site_versao",
+      "url": "https://www.ford.com.br/picapes/ranger-raptor/raptor-4wd-at/",
+      "tier": 1,
+      "tipo": "pagina_oficial",
+      "status": "consultada",
+      "tem_texto_salvo": true
+    },
+    {
+      "source_id": "ford_ficha_tecnica",
+      "url": "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2025/ranger-raptor/pdf/fbr-ranger-raptor-ficha-tecnica.pdf",
+      "tier": 1,
+      "tipo": "pdf_oficial",
+      "status": "consultada",
+      "tem_texto_salvo": true
+    },
+    {
+      "source_id": "registro_evidencias_raptor",
+      "url": "https://www.ford.com.br/picapes/ranger-raptor/raptor-4wd-at/",
+      "tier": 1,
+      "tipo": "registro_de_evidencia",
+      "status": "consultada",
+      "tem_texto_salvo": true,
+      "nota": "cobre FIPE, preço e aceleração, cujas páginas não foram salvas em HTML",
+      "origem": "registro verbatim da coleta de 2026-09-01 (execução do Manus seguindo o protocolo)"
+    },
+    {
+      "source_id": "fipe_raptor",
+      "url": "https://parallelum.com.br/fipe/api/v1/carros/marcas/22/modelos/10891/anos/2026-1",
+      "tier": 2,
+      "tipo": "fipe",
+      "status": "consultada",
+      "tem_texto_salvo": true,
+      "nota": "resposta da API comunitária da FIPE; o corpo JSON é o texto salvo e a citação é o par `\"Valor\":\"R$ …\"` dentro dele",
+      "origem": "coleta ao vivo de 2026-09-10 por scripts/coleta/coletar_faltantes.py (robots.txt consultado, 1 req/s, user-agent identificado)"
+    },
+    {
+      "source_id": "pbe_tabela",
+      "url": "https://www.gov.br/inmetro/pt-br/assuntos/regulamentacao/avaliacao-da-conformidade/programa-brasileiro-de-etiquetagem/tabelas-de-eficiencia-energetica/veiculos-automotivos-pbe-veicular",
+      "tier": 2,
+      "tipo": "pbe",
+      "status": "nao_encontrado",
+      "tem_texto_salvo": false,
+      "nota": "a tabela PBEV 2026 lista 12 configurações da Ranger e nenhuma é a Raptor (o ciclo só publica as diesel); consumo fica `nao_encontrado`",
+      "origem": "coleta ao vivo de 2026-09-10 por scripts/coleta/coletar_faltantes.py (robots.txt consultado, 1 req/s, user-agent identificado)"
+    },
+    {
+      "source_id": "autoesporte_raptor",
+      "url": "https://autoesporte.globo.com/carros/testes-de-carros/review/2024/05/teste-ford-ranger-raptor-e-piccape-que-acelera-mais-que-muito-esportivo.ghtml",
+      "tier": 3,
+      "tipo": "imprensa",
+      "status": "consultada",
+      "tem_texto_salvo": false,
+      "nota": "0-100 medido em 6,5 s; o trecho está no registro de evidências"
+    },
+    {
+      "source_id": "fipe_raptor",
+      "url": "https://www.tabelafipebrasil.com/carros/FORD/RANGER-RAPTOR-30-V6-BI-TURBO-4WD-AUT/2026-Gasolina",
+      "tier": 2,
+      "tipo": "fipe",
+      "status": "consultada",
+      "tem_texto_salvo": false,
+      "nota": "referência 2026-09"
+    },
+    {
+      "source_id": "carrosnaweb_ranger_raptor_2026",
+      "url": "https://www.carrosnaweb.com.br/fichadetalhe.asp?codigo=46982",
+      "tier": 3,
+      "tipo": "ficha",
+      "status": "consultada",
+      "tem_texto_salvo": true,
+      "nota": "código opaco por versão+ano-modelo; ano-modelo reconfirmado no cabeçalho pelo conector (pipeline/connectors/carrosnaweb.py); potência em cv vem como imagem"
+    }
+  ]
+}

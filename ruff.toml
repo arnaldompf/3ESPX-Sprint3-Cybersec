@@ -1,0 +1,13 @@
+# Lint da camada de segurança (seguranca/ e tests/). A solução em fordChallenge/ usa a
+# configuração própria do pyproject.toml dela.
+line-length = 100
+extend-exclude = ["fordChallenge"]
+
+[lint]
+# S = flake8-bandit (regras de segurança), B = bugbear
+select = ["E", "F", "S", "B", "I"]
+ignore = ["S603", "S607", "E501"]
+
+[lint.per-file-ignores]
+# Testes usam assert e segredos de teste declarados como tais.
+"tests/**" = ["S101", "S105", "S106"]

@@ -1,0 +1,1419 @@
+{
+  "versao": "1.1",
+  "gerado_em": "2026-09-15",
+  "descricao": "Verdade-terra para o eval do SpecRadar. 1 veículo Ford de referência + 1 Ford diesel de topo (v1.1, extraída pelo pipeline e pendente de confirmação) + 3 concorrentes + 1 caso negativo.",
+  "status_possiveis": {
+    "verificado": "valor em fonte oficial (tier 1) ou FIPE (tier 2), trecho verbatim confere",
+    "verificado_tier3": "valor apenas em imprensa especializada; aceitável, com confiança menor",
+    "divergente": "fontes oficiais divergem entre si ou do slide interno; todos os valores preservados",
+    "nao_disponivel": "fonte oficial afirma que o item não existe/não é oferecido",
+    "nao_encontrado": "nenhuma fonte consultada menciona; lista de fontes registrada",
+    "pendente_coleta": "fora do gabarito por enquanto; o pipeline deve coletar (não é erro do pipeline não bater)",
+    "versao_inexistente": "versão pedida não está na linha vigente; resposta esperada do resolvedor"
+  },
+  "regras_eval": {
+    "numericos": "igualdade com tolerância: cv/Nm ±1, rpm ±50, segundos ±0,1, preço ±0,5% ou mesma referência",
+    "listas": "comparação de conjuntos após normalização de sinônimos (esportivo→sport, lama/terra→lama, comfort→conforto, off-road→off_road)",
+    "cilindros": "v1.1: só a CONTAGEM é medida. 'V6'→6, '4 em linha'→4. O arranjo era inferência (nenhuma fonte pública da Hilux o afirma) e as duas grafias não eram comparáveis entre si. O arranjo segue no valor exibido, fora da medida.",
+    "adas_itens": "v1.1: conjuntos de FUNÇÃO, normalizados pelo vocabulário de sinônimos de pipeline/synonyms_seed.json (19 funções, 65 redações). 'Pre-crash System (PCS)' e 'frenagem automática de emergência' são a mesma função; nenhuma similaridade de texto casaria as duas. Item que nenhum lado canoniza cai em similaridade (limiar 72).",
+    "objetos": "campo a campo; None no gabarito = não avaliar aquele subcampo",
+    "status": "o pipeline deve reproduzir o status (nao_encontrado não pode virar valor inventado; divergente deve expor os valores)",
+    "grounding": "todo valor não-nulo do pipeline precisa de trecho encontrado no texto salvo da fonte (string-match após normalização de espaços/aspas)",
+    "slide_ford": "teste separado: o sistema deve apontar as 2 divergências (modos_direcao, modos_amortecedor) e os 2 rpm ausentes em fonte pública"
+  },
+  "veiculos": [
+    {
+      "id": "ford_ranger_raptor_2026",
+      "marca": "Ford",
+      "modelo": "Ranger",
+      "versao": "Raptor 3.0 V6 Bi-turbo 4WD AT",
+      "ano_modelo": 2026,
+      "codigo_fipe": "003506-8",
+      "papel": "veiculo_ford_referencia",
+      "origem": "Manus rodada 1 (2026-09-01) conferido contra slide Ford; textos brutos em raw/",
+      "linha_vigente": [
+        {
+          "nome_exato": "Raptor 4WD AT",
+          "ano_modelo": 2026
+        }
+      ],
+      "atributos": {
+        "motor": {
+          "esperado": {
+            "deslocamento_l": 3.0,
+            "cilindros": 6,
+            "combustivel": "gasolina",
+            "aspiracao": "biturbo"
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger-raptor/raptor-4wd-at/",
+            "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2025/ranger-raptor/pdf/fbr-ranger-raptor-ficha-tecnica.pdf"
+          ],
+          "trecho": "Motor 3.0L V6 Bi-turbo de 397cv com 583Nm",
+          "slide_ford": "V6 3.0L Nano bi turbo",
+          "nota": "'Nano' é nome interno; não aparece em fonte pública"
+        },
+        "potencia_cv": {
+          "esperado": 397,
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger-raptor/raptor-4wd-at/",
+            "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2025/ranger-raptor/pdf/fbr-ranger-raptor-ficha-tecnica.pdf"
+          ],
+          "trecho": "Potencia 397cv",
+          "slide_ford": 397
+        },
+        "potencia_rpm": {
+          "esperado": 6250,
+          "status": "divergente",
+          "tier": 3,
+          "fontes": [
+            "https://www.carrosnaweb.com.br/fichadetalhe.asp?codigo=46982"
+          ],
+          "trecho": "cv a 6250 rpm",
+          "slide_ford": 5650,
+          "nota": "Fase 2 do plano 18/18 (2026-09-15): CarrosNaWeb (tier 3) publica 6250 rpm; slide interno da Ford diz 5650. Fonte pública prevalece (slide é tier 4 e sempre perde); divergência exposta, não escondida."
+        },
+        "torque_nm": {
+          "esperado": 583,
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger-raptor/raptor-4wd-at/",
+            "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2025/ranger-raptor/pdf/fbr-ranger-raptor-ficha-tecnica.pdf"
+          ],
+          "trecho": "Torque 583Nm",
+          "slide_ford": 583
+        },
+        "torque_rpm": {
+          "esperado": 3500,
+          "status": "verificado_tier3",
+          "tier": 3,
+          "fontes": [
+            "https://www.carrosnaweb.com.br/fichadetalhe.asp?codigo=46982"
+          ],
+          "trecho": "kgfm a 3500 rpm",
+          "slide_ford": 3500,
+          "nota": "Fase 2 do plano 18/18 (2026-09-15): CarrosNaWeb (tier 3) publica 3500 rpm, concorda com o slide interno."
+        },
+        "transmissao": {
+          "esperado": {
+            "tipo": "automatica",
+            "numero_marchas": 10,
+            "paddle_shifters": true
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger-raptor/raptor-4wd-at/",
+            "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2025/ranger-raptor/pdf/fbr-ranger-raptor-ficha-tecnica.pdf"
+          ],
+          "trecho": "Transmissão AT de 10 velocidades; Paddle Shifters",
+          "slide_ford": "AT de 10 velocidades e paddle shifters",
+          "nota": "Manus perdeu 'Paddle Shifters' embora estivesse na fonte — caso de teste de campo composto"
+        },
+        "tracao": {
+          "esperado": {
+            "tipo": "4x4",
+            "descricao": "4WD"
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger-raptor/raptor-4wd-at/",
+            "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2025/ranger-raptor/pdf/fbr-ranger-raptor-ficha-tecnica.pdf"
+          ],
+          "trecho": "Tração 4WD",
+          "slide_ford": "4WD"
+        },
+        "amortecedores": {
+          "esperado": "FOX Racing 2.5 Live Valve",
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger-raptor/raptor-4wd-at/",
+            "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2025/ranger-raptor/pdf/fbr-ranger-raptor-ficha-tecnica.pdf"
+          ],
+          "trecho": "Amortecedores FOX 2.5” Racing com tecnologia Live Valve",
+          "slide_ford": "Live Valve FOX Racing 2.5\""
+        },
+        "aceleracao_0_100_s": {
+          "esperado": 5.8,
+          "status": "verificado_tier3",
+          "tier": 3,
+          "fontes": [
+            "https://autoesporte.globo.com/carros/testes-de-carros/review/2024/05/teste-ford-ranger-raptor-e-piccape-que-acelera-mais-que-muito-esportivo.ghtml"
+          ],
+          "trecho": "A Ford declara que a Ranger Raptor vai de 0 a 100 km/h em 5,8 segundos",
+          "slide_ford": 5.8,
+          "divergencias": [
+            {
+              "valor": 6.5,
+              "fonte": "https://autoesporte.globo.com/carros/testes-de-carros/review/2024/05/teste-ford-ranger-raptor-e-piccape-que-acelera-mais-que-muito-esportivo.ghtml",
+              "nota": "medido em teste"
+            }
+          ]
+        },
+        "modos_conducao": {
+          "esperado": [
+            "normal",
+            "sport",
+            "escorregadio",
+            "lama",
+            "areia",
+            "baja",
+            "rock_crawl"
+          ],
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger-raptor/raptor-4wd-at/",
+            "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2025/ranger-raptor/pdf/fbr-ranger-raptor-ficha-tecnica.pdf"
+          ],
+          "trecho": "7 modos de condução selecionáveis – Normal, Esportivo, Escorregadio, Lama/Terra, Areia, Baja, Rock Crawl",
+          "slide_ford": [
+            "normal",
+            "sport",
+            "escorregadio",
+            "lama",
+            "areia",
+            "rock_crawl",
+            "baja"
+          ],
+          "sinonimos": {
+            "esportivo": "sport",
+            "lama/terra": "lama"
+          }
+        },
+        "modos_direcao": {
+          "esperado": [
+            "normal",
+            "conforto",
+            "sport",
+            "off_road"
+          ],
+          "status": "divergente",
+          "tier": 1,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger-raptor/raptor-4wd-at/",
+            "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2025/ranger-raptor/pdf/fbr-ranger-raptor-ficha-tecnica.pdf"
+          ],
+          "trecho": "4 modos de direção selecionáveis – Normal, Conforto, Sport, Off-Road",
+          "slide_ford": [
+            "normal",
+            "sport",
+            "conforto"
+          ],
+          "nota": "Slide diz 3 modos de 'volante'; ficha pública diz 4 modos de 'direção'. Sinônimo volante≈direção. Manus marcou nao_encontrado por buscar a palavra 'volante'."
+        },
+        "modos_escapamento": {
+          "esperado": [
+            "silencioso",
+            "normal",
+            "sport",
+            "baja"
+          ],
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger-raptor/raptor-4wd-at/",
+            "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2025/ranger-raptor/pdf/fbr-ranger-raptor-ficha-tecnica.pdf"
+          ],
+          "trecho": "4 modos de escapamento selecionáveis – Silencioso, Normal, Sport, Baja",
+          "slide_ford": [
+            "normal",
+            "silencioso",
+            "sport",
+            "baja"
+          ]
+        },
+        "modos_amortecedor": {
+          "esperado": [
+            "normal",
+            "sport",
+            "off_road"
+          ],
+          "status": "divergente",
+          "tier": 1,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger-raptor/raptor-4wd-at/",
+            "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2025/ranger-raptor/pdf/fbr-ranger-raptor-ficha-tecnica.pdf"
+          ],
+          "trecho": "3 modos de amortecedor selecionáveis – Normal, Sport e Off-Road",
+          "slide_ford": [
+            "normal",
+            "sport",
+            "baja"
+          ],
+          "nota": "Slide diz Baja; fonte pública 2026 diz Off-Road"
+        },
+        "farois": {
+          "esperado": {
+            "tipo": "Matrix LED",
+            "neblina": "LED",
+            "nivelamento": "elétrico"
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger-raptor/raptor-4wd-at/",
+            "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2025/ranger-raptor/pdf/fbr-ranger-raptor-ficha-tecnica.pdf"
+          ],
+          "trecho": "Faróis Matrix Led",
+          "slide_ford": "Matrix LED"
+        },
+        "rodas_pneus": {
+          "esperado": {
+            "aro_pol": 17,
+            "material": "liga leve",
+            "pneus": "285/70 R17",
+            "tipo_pneu": "AT",
+            "marca_pneu": "General Grabber"
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger-raptor/raptor-4wd-at/",
+            "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2025/ranger-raptor/pdf/fbr-ranger-raptor-ficha-tecnica.pdf"
+          ],
+          "trecho": "Pneus 285/70 R17 General Grabber; Rodas de liga leve 17\"",
+          "slide_ford": "17\" com 285/70 R17 AT"
+        },
+        "pacote_adas": {
+          "esperado": {
+            "nome_comercial": null,
+            "itens": [
+              "alerta de colisão",
+              "alerta de tráfego cruzado",
+              "frenagem autônoma dianteira e em marcha à ré",
+              "assistente de manobras evasivas",
+              "permanência e centralização em faixa",
+              "ACC Stop and Go",
+              "farol alto automático",
+              "câmera 360°",
+              "BLIS",
+              "sensores dianteiro/traseiro",
+              "Pro Trailer"
+            ]
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger-raptor/raptor-4wd-at/",
+            "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2025/ranger-raptor/pdf/fbr-ranger-raptor-ficha-tecnica.pdf"
+          ],
+          "nota": "Ford não usa nome comercial na ficha BR (Co-Pilot360 não aparece)"
+        },
+        "preco_sugerido_brl": {
+          "esperado": 499000,
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger-raptor/raptor-4wd-at/"
+          ],
+          "trecho": "Raptor 3.0 V6 Bi-turbo 4WD AT 2026 (AOD6) ... R$ 499.000",
+          "data": "2026-09-01",
+          "slide_ford": "R$499.00 (typo do slide; ler R$ 499.000)"
+        },
+        "preco_fipe_brl": {
+          "esperado": 452540,
+          "status": "verificado",
+          "tier": 2,
+          "fontes": [
+            "https://www.tabelafipebrasil.com/carros/FORD/RANGER-RAPTOR-30-V6-BI-TURBO-4WD-AUT/2026-Gasolina"
+          ],
+          "trecho": "Referência FIPE: Setembro 2026; Preço: R$ 452.540,00",
+          "referencia": "2026-09"
+        }
+      }
+    },
+    {
+      "id": "ford_ranger_limited_2027",
+      "marca": "Ford",
+      "modelo": "Ranger",
+      "versao": "Limited 3.0 V6 Diesel 4WD AT",
+      "ano_modelo": 2027,
+      "codigo_fipe": "003497-5",
+      "papel": "veiculo_ford_diesel_topo",
+      "origem": "coleta ao vivo de 2026-09-10 por scripts/coleta/coletar_faltantes.py; extraído pelo pipeline; confirmação humana pendente",
+      "nota": "Escolha automática da versão pela maior 'a partir de' entre as 11 diesel da linha coletada. A página lista também 'Limited 3.0 V6 Diesel 4WD AT 2027 + Kit Opcional' a R$ 372.900 — mesma versão com pacote de acessórios, por isso fora. CONFIRMAR (DECISOES_NOITE.md D-161).",
+      "linha_vigente": [
+        {
+          "nome_exato": "Limited 3.0 V6 Diesel 4WD AT",
+          "ano_modelo": 2027
+        }
+      ],
+      "atributos": {
+        "motor": {
+          "esperado": {
+            "deslocamento_l": 3.0,
+            "cilindros": 6,
+            "combustivel": "diesel",
+            "aspiracao": "turbo"
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html"
+          ],
+          "trecho": "Motor 3.0 V6 Turbo Diesel",
+          "origem": "extraído pelo pipeline; confirmação humana pendente"
+        },
+        "potencia_cv": {
+          "esperado": 250,
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html"
+          ],
+          "trecho": "Potência 250 cv @ 3.250rpm",
+          "origem": "extraído pelo pipeline; confirmação humana pendente"
+        },
+        "potencia_rpm": {
+          "esperado": 3250,
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html"
+          ],
+          "trecho": "Potência 250 cv @ 3.250rpm",
+          "origem": "extraído pelo pipeline; confirmação humana pendente"
+        },
+        "torque_nm": {
+          "esperado": 600,
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html"
+          ],
+          "trecho": "Torque 600 Nm @ 1.750 rpm",
+          "origem": "extraído pelo pipeline; confirmação humana pendente"
+        },
+        "torque_rpm": {
+          "esperado": 1750,
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html"
+          ],
+          "trecho": "Torque 600 Nm @ 1.750 rpm",
+          "origem": "extraído pelo pipeline; confirmação humana pendente"
+        },
+        "transmissao": {
+          "esperado": {
+            "tipo": "automatica",
+            "numero_marchas": 10,
+            "paddle_shifters": null
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html"
+          ],
+          "trecho": "Transmissão Automática de 10 velocidades",
+          "origem": "extraído pelo pipeline; confirmação humana pendente",
+          "nota": "paddle_shifters não mencionado na página"
+        },
+        "tracao": {
+          "esperado": {
+            "tipo": "4x4",
+            "descricao": "4WD"
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html"
+          ],
+          "trecho": "Tração 4WD",
+          "origem": "extraído pelo pipeline; confirmação humana pendente"
+        },
+        "amortecedores": {
+          "esperado": null,
+          "status": "nao_encontrado",
+          "tier": null,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html",
+            "https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/nameplate/2025/nova-geracao-ranger/pdf/fbr-ranger-ficha-tecnica.pdf"
+          ],
+          "nota": "a página da versão não nomeia amortecedor; o PDF de ficha técnica tem a página de especificações em IMAGEM, sem texto extraível",
+          "origem": "extraído pelo pipeline; confirmação humana pendente"
+        },
+        "aceleracao_0_100_s": {
+          "esperado": 9.2,
+          "status": "verificado_tier3",
+          "tier": 3,
+          "fontes": [
+            "https://www.carrosnaweb.com.br/fichadetalhe.asp?codigo=49974"
+          ],
+          "trecho": "Aceleração 0-100 km/h  | 9,2 s",
+          "nota": "Fase 2 do plano 18/18 (2026-09-15): CarrosNaWeb (tier 3), ficha por versão+ano.",
+          "origem": "extraído pelo pipeline; confirmação humana pendente"
+        },
+        "consumo_urbano_kml": {
+          "esperado": 8.3,
+          "status": "verificado",
+          "tier": 2,
+          "fontes": [
+            "https://www.gov.br/inmetro/pt-br/assuntos/regulamentacao/avaliacao-da-conformidade/programa-brasileiro-de-etiquetagem/tabelas-de-eficiencia-energetica/veiculos-automotivos-pbe-veicular"
+          ],
+          "trecho": "Picape FORD Nova Ranger 4x4 LTD 3.0 V6 - 24V",
+          "origem": "extraído pelo pipeline; confirmação humana pendente",
+          "nota": "tabela PBEV 2026, 18º ciclo (atualizada em 31/08/2026); a linha traz urbano 8,3 · rodoviário 10,1 · combinado 9,0"
+        },
+        "consumo_rodoviario_kml": {
+          "esperado": 10.1,
+          "status": "verificado",
+          "tier": 2,
+          "fontes": [
+            "https://www.gov.br/inmetro/pt-br/assuntos/regulamentacao/avaliacao-da-conformidade/programa-brasileiro-de-etiquetagem/tabelas-de-eficiencia-energetica/veiculos-automotivos-pbe-veicular"
+          ],
+          "trecho": "Picape FORD Nova Ranger 4x4 LTD 3.0 V6 - 24V",
+          "origem": "extraído pelo pipeline; confirmação humana pendente"
+        },
+        "modos_conducao": {
+          "esperado": [
+            "normal",
+            "eco",
+            "reboque",
+            "escorregadio",
+            "lama",
+            "areia"
+          ],
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html"
+          ],
+          "trecho": "6 modos de condução selecionáveis – Normal, Eco, Rebocar/Transp, Escorregadio, Lama/Terra, Areia",
+          "origem": "extraído pelo pipeline; confirmação humana pendente",
+          "sinonimos": {
+            "rebocar/transp": "reboque",
+            "lama/terra": "lama"
+          }
+        },
+        "modos_direcao": {
+          "esperado": null,
+          "status": "nao_encontrado",
+          "tier": null,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html"
+          ],
+          "nota": "a Limited não oferece modos de direção",
+          "origem": "extraído pelo pipeline; confirmação humana pendente"
+        },
+        "modos_escapamento": {
+          "esperado": null,
+          "status": "nao_encontrado",
+          "tier": null,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html"
+          ],
+          "nota": "exclusivo da Raptor na linha Ranger",
+          "origem": "extraído pelo pipeline; confirmação humana pendente"
+        },
+        "modos_amortecedor": {
+          "esperado": null,
+          "status": "nao_encontrado",
+          "tier": null,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html"
+          ],
+          "nota": "exclusivo da Raptor na linha Ranger",
+          "origem": "extraído pelo pipeline; confirmação humana pendente"
+        },
+        "farois": {
+          "esperado": {
+            "tipo": "Full LED",
+            "neblina": "LED"
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html"
+          ],
+          "trecho": "Faróis FullLed",
+          "origem": "extraído pelo pipeline; confirmação humana pendente",
+          "nota": "a página lista 'Faróis FullLed' e 'Faróis de neblina em Led' como itens de equipamento"
+        },
+        "rodas_pneus": {
+          "esperado": {
+            "aro_pol": 18,
+            "material": "liga leve",
+            "pneus": "255/65 R18",
+            "tipo_pneu": "AT"
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html"
+          ],
+          "trecho": "Pneus 255/65 R18 All Terrain; Rodas de liga leve 18\"",
+          "origem": "extraído pelo pipeline; confirmação humana pendente"
+        },
+        "pacote_adas": {
+          "esperado": {
+            "nome_comercial": null,
+            "itens": [
+              "assistente de permanência em faixa",
+              "assistente autônomo de frenagem",
+              "alerta de colisão",
+              "reconhecimento de sinais de trânsito",
+              "farol alto automático",
+              "câmera de ré",
+              "sensor de estacionamento dianteiro",
+              "sensor de estacionamento traseiro"
+            ]
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html"
+          ],
+          "origem": "extraído pelo pipeline; confirmação humana pendente",
+          "nota": "a Ford não usa nome comercial na ficha BR; os itens estão na seção SEGURANÇA da página da versão"
+        },
+        "preco_sugerido_brl": {
+          "esperado": 346900,
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at.html"
+          ],
+          "trecho": "Ranger Limited 3.0 V6 Diesel 4WD AT 2027 Preço a partir de R$ 346.900",
+          "origem": "extraído pelo pipeline; confirmação humana pendente",
+          "data": "2026-09-10"
+        },
+        "preco_fipe_brl": {
+          "esperado": 343735,
+          "status": "verificado",
+          "tier": 2,
+          "fontes": [
+            "https://parallelum.com.br/fipe/api/v1/carros/marcas/22/modelos/10761/anos/32000-3"
+          ],
+          "trecho": "\"Valor\":\"R$ 343.735,00\"",
+          "origem": "extraído pelo pipeline; confirmação humana pendente",
+          "referencia": "2026-09",
+          "nota": "a FIPE de setembro/2026 ainda não abriu o ano-modelo 2027: o valor é o do registro ZERO-QUILÔMETRO (AnoModelo 32000)"
+        }
+      }
+    },
+    {
+      "id": "toyota_hilux_gr_sport_2026_inexistente",
+      "marca": "Toyota",
+      "modelo": "Hilux",
+      "versao": "GR-Sport",
+      "ano_modelo": 2026,
+      "codigo_fipe": "002177-6 (histórico, último ano 2024)",
+      "papel": "caso_negativo_resolvedor_de_versao",
+      "origem": "Manus rodada 2 (2026-09-01)",
+      "linha_vigente": [
+        {
+          "nome_exato": "STD Power Pack AT",
+          "ano_modelo": 2026
+        },
+        {
+          "nome_exato": "SR AT",
+          "ano_modelo": 2026
+        },
+        {
+          "nome_exato": "SRV AT",
+          "ano_modelo": 2026
+        },
+        {
+          "nome_exato": "SRX AT",
+          "ano_modelo": 2026
+        },
+        {
+          "nome_exato": "SRX Plus AT",
+          "ano_modelo": 2026
+        }
+      ],
+      "resultado_esperado": {
+        "status": "versao_inexistente",
+        "mensagem_contem": [
+          "não está na linha vigente",
+          "SRX Plus"
+        ],
+        "sugestao_equivalente": "SRX Plus AT",
+        "ultimo_ano_fipe": 2024,
+        "fontes": [
+          "https://www.toyota.com.br/modelos/hilux-cabine-dupla",
+          "https://media.toyota.com.br/d400f124-b3ac-4d73-a885-5d6828812f11.pdf",
+          "https://www.tabelafipebrasil.com/carros/TOYOTA/HILUX-CD-GR-S-4X4-28-TDI-DIES-AUT"
+        ]
+      },
+      "atributos": {}
+    },
+    {
+      "id": "toyota_hilux_srx_plus_at_2026",
+      "marca": "Toyota",
+      "modelo": "Hilux",
+      "versao": "SRX Plus AT (Cabine Dupla)",
+      "ano_modelo": 2026,
+      "codigo_fipe": "002215-2",
+      "papel": "concorrente",
+      "origem": "Extraído manualmente do PDF oficial 'HILUX MY26' (páginas 6 e 7) já baixado; layout em raw/toyota_hilux_my26_p6_p7_layout.txt",
+      "linha_vigente": [
+        {
+          "nome_exato": "STD Power Pack AT",
+          "ano_modelo": 2026
+        },
+        {
+          "nome_exato": "SR AT",
+          "ano_modelo": 2026
+        },
+        {
+          "nome_exato": "SRV AT",
+          "ano_modelo": 2026
+        },
+        {
+          "nome_exato": "SRX AT",
+          "ano_modelo": 2026
+        },
+        {
+          "nome_exato": "SRX Plus AT",
+          "ano_modelo": 2026
+        }
+      ],
+      "atributos": {
+        "motor": {
+          "esperado": {
+            "deslocamento_l": 2.8,
+            "cilindros": 4,
+            "valvulas": 16,
+            "combustivel": "diesel",
+            "aspiracao": "turbo geometria variável + intercooler"
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://media.toyota.com.br/d400f124-b3ac-4d73-a885-5d6828812f11.pdf"
+          ],
+          "trecho": "Motor a Diesel 2.8L 16V Turbo* Intercooler (*Turbo com geometria variável)",
+          "pagina_pdf": 6
+        },
+        "potencia_cv": {
+          "esperado": 204,
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://media.toyota.com.br/d400f124-b3ac-4d73-a885-5d6828812f11.pdf"
+          ],
+          "trecho": "204/ 3.400 (cv/rpm)",
+          "pagina_pdf": 6
+        },
+        "potencia_rpm": {
+          "esperado": 3400,
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://media.toyota.com.br/d400f124-b3ac-4d73-a885-5d6828812f11.pdf"
+          ],
+          "trecho": "204/ 3.400 (cv/rpm)",
+          "pagina_pdf": 6
+        },
+        "torque_nm": {
+          "esperado": 499,
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://media.toyota.com.br/d400f124-b3ac-4d73-a885-5d6828812f11.pdf"
+          ],
+          "trecho": "50,9/ 2.800 (kgf.m/rpm)",
+          "pagina_pdf": 6,
+          "valor_bruto": "50,9 kgf.m",
+          "conversao": "kgf.m→Nm ×9,80665"
+        },
+        "torque_rpm": {
+          "esperado": 2800,
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://media.toyota.com.br/d400f124-b3ac-4d73-a885-5d6828812f11.pdf"
+          ],
+          "trecho": "50,9/ 2.800 (kgf.m/rpm)",
+          "pagina_pdf": 6
+        },
+        "transmissao": {
+          "esperado": {
+            "tipo": "automatica",
+            "numero_marchas": 6,
+            "paddle_shifters": null
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://media.toyota.com.br/d400f124-b3ac-4d73-a885-5d6828812f11.pdf"
+          ],
+          "trecho": "Automática de 6 velocidades sequencial",
+          "pagina_pdf": 6,
+          "nota": "paddle_shifters: nao_encontrado (lista oficial não cita)"
+        },
+        "tracao": {
+          "esperado": {
+            "tipo": "4x4 sob demanda",
+            "descricao": "4×2, 4×4; reduzida com acionamento eletrônico; bloqueio do diferencial"
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://media.toyota.com.br/d400f124-b3ac-4d73-a885-5d6828812f11.pdf"
+          ],
+          "trecho": "4×2, 4×4 Reduzida com acionamento eletrônico ... A-TRC com bloqueio do diferencial",
+          "pagina_pdf": 6
+        },
+        "amortecedores": {
+          "esperado": {
+            "suspensao_dianteira": "independente, braços duplos triangulares, molas helicoidais e barra estabilizadora",
+            "suspensao_traseira": "eixo rígido, molas semielípticas de duplo estágio e barra estabilizadora",
+            "amortecedores": null
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://media.toyota.com.br/d400f124-b3ac-4d73-a885-5d6828812f11.pdf"
+          ],
+          "trecho": "Eixo rígido, molas semielípticas de duplo estágio e barra estabilizadora",
+          "pagina_pdf": 7,
+          "nota": "Marca/modelo de amortecedor não informado (nao_encontrado); suspensão descrita"
+        },
+        "aceleracao_0_100_s": {
+          "esperado": 12.0,
+          "status": "verificado_tier3",
+          "tier": 3,
+          "fontes": [
+            "https://www.carrosnaweb.com.br/fichadetalhe.asp?codigo=41190"
+          ],
+          "trecho": "Aceleração 0-100 km/h  | 12 s",
+          "nota": "Fase 2 do plano 18/18 (2026-09-15): CarrosNaWeb (tier 3), ficha por versão+ano."
+        },
+        "modos_conducao": {
+          "esperado": [
+            "eco",
+            "power"
+          ],
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://media.toyota.com.br/d400f124-b3ac-4d73-a885-5d6828812f11.pdf"
+          ],
+          "trecho": "Modos de seleção de condução Eco e Power",
+          "pagina_pdf": 6
+        },
+        "modos_direcao": {
+          "esperado": null,
+          "status": "nao_encontrado",
+          "tier": null,
+          "fontes": [
+            "https://media.toyota.com.br/d400f124-b3ac-4d73-a885-5d6828812f11.pdf",
+            "https://www.toyota.com.br/modelos/hilux-cabine-dupla"
+          ],
+          "nota": "lista oficial completa de equipamentos não cita"
+        },
+        "modos_escapamento": {
+          "esperado": null,
+          "status": "nao_encontrado",
+          "tier": null,
+          "fontes": [
+            "https://media.toyota.com.br/d400f124-b3ac-4d73-a885-5d6828812f11.pdf",
+            "https://www.toyota.com.br/modelos/hilux-cabine-dupla"
+          ],
+          "nota": "lista oficial completa de equipamentos não cita"
+        },
+        "modos_amortecedor": {
+          "esperado": null,
+          "status": "nao_encontrado",
+          "tier": null,
+          "fontes": [
+            "https://media.toyota.com.br/d400f124-b3ac-4d73-a885-5d6828812f11.pdf",
+            "https://www.toyota.com.br/modelos/hilux-cabine-dupla"
+          ],
+          "nota": "lista oficial completa de equipamentos não cita"
+        },
+        "farois": {
+          "esperado": {
+            "tipo": "LED",
+            "neblina": "LED",
+            "nivelamento": "automático"
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://media.toyota.com.br/d400f124-b3ac-4d73-a885-5d6828812f11.pdf"
+          ],
+          "trecho": "Faróis de LED; Faróis de neblina dianteiros de LED; Nivelamento dos faróis dianteiros automático",
+          "pagina_pdf": 6
+        },
+        "rodas_pneus": {
+          "esperado": {
+            "aro_pol": 18,
+            "material": "liga leve",
+            "pneus": "265/60 R18",
+            "tipo_pneu": null
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://media.toyota.com.br/d400f124-b3ac-4d73-a885-5d6828812f11.pdf"
+          ],
+          "trecho": "Pneus 265/60 R18; Rodas Liga leve 18\"",
+          "pagina_pdf": 7,
+          "nota": "coluna SRX AT / SRX Plus AT da tabela"
+        },
+        "pacote_adas": {
+          "esperado": {
+            "nome_comercial": "Toyota Safety Sense (TSS)",
+            "itens": [
+              "Pre-crash System (PCS) com frenagem automática (carros, pedestres, ciclistas)",
+              "Lane Departure Alert (LDA)",
+              "Adaptive Cruise Control (ACC)",
+              "7 airbags",
+              "câmera 360º (PVM)",
+              "sensores dianteiros (2) e traseiros (4)"
+            ]
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://media.toyota.com.br/d400f124-b3ac-4d73-a885-5d6828812f11.pdf"
+          ],
+          "trecho": "Assistente de pré-colisão frontal (Pre-crash System - PCS) ... TSS",
+          "pagina_pdf": 6
+        },
+        "preco_sugerido_brl": {
+          "esperado": null,
+          "status": "pendente_coleta",
+          "tier": null,
+          "fontes": [],
+          "nota": "Site exibe apenas 'A partir de R$ 292.790,00' para a linha (versão de entrada). Coletar no configurador Toyota ou release; não inferir."
+        },
+        "preco_fipe_brl": {
+          "esperado": null,
+          "status": "pendente_coleta",
+          "tier": null,
+          "fontes": [
+            "https://www.tabelafipebrasil.com/carros/TOYOTA/HILUX-CD-SRX-PLUS-4X4-28-TDI-DIE-AUT"
+          ],
+          "nota": "Código FIPE 002215-2 confirmado (tabelafipebrasil). Coletar via API FIPE na referência do mês vigente."
+        }
+      }
+    },
+    {
+      "id": "vw_amarok_v6_extreme_2026",
+      "marca": "Volkswagen",
+      "modelo": "Amarok",
+      "versao": "V6 Extreme",
+      "ano_modelo": 2026,
+      "codigo_fipe": "005506-9",
+      "papel": "concorrente",
+      "origem": "Manus rodada 3 (2026-09-02); textos brutos em raw/ (sem prints)",
+      "linha_vigente": [
+        {
+          "nome_exato": "V6 Comfortline",
+          "ano_modelo": 2026,
+          "preco_a_partir_brl": 339990,
+          "fonte_preco": "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2025/08/volkswagen-amarok-2026-precos-versoes-equipamentos.ghtml",
+          "tier": 3
+        },
+        {
+          "nome_exato": "V6 Highline",
+          "ano_modelo": 2026,
+          "preco_a_partir_brl": 356990,
+          "fonte_preco": "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2025/08/volkswagen-amarok-2026-precos-versoes-equipamentos.ghtml",
+          "tier": 3
+        },
+        {
+          "nome_exato": "V6 Extreme",
+          "ano_modelo": 2026,
+          "preco_a_partir_brl": 379990,
+          "fonte_preco": "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2025/08/volkswagen-amarok-2026-precos-versoes-equipamentos.ghtml",
+          "tier": 3
+        }
+      ],
+      "atributos": {
+        "motor": {
+          "esperado": {
+            "deslocamento_l": 3.0,
+            "cilindros": 6,
+            "combustivel": "diesel",
+            "aspiracao": "turbo (TDI)"
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.vw.com.br/pt/carros/amarok.html"
+          ],
+          "trecho": "A picape vem com o motor V6 3.0 TDI de 258 cv com 59,1 kgfm de torque"
+        },
+        "potencia_cv": {
+          "esperado": 258,
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.vw.com.br/pt/carros/amarok.html"
+          ],
+          "trecho": "Motor V6 Potência 258 cv"
+        },
+        "potencia_rpm": {
+          "esperado": 3250,
+          "status": "verificado_tier3",
+          "tier": 3,
+          "fontes": [
+            "https://www.carrosnaweb.com.br/fichadetalhe.asp?codigo=44849"
+          ],
+          "trecho": "cv a 3250 rpm",
+          "nota": "Fase 2 do plano 18/18 (2026-09-15): CarrosNaWeb (tier 3), ficha por versão+ano."
+        },
+        "torque_nm": {
+          "esperado": 580,
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.vw.com.br/pt/carros/amarok.html"
+          ],
+          "trecho": "59,1 kgfm de torque",
+          "valor_bruto": "59,1 kgfm",
+          "conversao": "kgf.m→Nm ×9,80665",
+          "divergencias": [
+            {
+              "valor_bruto": "59 kgfm",
+              "fonte": "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2025/08/volkswagen-amarok-2026-precos-versoes-equipamentos.ghtml",
+              "nota": "arredondamento da imprensa"
+            }
+          ]
+        },
+        "torque_rpm": {
+          "esperado": 1400,
+          "status": "verificado_tier3",
+          "tier": 3,
+          "fontes": [
+            "https://www.carrosnaweb.com.br/fichadetalhe.asp?codigo=44849"
+          ],
+          "trecho": "kgfm a 1400 rpm",
+          "nota": "Fase 2 do plano 18/18 (2026-09-15): CarrosNaWeb (tier 3), ficha por versão+ano."
+        },
+        "transmissao": {
+          "esperado": {
+            "tipo": "automatica",
+            "numero_marchas": 8,
+            "paddle_shifters": true
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.vw.com.br/pt/carros/amarok.html"
+          ],
+          "trecho": "Transmissão Automática de 8 velocidades; troca de marchas por aletas no volante",
+          "sinonimos": {
+            "aletas no volante": "paddle_shifters"
+          }
+        },
+        "tracao": {
+          "esperado": {
+            "tipo": "4x4 permanente",
+            "descricao": "4Motion (4x4 Permanente)"
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.vw.com.br/pt/carros/amarok.html"
+          ],
+          "trecho": "Tração 4Motion (4x4 Permanente)"
+        },
+        "amortecedores": {
+          "esperado": null,
+          "status": "nao_encontrado",
+          "tier": null,
+          "fontes": [
+            "https://www.vw.com.br/pt/carros/amarok.html",
+            "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2025/08/volkswagen-amarok-2026-precos-versoes-equipamentos.ghtml"
+          ]
+        },
+        "aceleracao_0_100_s": {
+          "esperado": 8.0,
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.vw.com.br/pt/carros/amarok.html",
+            "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2025/08/volkswagen-amarok-2026-precos-versoes-equipamentos.ghtml"
+          ],
+          "trecho": "indo de 0 a 100 km/h em 8 segundos"
+        },
+        "modos_conducao": {
+          "esperado": null,
+          "status": "nao_encontrado",
+          "tier": null,
+          "fontes": [
+            "https://www.vw.com.br/pt/carros/amarok.html",
+            "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2025/08/volkswagen-amarok-2026-precos-versoes-equipamentos.ghtml"
+          ]
+        },
+        "modos_direcao": {
+          "esperado": null,
+          "status": "nao_encontrado",
+          "tier": null,
+          "fontes": [
+            "https://www.vw.com.br/pt/carros/amarok.html",
+            "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2025/08/volkswagen-amarok-2026-precos-versoes-equipamentos.ghtml"
+          ]
+        },
+        "modos_escapamento": {
+          "esperado": null,
+          "status": "nao_encontrado",
+          "tier": null,
+          "fontes": [
+            "https://www.vw.com.br/pt/carros/amarok.html",
+            "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2025/08/volkswagen-amarok-2026-precos-versoes-equipamentos.ghtml"
+          ]
+        },
+        "modos_amortecedor": {
+          "esperado": null,
+          "status": "nao_encontrado",
+          "tier": null,
+          "fontes": [
+            "https://www.vw.com.br/pt/carros/amarok.html",
+            "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2025/08/volkswagen-amarok-2026-precos-versoes-equipamentos.ghtml"
+          ]
+        },
+        "farois": {
+          "esperado": {
+            "tipo": "Full LED",
+            "extra": "grade frontal iluminada (light strip); Coming & Leaving home"
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.vw.com.br/pt/carros/amarok.html"
+          ],
+          "trecho": "faróis Full LED e rodas de liga leve 20”"
+        },
+        "rodas_pneus": {
+          "esperado": {
+            "aro_pol": 20,
+            "material": "liga leve",
+            "pneus": null
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.vw.com.br/pt/carros/amarok.html",
+            "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2025/08/volkswagen-amarok-2026-precos-versoes-equipamentos.ghtml"
+          ],
+          "trecho": "rodas de liga leve 20”",
+          "nota": "medida de pneu nao_encontrada"
+        },
+        "pacote_adas": {
+          "esperado": {
+            "nome_comercial": "Safer Tag",
+            "itens": [
+              "aviso de colisão com pedestres e ciclistas",
+              "Forward collision warning",
+              "Lane alert"
+            ]
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.vw.com.br/pt/carros/amarok.html"
+          ],
+          "trecho": "Safer Tag – Assistente de condução passiva"
+        },
+        "preco_sugerido_brl": {
+          "esperado": 379990,
+          "status": "verificado_tier3",
+          "tier": 3,
+          "fontes": [
+            "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2025/08/volkswagen-amarok-2026-precos-versoes-equipamentos.ghtml"
+          ],
+          "trecho": "Extreme (R$ 379.990)",
+          "data": "2025-08-26",
+          "nota": "Site oficial não exibiu preço por versão no texto capturado; imprensa como tier 3 — não substitui oficial"
+        },
+        "preco_fipe_brl": {
+          "esperado": 339270,
+          "status": "verificado",
+          "tier": 2,
+          "fontes": [
+            "https://www.tabelafipebrasil.com/carros/VW---VOLKSWAGEN/AMAROK-EXTREME-CD-30-4X4-TB-DIES-AUT/2026-Diesel"
+          ],
+          "trecho": "Referência FIPE: Setembro 2026; Preço: R$ 339.270,00",
+          "referencia": "2026-09"
+        }
+      }
+    },
+    {
+      "id": "chevrolet_s10_high_country_2027",
+      "marca": "Chevrolet",
+      "modelo": "S10",
+      "versao": "High Country",
+      "ano_modelo": 2027,
+      "codigo_fipe": "004464-4",
+      "papel": "concorrente",
+      "origem": "Manus rodada 4 (2026-09-01/02), tarefa nova; prints e textos em s10_entrega.zip",
+      "linha_vigente": [
+        {
+          "nome_exato": "S10 Cabine Simples",
+          "ano_modelo": 2027,
+          "preco_a_partir_brl": 265690,
+          "fonte_preco": "https://www.chevrolet.com.br/picapes/s10",
+          "tier": 1
+        },
+        {
+          "nome_exato": "S10 WT MT",
+          "ano_modelo": 2027,
+          "preco_a_partir_brl": 285890,
+          "fonte_preco": "https://www.chevrolet.com.br/picapes/s10",
+          "tier": 1
+        },
+        {
+          "nome_exato": "S10 WT AT",
+          "ano_modelo": 2027,
+          "preco_a_partir_brl": 304590,
+          "fonte_preco": "https://www.chevrolet.com.br/picapes/s10",
+          "tier": 1
+        },
+        {
+          "nome_exato": "S10 Z71",
+          "ano_modelo": 2027,
+          "preco_a_partir_brl": 325290,
+          "fonte_preco": "https://www.chevrolet.com.br/picapes/s10",
+          "tier": 1
+        },
+        {
+          "nome_exato": "S10 LTZ",
+          "ano_modelo": 2027,
+          "preco_a_partir_brl": 333690,
+          "fonte_preco": "https://www.chevrolet.com.br/picapes/s10",
+          "tier": 1
+        },
+        {
+          "nome_exato": "Trail Boss",
+          "ano_modelo": 2027,
+          "preco_a_partir_brl": 341290,
+          "fonte_preco": "https://www.chevrolet.com.br/picapes/s10",
+          "tier": 1
+        },
+        {
+          "nome_exato": "S10 High Country",
+          "ano_modelo": 2027,
+          "preco_a_partir_brl": 348790,
+          "fonte_preco": "https://www.chevrolet.com.br/picapes/s10",
+          "tier": 1
+        }
+      ],
+      "atributos": {
+        "motor": {
+          "esperado": {
+            "deslocamento_l": 2.8,
+            "cilindros": 4,
+            "combustivel": "diesel",
+            "aspiracao": "turbo"
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.chevrolet.com.br/picapes/s10",
+            "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2026/07/chevrolet-s10-2027-precos-versoes-equipamentos-consumo.ghtml"
+          ],
+          "trecho": "Motor 2.8 turbo diesel de 207 cv"
+        },
+        "potencia_cv": {
+          "esperado": 207,
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.chevrolet.com.br/picapes/s10",
+            "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2026/07/chevrolet-s10-2027-precos-versoes-equipamentos-consumo.ghtml"
+          ],
+          "trecho": "motor turbo diesel mais eficiente de 207 cv"
+        },
+        "potencia_rpm": {
+          "esperado": 3200,
+          "status": "verificado_tier3",
+          "tier": 3,
+          "fontes": [
+            "https://www.carrosnaweb.com.br/fichadetalhe.asp?codigo=47930"
+          ],
+          "trecho": "cv a 3200 rpm",
+          "nota": "Fase 2 do plano 18/18 (2026-09-15): CarrosNaWeb (tier 3), ficha por versão+ano."
+        },
+        "torque_nm": {
+          "esperado": 510,
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.chevrolet.com.br/picapes/s10",
+            "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2026/07/chevrolet-s10-2027-precos-versoes-equipamentos-consumo.ghtml"
+          ],
+          "trecho": "e 52 kgfm de torque",
+          "valor_bruto": "52 kgfm",
+          "conversao": "kgf.m→Nm ×9,80665"
+        },
+        "torque_rpm": {
+          "esperado": 2000,
+          "status": "verificado_tier3",
+          "tier": 3,
+          "fontes": [
+            "https://www.carrosnaweb.com.br/fichadetalhe.asp?codigo=47930"
+          ],
+          "trecho": "kgfm a 2000 rpm",
+          "nota": "Fase 2 do plano 18/18 (2026-09-15): CarrosNaWeb (tier 3), ficha por versão+ano."
+        },
+        "transmissao": {
+          "esperado": {
+            "tipo": "automatica",
+            "numero_marchas": 8,
+            "paddle_shifters": null
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.chevrolet.com.br/picapes/s10"
+          ],
+          "trecho": "Com câmbio automático de 8 marchas",
+          "nota": "paddle_shifters nao_encontrado"
+        },
+        "tracao": {
+          "esperado": {
+            "tipo": "4x4",
+            "descricao": "4x4 em todas as configurações"
+          },
+          "status": "verificado_tier3",
+          "tier": 3,
+          "fontes": [
+            "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2026/07/chevrolet-s10-2027-precos-versoes-equipamentos-consumo.ghtml"
+          ],
+          "trecho": "4x4 em todas as configurações"
+        },
+        "amortecedores": {
+          "esperado": {
+            "amortecedores": null,
+            "descricao_oficial": "suspensão com calibração refinada"
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.chevrolet.com.br/picapes/s10"
+          ],
+          "trecho": "Suspensão com calibração refinada",
+          "nota": "descrição vaga; sem marca/tipo"
+        },
+        "aceleracao_0_100_s": {
+          "esperado": 9.4,
+          "status": "verificado_tier3",
+          "tier": 3,
+          "fontes": [
+            "https://www.carrosnaweb.com.br/fichadetalhe.asp?codigo=47930"
+          ],
+          "trecho": "Aceleração 0-100 km/h  | 9,4 s",
+          "nota": "Fase 2 do plano 18/18 (2026-09-15): CarrosNaWeb (tier 3), ficha por versão+ano."
+        },
+        "modos_conducao": {
+          "esperado": null,
+          "status": "nao_encontrado",
+          "tier": null,
+          "fontes": [
+            "https://www.chevrolet.com.br/picapes/s10",
+            "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2026/07/chevrolet-s10-2027-precos-versoes-equipamentos-consumo.ghtml"
+          ]
+        },
+        "modos_direcao": {
+          "esperado": null,
+          "status": "nao_encontrado",
+          "tier": null,
+          "fontes": [
+            "https://www.chevrolet.com.br/picapes/s10",
+            "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2026/07/chevrolet-s10-2027-precos-versoes-equipamentos-consumo.ghtml"
+          ]
+        },
+        "modos_escapamento": {
+          "esperado": null,
+          "status": "nao_encontrado",
+          "tier": null,
+          "fontes": [
+            "https://www.chevrolet.com.br/picapes/s10",
+            "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2026/07/chevrolet-s10-2027-precos-versoes-equipamentos-consumo.ghtml"
+          ]
+        },
+        "modos_amortecedor": {
+          "esperado": null,
+          "status": "nao_encontrado",
+          "tier": null,
+          "fontes": [
+            "https://www.chevrolet.com.br/picapes/s10",
+            "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2026/07/chevrolet-s10-2027-precos-versoes-equipamentos-consumo.ghtml"
+          ]
+        },
+        "farois": {
+          "esperado": {
+            "tipo": "LED",
+            "extra": "assinatura em LED"
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.chevrolet.com.br/picapes/s10"
+          ],
+          "trecho": "assinatura em LED",
+          "nota": "tipo do farol principal não explícito"
+        },
+        "rodas_pneus": {
+          "esperado": {
+            "aro_pol": 18,
+            "material": null,
+            "pneus": "265/60 R18",
+            "descricao_oficial": "novas rodas com design exclusivo"
+          },
+          "status": "verificado_tier3",
+          "tier": 3,
+          "fontes": [
+            "https://www.carrosnaweb.com.br/fichadetalhe.asp?codigo=47930"
+          ],
+          "trecho": "Dianteiros  | 265/60 R18",
+          "nota": "Fase 2 do plano 18/18 (2026-09-15): CarrosNaWeb (tier 3), ficha por versão+ano. Material da roda segue sem fonte."
+        },
+        "pacote_adas": {
+          "esperado": {
+            "nome_comercial": null,
+            "itens": [
+              "assistente ativo de permanência em faixa",
+              "alerta de tráfego cruzado traseiro",
+              "frenagem automática de emergência"
+            ]
+          },
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.chevrolet.com.br/picapes/s10",
+            "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2026/07/chevrolet-s10-2027-precos-versoes-equipamentos-consumo.ghtml"
+          ],
+          "trecho": "Sistema auxiliar de permanência em faixa; alerta de tráfego cruzado traseiro; frenagem automática de emergência"
+        },
+        "preco_sugerido_brl": {
+          "esperado": 348790,
+          "status": "verificado",
+          "tier": 1,
+          "fontes": [
+            "https://www.chevrolet.com.br/picapes/s10",
+            "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2026/07/chevrolet-s10-2027-precos-versoes-equipamentos-consumo.ghtml"
+          ],
+          "trecho": "S10 High Country A partir de R$ 348.790",
+          "data": "2026-09-01"
+        },
+        "preco_fipe_brl": {
+          "esperado": 294378,
+          "status": "verificado",
+          "tier": 2,
+          "fontes": [
+            "https://www.webmotors.com.br/tabela-fipe/carros/chevrolet/s10/2027/28-16v-turbo-diesel-high-country-cd-4x4-automatico"
+          ],
+          "trecho": "R$ 294.378,00 (referência setembro de 2026)",
+          "referencia": "2026-09"
+        }
+      }
+    }
+  ]
+}

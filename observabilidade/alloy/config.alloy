@@ -1,0 +1,45 @@
+// Grafana Alloy: coleta os logs JSON dos contêineres do SpecRadar e envia ao Loki.
+// (Alloy substitui o Promtail, descontinuado.)
+
+discovery.docker "containers" {
+  host = "unix:///var/run/docker.sock"
+}
+
+discovery.relabel "specradar" {
+  targets = discovery.docker.containers.targets
+
+  // Só os contêineres do projeto compose `specradar` (api, worker, caddy, db).
+  rule {
+    source_labels = ["__meta_docker_container_label_com_docker_compose_project"]
+    regex         = "specradar"
+    action        = "keep"
+  }
+  rule {
+    source_labels = ["__meta_docker_container_label_com_docker_compose_service"]
+    target_label  = "servico"
+  }
+}
+
+loki.source.docker "specradar" {
+  host       = "unix:///var/run/docker.sock"
+  targets    = discovery.relabel.specradar.output
+  forward_to = [loki.process.json.receiver]
+}
+
+// A solução já loga em JSON (structlog). `event` e `level` viram rótulos: conjunto pequeno
+// e fechado de valores, sem explodir a cardinalidade. request_id/origem ficam no corpo.
+loki.process "json" {
+  stage.json {
+    expressions = { event = "event", level = "level" }
+  }
+  stage.labels {
+    values = { event = "", level = "" }
+  }
+  forward_to = [loki.write.local.receiver]
+}
+
+loki.write "local" {
+  endpoint {
+    url = "http://loki:3100/loki/api/v1/push"
+  }
+}

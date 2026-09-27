@@ -1,0 +1,132 @@
+# Dimensões do Customer Need Engine: campo → dimensão, direção e tipo de nota.
+#
+# Versionado no repositório, como `docs/12` §6.2 manda. É a tabela que responde "por que
+# este carro é melhor **para este cliente**", e por isso ela precisa ser lida por um humano
+# antes de ser usada num argumento de venda: cada linha aqui é uma afirmação de que o campo
+# pesa naquela dimensão e de que lado é melhor.
+#
+# `versao` viaja na resposta da API. Uma comparação feita hoje não pode ser confundida com
+# uma feita sob outra tabela de pesos — é a mesma regra do `comparables.yaml`.
+versao: 2026-09-09
+
+# Os cinco pesos do ranking, em ordem: 1º, 2º, 3º, 4º, 5º. Fora do top 5, peso zero.
+# `docs/12` §6.2, literal. Somam 100.
+pesos_por_rank: [35, 25, 20, 12, 8]
+
+# Cobertura mínima de uma dimensão para ela entrar no total. Abaixo disso ela é marcada
+# `insuficiente` e **excluída** do total, com aviso — nunca diluída em silêncio.
+cobertura_minima: 0.5
+
+dimensoes:
+  economia:
+    rotulo: economia de combustível
+    campos:
+      - campo: consumo_urbano_kml
+        tipo: numerico
+        direcao: maior
+      - campo: consumo_rodoviario_kml
+        tipo: numerico
+        direcao: maior
+    # `custo_uso_estimado` aparece na lista de `docs/12` §6.2 e **não** entra aqui de
+    # propósito: ele é derivado do próprio consumo (km/mês ÷ km/l × preço). Pontuá-lo junto
+    # contaria a mesma informação duas vezes e inflaria a dimensão. O custo mensal é
+    # calculado e exibido ao lado, por `pipeline/fit/usage_cost.py`, onde o vendedor vê a
+    # conta com os inputs dele.
+  capacidade:
+    rotulo: capacidade de carga e reboque
+    campos:
+      - campo: capacidade_carga_kg
+        tipo: numerico
+        direcao: maior
+      - campo: capacidade_reboque_kg
+        tipo: numerico
+        direcao: maior
+      - campo: tanque_l
+        tipo: numerico
+        direcao: maior
+  seguranca:
+    rotulo: segurança
+    campos:
+      - campo: adas_itens
+        tipo: contagem
+      - campo: airbags_qtd
+        tipo: numerico
+        direcao: maior
+      - campo: camera_360
+        tipo: booleano
+      - campo: freios_traseiros
+        tipo: ordinal
+        # Disco vale mais que tambor: é a ordem que a própria engenharia usa.
+        ordem: [tambor, misto, disco]
+  desempenho:
+    rotulo: desempenho
+    campos:
+      - campo: potencia_cv
+        tipo: numerico
+        direcao: maior
+      - campo: torque_nm
+        tipo: numerico
+        direcao: maior
+      - campo: aceleracao_0_100_s
+        tipo: numerico
+        direcao: menor
+  off_road:
+    rotulo: capacidade off-road
+    campos:
+      - campo: tipo_tracao
+        tipo: ordinal
+        # 4x2 < 4x4 sob demanda < 4x4 permanente. Tração permanente é mais capaz e mais
+        # caro de rodar; nesta dimensão o que se mede é capacidade.
+        ordem: [4x2, 4x4_sob_demanda, 4x4_permanente]
+      - campo: reduzida
+        tipo: booleano
+      - campo: bloqueio_diferencial
+        tipo: booleano
+      - campo: modos_conducao
+        tipo: contagem
+      - campo: pneus_tipo
+        tipo: ordinal
+        ordem: [rodoviario, misto, at, mt]
+      - campo: amortecedores
+        tipo: presenca_de_termo
+        # Amortecedor de curso longo com controle é o que separa uma picape de trabalho de
+        # uma preparada para fora de estrada. A regra é presença de termo, e os termos
+        # estão aqui em vez de embutidos no código.
+        termos: [fox, live valve, racing, bilstein, remoto, monotubo]
+  conforto_tecnologia:
+    rotulo: conforto e tecnologia
+    campos:
+      - campo: modos_direcao
+        tipo: contagem
+      - campo: modos_amortecedor
+        tipo: contagem
+      - campo: paddle_shifters
+        tipo: booleano
+      - campo: farois_tipo
+        tipo: ordinal
+        ordem: [halogeno, led, full_led, matrix]
+  preco:
+    rotulo: preço
+    campos:
+      - campo: preco_sugerido_brl
+        tipo: numerico
+        direcao: menor
+      - campo: preco_fipe_brl
+        tipo: numerico
+        direcao: menor
+
+# As opções de uso do perfil (`docs/12` §6.2). Vocabulário fechado: a tela desenha um
+# checkbox por item, e uso novo chegando como texto livre entraria sem efeito nenhum.
+usos:
+  - rural_carga
+  - familia
+  - cidade
+  - off_road
+  - frota
+
+# O rótulo **obrigatório** de toda saída do motor. `docs/12` §6.2, literal.
+#
+# Ele existe porque "aderência 8,4" se lê como nota de qualidade, e não é: é o quanto o
+# veículo atende **ao perfil que o vendedor digitou**. Trocar de perfil muda o número sem
+# nada mudar no carro, e quem lê a tela precisa saber disso.
+rotulo_obrigatorio: "Aderência ao perfil informado — não é um ranking de qualidade"

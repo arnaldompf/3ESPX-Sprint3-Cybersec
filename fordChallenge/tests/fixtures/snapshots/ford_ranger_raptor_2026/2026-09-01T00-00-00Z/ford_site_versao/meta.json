@@ -1,0 +1,15 @@
+{
+  "source_id": "ford_site_versao",
+  "version_id": "ford_ranger_raptor_2026",
+  "url_final": "https://www.ford.com.br/picapes/ranger-raptor/raptor-4wd-at/",
+  "http_status": 200,
+  "tier": 1,
+  "tipo": "pagina_oficial",
+  "status": "consultada",
+  "captured_at": "2026-09-01",
+  "text_path": "page.md",
+  "sha256": "aca53db68a6a2211ebe211528e1f2793f161bf8f716eb4731e77a3935d4a1830",
+  "bytes": 7715,
+  "arquivo_de_origem": "gabarito/raw/ford_raptor_site_versao.md",
+  "gerado_por": "scripts/build_fixtures.py"
+}

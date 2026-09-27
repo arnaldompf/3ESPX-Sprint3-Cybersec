@@ -1,0 +1,44 @@
+# Regras SAST específicas do SpecRadar, além dos pacotes p/python, p/typescript e
+# p/owasp-top-ten. Cada regra codifica uma regra inviolável do projeto.
+rules:
+  - id: specradar-log-com-credencial
+    message: >-
+      Log estruturado recebendo senha/token/segredo. O log fica 90 dias e é lido por mais
+      gente que o banco: credencial nunca entra nele (OWASP ASVS V16, LGPD art. 46).
+    severity: ERROR
+    languages: [python]
+    patterns:
+      - pattern-either:
+          - pattern: $LOG.$METODO(..., senha=$V, ...)
+          - pattern: $LOG.$METODO(..., password=$V, ...)
+          - pattern: $LOG.$METODO(..., token=$V, ...)
+          - pattern: $LOG.$METODO(..., access_token=$V, ...)
+          - pattern: $LOG.$METODO(..., refresh_token=$V, ...)
+          - pattern: $LOG.$METODO(..., jwt_secret=$V, ...)
+          - pattern: $LOG.$METODO(..., api_key=$V, ...)
+      - metavariable-regex:
+          metavariable: $METODO
+          regex: ^(debug|info|warning|error|critical|exception|msg)$
+
+  - id: specradar-cors-curinga
+    message: >-
+      CORS com origem "*". docs/04 e docs/08 exigem CORS restrito às origens configuradas.
+    severity: ERROR
+    languages: [python]
+    pattern-either:
+      - pattern: CORSMiddleware(..., allow_origins=["*"], ...)
+      - pattern: $APP.add_middleware(CORSMiddleware, ..., allow_origins=["*"], ...)
+
+  - id: specradar-requisicao-sem-timeout
+    message: >-
+      Requisição HTTP de saída sem timeout: um site-fonte lento prende o worker para sempre
+      (OWASP API4 — consumo irrestrito de recursos).
+    severity: WARNING
+    languages: [python]
+    patterns:
+      - pattern-either:
+          - pattern: requests.$M($URL)
+          - pattern: httpx.$M($URL)
+      - metavariable-regex:
+          metavariable: $M
+          regex: ^(get|post|put|patch|delete|head)$

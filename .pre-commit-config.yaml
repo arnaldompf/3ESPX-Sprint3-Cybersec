@@ -1,0 +1,24 @@
+# Primeira linha de defesa, na máquina de quem desenvolve (antes do push):
+#   uvx pre-commit install
+# O pipeline repete as mesmas verificações; o hook só antecipa o feedback.
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.1
+    hooks:
+      - id: gitleaks
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: detect-private-key
+      - id: check-added-large-files
+        args: [--maxkb=2048]
+      - id: check-merge-conflict
+      - id: check-yaml
+        args: [--allow-multiple-documents]
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.14.5
+    hooks:
+      - id: ruff # configuração em ruff.toml (inclui flake8-bandit)
+        files: ^(seguranca|tests)/

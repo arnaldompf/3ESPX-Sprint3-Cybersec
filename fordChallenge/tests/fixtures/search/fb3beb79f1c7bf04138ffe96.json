@@ -1,0 +1,19 @@
+{
+  "consulta": "tabela fipe Toyota Hilux SRX Plus AT",
+  "provedor": "replay",
+  "veiculo": "Toyota Hilux SRX Plus AT",
+  "achados": [
+    {
+      "url": "https://www.toyota.com.br/modelos/hilux-cabine-dupla",
+      "titulo": "Toyota Hilux",
+      "snippet": "",
+      "posicao": 0
+    },
+    {
+      "url": "https://www.toyota.com.br/content/dam/toyota/hilux/ficha-tecnica-my26.pdf",
+      "titulo": "Toyota Hilux",
+      "snippet": "",
+      "posicao": 1
+    }
+  ]
+}

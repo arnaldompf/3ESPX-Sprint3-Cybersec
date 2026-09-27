@@ -1,0 +1,17 @@
+{
+  "source_id": "fipe_amarok_extreme",
+  "version_id": "vw_amarok_v6_extreme_2026",
+  "url_final": "https://parallelum.com.br/fipe/api/v1/carros/marcas/59/modelos/8532/anos/2026-3",
+  "http_status": 200,
+  "tier": 2,
+  "tipo": "fipe",
+  "status": "consultada",
+  "captured_at": "2026-09-10",
+  "text_path": "page.md",
+  "sha256": "8cd170fe1d5c24761627869af5d380c8f2f02f8efd33abb2dbcafa0809fca956",
+  "bytes": 396,
+  "arquivo_de_origem": "gabarito/raw/fipe_api_amarok_extreme.md",
+  "gerado_por": "scripts/build_fixtures.py",
+  "origem": "coleta ao vivo de 2026-09-10 por scripts/coleta/coletar_faltantes.py (robots.txt consultado, 1 req/s, user-agent identificado)",
+  "nota": "resposta da API comunitária da FIPE; o corpo JSON é o texto salvo e a citação é o par `\"Valor\":\"R$ …\"` dentro dele"
+}

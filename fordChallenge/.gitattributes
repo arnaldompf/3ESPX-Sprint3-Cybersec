@@ -1,0 +1,34 @@
+# Fim de linha: LF no repositório, sempre.
+#
+# Existe por um defeito real desta noite. `pathlib.Path.write_text()` no Windows traduz
+# `\n` para `\r\n` (é o comportamento documentado de `newline=None`), e eu reescrevi
+# módulos com scripts Python ao longo da noite. Resultado: 41 arquivos viraram CRLF e o
+# `git diff` passou a mostrar **arquivo inteiro** reescrito a cada commit — o histórico
+# fica ilegível justamente onde alguém vai querer revisar o que mudou.
+#
+# `core.autocrlf` está `false` nesta máquina, então sem este arquivo o repositório
+# guardaria o que estivesse no disco. Com `eol=lf`, o git normaliza na entrada.
+#
+# Os `.sh` são o caso crítico: `bash` com shebang seguido de `\r` falha com
+# "bad interpreter". Nenhum script de verify chegou a ser afetado, e a marcação explícita
+# garante que não seja.
+* text=auto eol=lf
+
+*.sh    text eol=lf
+*.py    text eol=lf
+*.md    text eol=lf
+*.json  text eol=lf
+*.toml  text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+
+# Material coletado fica **byte a byte** como veio. Os CSV do Manus são CRLF na origem, e
+# os fixtures de PDF são verificados por sha256 em `scripts/build_fixtures.py --check`:
+# normalizar aqui alteraria fonte de dados e quebraria a conferência.
+gabarito/raw/**  -text
+_kits/**         -text
+
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.ico   binary

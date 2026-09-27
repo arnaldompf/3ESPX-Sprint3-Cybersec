@@ -1,0 +1,69 @@
+{
+  "chave": "8188a3c67d9dcb729655f368",
+  "meta": {
+    "origem": "derivada de gabarito_v1.json (valor e trecho verbatim da verdade-terra humana), porque nao havia ANTHROPIC_API_KEY",
+    "version_id": "chevrolet_s10_high_country_2027",
+    "source_id": "chevrolet_site",
+    "modelo": "claude-sonnet-5",
+    "campos_pedidos": [
+      "aceleracao_0_100_s",
+      "adas_nome_comercial",
+      "amortecedores",
+      "cilindros",
+      "deslocamento_l",
+      "farois_tipo",
+      "fipe_referencia",
+      "modos_amortecedor",
+      "modos_conducao",
+      "modos_direcao",
+      "modos_escapamento",
+      "paddle_shifters",
+      "pneus_medida",
+      "potencia_rpm",
+      "preco_data",
+      "preco_fipe_brl",
+      "tipo_tracao",
+      "torque_rpm"
+    ],
+    "campos_respondidos": [
+      "amortecedores",
+      "cilindros",
+      "deslocamento_l",
+      "farois_tipo",
+      "preco_data"
+    ],
+    "gerado_por": "scripts/record_llm_fixtures.py"
+  },
+  "dados": {
+    "deslocamento_l": {
+      "raw_value": "2.8",
+      "value": 2.8,
+      "unit": null,
+      "evidence_quote": "Motor 2.8 turbo diesel de 207 cv"
+    },
+    "cilindros": {
+      "raw_value": "4 em linha",
+      "value": "4 em linha",
+      "unit": null,
+      "evidence_quote": "Motor 2.8 turbo diesel de 207 cv"
+    },
+    "amortecedores": {
+      "raw_value": "suspensão com calibração refinada",
+      "value": "suspensão com calibração refinada",
+      "unit": null,
+      "evidence_quote": "Suspensão com calibração refinada"
+    },
+    "farois_tipo": {
+      "raw_value": "LED",
+      "value": "LED",
+      "unit": null,
+      "evidence_quote": "assinatura em LED"
+    },
+    "preco_data": {
+      "raw_value": "2026-09-01",
+      "value": "2026-09-01",
+      "unit": null,
+      "evidence_quote": "S10 High Country A partir de R$ 348.790"
+    }
+  }
+}

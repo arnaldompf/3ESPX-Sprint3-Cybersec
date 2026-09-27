@@ -1,0 +1,78 @@
+{
+  "version_id": "chevrolet_s10_high_country_2027",
+  "descricao": "Chevrolet S10 High Country 2027 — concorrente",
+  "captured_at": "2026-09-01",
+  "fontes": [
+    {
+      "source_id": "chevrolet_site",
+      "url": "https://www.chevrolet.com.br/picapes/s10",
+      "tier": 1,
+      "tipo": "pagina_oficial",
+      "status": "consultada",
+      "tem_texto_salvo": true
+    },
+    {
+      "source_id": "registro_evidencias_s10",
+      "url": "https://www.chevrolet.com.br/picapes/s10",
+      "tier": 1,
+      "tipo": "registro_de_evidencia",
+      "status": "consultada",
+      "tem_texto_salvo": true,
+      "origem": "registro verbatim da coleta de 2026-09-01 (execução do Manus seguindo o protocolo)"
+    },
+    {
+      "source_id": "autoesporte_s10",
+      "url": "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2026/07/chevrolet-s10-2027-precos-versoes-equipamentos-consumo.ghtml",
+      "tier": 3,
+      "tipo": "imprensa",
+      "status": "consultada",
+      "tem_texto_salvo": false
+    },
+    {
+      "source_id": "fipe_s10",
+      "url": "https://www.webmotors.com.br/tabela-fipe/carros/chevrolet/s10/2027/28-16v-turbo-diesel-high-country-cd-4x4-automatico",
+      "tier": 2,
+      "tipo": "fipe",
+      "status": "consultada",
+      "tem_texto_salvo": false
+    },
+    {
+      "source_id": "fipe_s10_high_country",
+      "url": "https://parallelum.com.br/fipe/api/v1/carros/marcas/23/modelos/7305/anos/2027-3",
+      "tier": 2,
+      "tipo": "fipe",
+      "status": "consultada",
+      "tem_texto_salvo": true,
+      "nota": "resposta da API comunitária da FIPE; o corpo JSON é o texto salvo e a citação é o par `\"Valor\":\"R$ …\"` dentro dele",
+      "origem": "coleta ao vivo de 2026-09-10 por scripts/coleta/coletar_faltantes.py (robots.txt consultado, 1 req/s, user-agent identificado)"
+    },
+    {
+      "source_id": "pbe_tabela",
+      "url": "https://www.gov.br/inmetro/pt-br/assuntos/regulamentacao/avaliacao-da-conformidade/programa-brasileiro-de-etiquetagem/tabelas-de-eficiencia-energetica/veiculos-automotivos-pbe-veicular",
+      "tier": 2,
+      "tipo": "pbe",
+      "status": "consultada",
+      "tem_texto_salvo": true,
+      "nota": "tabela PBEV 2026 (18º ciclo, atualizada em 31/08/2026); uma linha por configuração publicada, com o consumo urbano e rodoviário medidos",
+      "origem": "coleta ao vivo de 2026-09-10 por scripts/coleta/coletar_faltantes.py (robots.txt consultado, 1 req/s, user-agent identificado)"
+    },
+    {
+      "source_id": "gm_imprensa",
+      "url": "https://media.gm.com/brasil",
+      "tier": 1,
+      "tipo": "sala_de_imprensa",
+      "status": "bloqueada",
+      "tem_texto_salvo": false,
+      "nota": "CAPTCHA na sala de imprensa da GM; fonte bloqueada vira status, nunca tentativa de burlar (docs/12 §3.12)"
+    },
+    {
+      "source_id": "carrosnaweb_s10_high_country_2027",
+      "url": "https://www.carrosnaweb.com.br/fichadetalhe.asp?codigo=47930",
+      "tier": 3,
+      "tipo": "ficha",
+      "status": "consultada",
+      "tem_texto_salvo": true,
+      "nota": "código opaco por versão+ano-modelo; ano-modelo reconfirmado no cabeçalho pelo conector (pipeline/connectors/carrosnaweb.py); potência em cv vem como imagem"
+    }
+  ]
+}

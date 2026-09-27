@@ -1,0 +1,102 @@
+# Alertas de métricas. Severidade → resposta (docs/SPRINT3 §3.4):
+#   critica  → aciona o plantão na hora (P1/P2) e abre incidente
+#   alta     → plantão em até 30 min
+#   media    → fila do time no próximo dia útil
+groups:
+  - name: specradar-api
+    rules:
+      - alert: ApiForaDoAr
+        expr: up{job="specradar-api"} == 0
+        for: 2m
+        labels: { severidade: critica, componente: api }
+        annotations:
+          resumo: "API do SpecRadar sem responder ao Prometheus há 2 min"
+          runbook: "docs/SPRINT3_CYBERSECURITY.md#35-plano-de-resposta-a-incidentes"
+
+      - alert: TaxaDeErro5xxAlta
+        expr: |
+          sum(rate(specradar_http_requisicoes_total{status=~"5.."}[5m]))
+            / clamp_min(sum(rate(specradar_http_requisicoes_total[5m])), 1e-9) > 0.05
+        for: 5m
+        labels: { severidade: alta, componente: api }
+        annotations:
+          resumo: "Mais de 5% das requisições com erro 5xx nos últimos 5 min"
+
+      - alert: LatenciaP95Alta
+        expr: |
+          histogram_quantile(0.95,
+            sum by (le) (rate(specradar_http_latencia_segundos_bucket{rota!~"/app/.*"}[5m]))) > 2
+        for: 10m
+        labels: { severidade: media, componente: api }
+        annotations:
+          resumo: "p95 da API acima de 2 s por 10 min"
+
+  - name: specradar-seguranca
+    rules:
+      - alert: PicoDeAcessoNegado
+        # 401/403 em rajada: força bruta, enumeração de rotas ou token roubado expirado.
+        expr: sum(increase(specradar_eventos_seguranca_total{tipo="acesso_negado"}[5m])) > 20
+        labels: { severidade: alta, componente: seguranca }
+        annotations:
+          resumo: "Mais de 20 respostas 401/403 em 5 min"
+          acao: "Ver no Grafana > Eventos de segurança, agrupar por `origem` (IP pseudonimizado)"
+
+      - alert: RateLimitEstourandoEmMassa
+        expr: sum(increase(specradar_eventos_seguranca_total{tipo="limite_excedido"}[5m])) > 50
+        labels: { severidade: alta, componente: seguranca }
+        annotations:
+          resumo: "Mais de 50 respostas 429 em 5 min — possível abuso/DoS de aplicação"
+
+      - alert: TentativaDeSSRF
+        # Nenhum uso legítimo resolve para rede interna: um único evento já é incidente.
+        expr: sum(increase(specradar_eventos_seguranca_total{tipo="ssrf_bloqueado"}[10m])) > 0
+        labels: { severidade: critica, componente: pipeline }
+        annotations:
+          resumo: "Pipeline tentou acessar endereço interno (SSRF bloqueado)"
+
+      - alert: AlteracoesCriticasEmRajada
+        expr: sum(increase(specradar_eventos_seguranca_total{tipo="alteracao_critica"}[15m])) > 30
+        labels: { severidade: media, componente: seguranca }
+        annotations:
+          resumo: "Muitas escritas em usuários/fontes/domínio em 15 min — conferir no audit_log"
+
+  - name: specradar-pipeline-ml
+    rules:
+      - alert: AlucinacaoDetectadaNoEval
+        # Regra inviolável do projeto: nenhum valor sem evidência. Meta = 0.
+        expr: specradar_eval_metrica{metrica="hallucination_rate"} > 0
+        labels: { severidade: critica, componente: ml }
+        annotations:
+          resumo: "Eval acusou valor sem evidência (hallucination_rate > 0)"
+
+      - alert: AcuraciaDeExtracaoAbaixoDaMeta
+        expr: specradar_eval_metrica{metrica="field_accuracy"} < 0.90
+        labels: { severidade: alta, componente: ml }
+        annotations:
+          resumo: "field_accuracy abaixo de 0,90 — possível deriva de modelo ou fonte alterada"
+
+      - alert: GroundingIncompleto
+        expr: specradar_eval_metrica{metrica="grounding_rate"} < 1
+        labels: { severidade: alta, componente: ml }
+        annotations:
+          resumo: "Há valor publicado sem trecho localizado na fonte (grounding_rate < 1)"
+
+      - alert: FilaDeJobsTravada
+        expr: specradar_jobs{status="pendente"} > 50
+        for: 30m
+        labels: { severidade: media, componente: pipeline }
+        annotations:
+          resumo: "Mais de 50 jobs pendentes por 30 min — worker parado ou lento"
+
+      - alert: JobsFalhando
+        expr: increase(specradar_jobs{status="falhou"}[1h]) > 10
+        labels: { severidade: media, componente: pipeline }
+        annotations:
+          resumo: "Mais de 10 jobs falharam na última hora"
+
+      - alert: ColetorDeMetricasFalhando
+        expr: specradar_coleta_metricas_falhou == 1
+        for: 10m
+        labels: { severidade: media, componente: observabilidade }
+        annotations:
+          resumo: "Coletor de métricas {{ $labels.coletor }} falhando há 10 min"

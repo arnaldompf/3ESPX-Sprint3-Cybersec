@@ -1,0 +1,51 @@
+{
+  "chave": "28b4faa59ecfd2c7a647d8d3",
+  "meta": {
+    "origem": "derivada de gabarito_v1.json (valor e trecho verbatim da verdade-terra humana), porque nao havia ANTHROPIC_API_KEY",
+    "version_id": "toyota_hilux_srx_plus_at_2026",
+    "source_id": "toyota_pdf_my26_completo",
+    "modelo": "claude-haiku-4-5-20251001",
+    "campos_pedidos": [
+      "aceleracao_0_100_s",
+      "adas_itens",
+      "amortecedores",
+      "ano_modelo",
+      "capacidade_reboque_kg",
+      "carroceria",
+      "cilindros",
+      "codigo_fipe",
+      "consumo_rodoviario_kml",
+      "consumo_urbano_kml",
+      "garantia_meses",
+      "marca",
+      "modelo",
+      "modos_amortecedor",
+      "modos_direcao",
+      "modos_escapamento",
+      "paddle_shifters",
+      "pneus_tipo",
+      "preco_data",
+      "segmento",
+      "versao"
+    ],
+    "campos_respondidos": [
+      "adas_itens"
+    ],
+    "gerado_por": "scripts/record_llm_fixtures.py"
+  },
+  "dados": {
+    "adas_itens": {
+      "raw_value": "['Pre-crash System (PCS) com frenagem automática (carros, pedestres, ciclistas)', 'Lane Departure Alert (LDA)', 'Adaptive Cruise Control (ACC)', '7 airbags', 'câmera 360º (PVM)', 'sensores dianteiros (2) e traseiros (4)']",
+      "value": [
+        "Pre-crash System (PCS) com frenagem automática (carros, pedestres, ciclistas)",
+        "Lane Departure Alert (LDA)",
+        "Adaptive Cruise Control (ACC)",
+        "7 airbags",
+        "câmera 360º (PVM)",
+        "sensores dianteiros (2) e traseiros (4)"
+      ],
+      "unit": null,
+      "evidence_quote": "Assistente de pré-colisão frontal (Pre-crash System - PCS) ... TSS"
+    }
+  }
+}

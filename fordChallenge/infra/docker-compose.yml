@@ -1,0 +1,99 @@
+# Postgres 16 + pgvector para dev e producao local.
+#
+# Nesta maquina o daemon do Docker nao esta de pe (DECISOES_NOITE.md D-05), entao dev
+# e teste rodam em SQLite. Este arquivo continua no repositorio porque Postgres segue
+# sendo o alvo de producao: basta subir o Docker Desktop e rodar
+#
+#   python scripts/task.py up
+#   DATABASE_URL=postgresql+psycopg://specradar:specradar@localhost:5432/specradar
+#   python scripts/task.py migrate
+#
+# Sem porta publica alem da 5432 e da 8000, as duas ligadas ao loopback.
+#
+# Servicos: `db` (Postgres 16 + pgvector), `api` e `worker`. Os dois ultimos saem da
+# mesma imagem (infra/Dockerfile) com comandos diferentes.
+
+name: specradar
+
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: specradar-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: specradar
+      POSTGRES_PASSWORD: specradar
+      POSTGRES_DB: specradar
+      # pt-BR nao e necessario; ordenacao deterministica ajuda os testes
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --locale=C"
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./initdb:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U specradar -d specradar"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+      start_period: 10s
+
+  # A API e o worker saem da MESMA imagem, com comandos diferentes. Duas imagens dariam a
+  # chance de as duas rodarem versoes diferentes do pipeline — e ai a ficha que a API le
+  # nao e a ficha que o worker escreveu.
+  api:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile
+    container_name: specradar-api
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+psycopg://specradar:specradar@db:5432/specradar
+      # JWT_SECRET vem do .env do host; sem ele a API NAO SOBE, de proposito
+      # (api/app/security.py recusa segredo com menos de 32 bytes).
+      JWT_SECRET: ${JWT_SECRET:?defina JWT_SECRET no .env}
+      REPLAY_MODE: ${REPLAY_MODE:-0}
+      LLM_FAKE: ${LLM_FAKE:-1}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:5173}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      # `data/` fora da imagem: snapshot e upload sao dado, nao build.
+      - ../data:/app/data
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health').status == 200 else 1)\""]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 20s
+
+  worker:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile
+    container_name: specradar-worker
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+psycopg://specradar:specradar@db:5432/specradar
+      JWT_SECRET: ${JWT_SECRET:?defina JWT_SECRET no .env}
+      REPLAY_MODE: ${REPLAY_MODE:-0}
+      LLM_FAKE: ${LLM_FAKE:-1}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+    volumes:
+      - ../data:/app/data
+    # No Postgres o worker usa `FOR UPDATE SKIP LOCKED`, entao mais de uma replica e
+    # seguro. Fica em 1 porque escalonamento horizontal esta fora do escopo da WP-14 e
+    # subir replica sem medir vazao e enfeite.
+    command: ["python", "-m", "pipeline.cli", "worker"]
+
+volumes:
+  pgdata:
+    name: specradar-pgdata

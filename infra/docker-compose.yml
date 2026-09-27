@@ -1,0 +1,165 @@
+# SpecRadar em produção — compose endurecido. Rodar da raiz do repositório:
+#
+#   bash infra/gerar_segredos.sh          # cria infra/segredos/* (gitignored, permissão 0400)
+#   docker compose -f infra/docker-compose.yml up -d --build
+#
+# Topologia (diagrama em docs/SPRINT3_CYBERSECURITY.md §2.6):
+#
+#   internet ──443──► caddy ──(borda, interna)──► api ──(dados, interna)──► db
+#             (rede publica)                                     ▲
+#                     worker ──(dados)───────────────────────────┘
+#                        └──(rede saida)──► sites das montadoras (HTTPS)
+#
+# * Só o Caddy publica porta, pela rede `publica`. API e banco não são alcançáveis de fora.
+# * `borda` e `dados` são `internal: true`: nem API nem banco têm rota para a internet —
+#   uma API comprometida não consegue exfiltrar dado por conexão de saída. (Medido: com
+#   `borda` comum, a API alcançava https://example.com; ver evidencias/11.)
+# * O worker é o único com saída para a internet (coleta), e não está na rede `borda`.
+# * Segredos via Docker secrets (arquivos em /run/secrets), nunca em variável literal.
+
+name: specradar
+
+x-endurecimento: &endurecimento
+  read_only: true
+  security_opt:
+    - no-new-privileges:true
+  cap_drop: [ALL]
+  restart: unless-stopped
+  logging:
+    driver: json-file
+    options: { max-size: "20m", max-file: "5" }
+
+services:
+  caddy:
+    <<: *endurecimento
+    image: caddy:2.9-alpine
+    cap_add: [NET_BIND_SERVICE] # única capacidade: escutar 80/443
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      SPECRADAR_DOMINIO: ${SPECRADAR_DOMINIO:-localhost}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-dados:/data
+      - caddy-config:/config
+    tmpfs: [/tmp]
+    networks:
+      publica: {} # portas 80/443 e emissão de certificado (ACME)
+      borda:
+        ipv4_address: 172.30.0.10 # o único IP em FORWARDED_ALLOW_IPS da API
+    depends_on:
+      api:
+        condition: service_healthy
+
+  api:
+    <<: *endurecimento
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile
+    image: specradar:local
+    environment:
+      APP_ENV: producao
+      AUTH_ENABLED: "1"
+      RATE_LIMIT_ENABLED: "1"
+      CORS_ORIGINS: https://${SPECRADAR_DOMINIO:-localhost}
+      REPLAY_MODE: ${REPLAY_MODE:-0}
+      LLM_FAKE: ${LLM_FAKE:-1}
+      LOG_LEVEL: INFO
+      DATABASE_URL_FILE: /run/secrets/database_url
+      JWT_SECRET_FILE: /run/secrets/jwt_secret
+      METRICS_TOKEN_FILE: /run/secrets/metrics_token
+      LOG_PSEUDONIMO_KEY_FILE: /run/secrets/log_pseudonimo_key
+      SPECRADAR_DATA_KEY_FILE: /run/secrets/data_key
+      ADMIN_PASSWORD_FILE: /run/secrets/admin_password # só para `seguranca.criar_admin`
+    secrets: [database_url, jwt_secret, metrics_token, log_pseudonimo_key, data_key, admin_password]
+    volumes:
+      - dados-app:/app/data
+      - relatorios:/app/reports
+    tmpfs: [/tmp]
+    networks:
+      borda:
+        ipv4_address: 172.30.0.20
+      dados: {}
+    depends_on:
+      db:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits: { cpus: "1.0", memory: 1g, pids: 256 }
+
+  worker:
+    <<: *endurecimento
+    image: specradar:local
+    command: ["python", "-m", "seguranca.worker_seguro"]
+    environment:
+      APP_ENV: producao
+      REPLAY_MODE: ${REPLAY_MODE:-0}
+      LLM_FAKE: ${LLM_FAKE:-1}
+      LOG_LEVEL: INFO
+      DATABASE_URL_FILE: /run/secrets/database_url
+      LLM_API_KEY_FILE: /run/secrets/llm_api_key
+      SPECRADAR_DATA_KEY_FILE: /run/secrets/data_key
+    secrets: [database_url, llm_api_key, data_key]
+    volumes:
+      - dados-app:/app/data
+    tmpfs: [/tmp]
+    networks: [dados, saida]
+    healthcheck:
+      disable: true # o worker não serve HTTP; a fila (`specradar_jobs`) é o sinal de vida
+    depends_on:
+      db:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits: { cpus: "1.0", memory: 2g, pids: 256 }
+
+  db:
+    <<: *endurecimento
+    image: pgvector/pgvector:0.8.0-pg16
+    read_only: false # o Postgres escreve fora do volume (socket, pid); compensado abaixo
+    cap_add: [CHOWN, DAC_OVERRIDE, FOWNER, SETGID, SETUID] # mínimo para o entrypoint
+    environment:
+      POSTGRES_USER: specradar
+      POSTGRES_DB: specradar
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_password
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --locale=C --auth-host=scram-sha-256"
+      POSTGRES_HOST_AUTH_METHOD: scram-sha-256
+    secrets: [db_password]
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ../fordChallenge/infra/initdb:/docker-entrypoint-initdb.d:ro
+    networks: [dados]
+    # Sem `ports`: o banco não existe fora da rede `dados`.
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U specradar -d specradar"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+
+networks:
+  publica: {}
+  borda:
+    internal: true
+    ipam:
+      config: [{ subnet: 172.30.0.0/24 }]
+  dados:
+    internal: true
+  saida: {}
+
+volumes:
+  pgdata:
+  dados-app:
+  relatorios:
+  caddy-dados:
+  caddy-config:
+
+secrets:
+  db_password: { file: ./segredos/db_password }
+  database_url: { file: ./segredos/database_url }
+  jwt_secret: { file: ./segredos/jwt_secret }
+  metrics_token: { file: ./segredos/metrics_token }
+  log_pseudonimo_key: { file: ./segredos/log_pseudonimo_key }
+  data_key: { file: ./segredos/data_key }
+  llm_api_key: { file: ./segredos/llm_api_key }
+  admin_password: { file: ./segredos/admin_password }

@@ -1,0 +1,36 @@
+# Broker MQTT com TLS + mTLS + ACL (infra/mqtt) — 2026-10-01T07:41Z
+# Certificados emitidos por infra/mqtt/gerar_certificados.sh (CA própria, ECDSA P-256).
+
+$ docker compose -f infra/mqtt/docker-compose.mqtt.yml ps
+SERVICE     IMAGE                      STATUS              PORTS
+mosquitto   eclipse-mosquitto:2.0.20   Up About a minute   0.0.0.0:8883->8883/tcp, [::]:8883->8883/tcp
+
+## 1. Totem com certificado válido publica na PRÓPRIA árvore → o ingestor recebe
+$ mosquitto_sub (ingestor) -t "specradar/totem/+/telemetria"  &  mosquitto_pub (totem-sp-001) -t specradar/totem/totem-sp-001/telemetria
+specradar/totem/totem-sp-001/telemetria {"cpu":12,"versao":"1.4.0"}
+publicação aceita
+
+## 2. Cliente SEM certificado de cliente → mTLS recusa a conexão
+$ mosquitto_pub --cafile ca.crt (sem --cert/--key) -t specradar/totem/totem-sp-001/telemetria
+Error: The connection was lost.
+  broker: peer did not return a certificate
+
+## 3. Totem publicando na árvore de OUTRO totem → ACL nega
+$ mosquitto_pub (totem-sp-001) -t specradar/totem/totem-rj-999/telemetria -m "dado falso" -q 1
+Warning: Publish 1 failed: Not authorized.
+
+## 4. Totem assinando os comandos próprios E os de outro totem → só recebe os próprios
+$ mosquitto_sub (totem-sp-001) -t .../totem-sp-001/comandos -t .../totem-rj-999/comandos  &  ingestor publica nos dois
+specradar/totem/totem-sp-001/comandos atualizar-catalogo
+  ("comando-do-outro-totem" não chega: a ACL de leitura bloqueia a entrega)
+
+## 5. TLS 1.1 → servidor recusa (mínimo TLS 1.2)
+$ openssl s_client -connect mosquitto:8883 -tls1_1
+tlsv1 alert protocol version
+SSL alert number 70
+$ openssl s_client -connect mosquitto:8883 -tls1_2
+New, TLSv1.2, Cipher is ECDHE-ECDSA-AES256-GCM-SHA384
+
+## 6. Porta 1883 (MQTT em texto claro) → não existe
+$ mosquitto_pub -h mosquitto -p 1883
+Error: Connection refused

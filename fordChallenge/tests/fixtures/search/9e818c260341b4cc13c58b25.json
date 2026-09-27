@@ -1,0 +1,89 @@
+{
+  "consulta": "site:vw.com.br filetype:pdf Amarok",
+  "provedor": "replay",
+  "veiculo": "Volkswagen Amarok V6 Highline",
+  "gravado_em": "2026-09-13",
+  "gravado_de": "tavily",
+  "achados": [
+    {
+      "url": "https://www.vw.com.br/idhub/content/dam/onehub_pkw/importers/br/literatura-de-bordo/manual-amarok/my-2014_142-5b1-aba-66.pdf",
+      "titulo": "[PDF] Manual de instruções - Amarok - VW",
+      "snippet": "uma Concessionária Volkswagen. [...] uma Concessionária Volkswagen. [...] ● Este Manual de instruções é válido para todos os modelos e versões da Amarok.",
+      "posicao": 0,
+      "provedor": "tavily",
+      "consulta": "site:vw.com.br filetype:pdf Amarok"
+    },
+    {
+      "url": "https://www.vw.com.br/idhub/content/dam/onehub_pkw/importers/br/literatura-de-bordo/manual-amarok/my-2017_amarok_manual-de-instru--es.pdf",
+      "titulo": "[PDF] Manual de instruções Amarok - VW",
+      "snippet": "e versões da Amarok. [...] uma Concessionária Volkswagen. [...] especializados e ferramentas.",
+      "posicao": 1,
+      "provedor": "tavily",
+      "consulta": "site:vw.com.br filetype:pdf Amarok"
+    },
+    {
+      "url": "https://www.vw.com.br/idhub/content/dam/onehub_pkw/importers/br/literatura-de-bordo/manual-amarok/MY25/Manual_de_instrucoes_Amarok_MY25.pdf",
+      "titulo": "[PDF] Manual de instruções Amarok - VW",
+      "snippet": "e-mail ou impresso, conforme armazenado no sistema. [...] da fábrica sobre aces-sório, peças de reposição e recursos. [...] os serviços numa empresa especializada qualificada para isso.",
+      "posicao": 2,
+      "provedor": "tavily",
+      "consulta": "site:vw.com.br filetype:pdf Amarok"
+    },
+    {
+      "url": "https://www.vw.com.br/idhub/content/dam/onehub_pkw/importers/br/literatura-de-bordo/manual-amarok/Amarok2020.pdf",
+      "titulo": "[PDF] Manual de instruções Amarok - VW",
+      "snippet": "da fábrica sobre acessório, peças de repo-sição e recursos. [...] das indicações, figuras e descrições deste manual. [...] podem ser obtidas numa Concessionária Volks-wagen.",
+      "posicao": 3,
+      "provedor": "tavily",
+      "consulta": "site:vw.com.br filetype:pdf Amarok"
+    },
+    {
+      "url": "https://www.vw.com.br/idhub/content/dam/onehub_pkw/importers/br/literatura-de-bordo/manual-amarok/Amarok%20MY%202019.pdf",
+      "titulo": "[PDF] Manual de instruções Amarok - VW",
+      "snippet": "da fábrica sobre acessório, peças de repo-sição e recursos. [...] numa Concessionária Volks-wagen. [...] do veículo na página 276.",
+      "posicao": 4,
+      "provedor": "tavily",
+      "consulta": "site:vw.com.br filetype:pdf Amarok"
+    },
+    {
+      "url": "https://www.vw.com.br/idhub/content/dam/onehub_pkw/importers/br/literatura-de-bordo/manual-amarok/my22/Amarok_MY22_2H6012766BQ_Manual%20de%20instru%C3%A7%C3%B5es.pdf",
+      "titulo": "[PDF] Manual de instruções Amarok - VW",
+      "snippet": "de conforto que você certamente desejará usar em suas viagens diárias. [...] aces-sório, peças de reposição e recursos. [...] qualificada para isso.",
+      "posicao": 5,
+      "provedor": "tavily",
+      "consulta": "site:vw.com.br filetype:pdf Amarok"
+    },
+    {
+      "url": "https://www.vw.com.br/idhub/content/dam/onehub_pkw/importers/br/literatura-de-bordo/manual-amarok/Baixa_2H6.012.766.BN%20-%20Manual%20de%20instru%C3%A7%C3%B5es%20-%20Amarok.pdf",
+      "titulo": "[PDF] Manual de instruções Amarok - VW",
+      "snippet": "sobre determinações legais e recomendações da fábrica sobre acessório, peças de reposição e recursos. [...] e os alertas deste Manual de instru-ções. [...] no se-gundo ano.",
+      "posicao": 6,
+      "provedor": "tavily",
+      "consulta": "site:vw.com.br filetype:pdf Amarok"
+    },
+    {
+      "url": "https://www.vw.com.br/idhub/content/dam/onehub_pkw/importers/br/literatura-de-bordo/manual-amarok/21B.5B2.AMA.66%20-%20Suplemento.pdf",
+      "titulo": "[PDF] Amarok 2021 - Manual de Instruções - Suplemento - VW",
+      "snippet": "armazenado no sistema. [...] Acesse estas e outras informações de serviços do seu veículo através do aplicativo Meu VW, disponível gratuitamente para as plataformas iOS (Apple) e Android (Google). [...] de criança; – pré-tensionador dos cintos de segurança; – regulagem de altura dos cintos de segurança; – tensor dos cintos de segurança; – unidades de controle e sensores.",
+      "posicao": 7,
+      "provedor": "tavily",
+      "consulta": "site:vw.com.br filetype:pdf Amarok"
+    },
+    {
+      "url": "https://www.vw.com.br/idhub/content/dam/onehub_pkw/importers/br/literatura-de-bordo/manual-amarok/my24/Amarok_MY24_24A5B2AMA66_Suplemento.pdf",
+      "titulo": "[PDF] Suplemento - VW",
+      "snippet": "Suplemento Amarok – Edição 10.2023 Legislação e modificações técnicas Neste suplemento estão descritas informações que substituem ou complementam os respectivos conteúdos do Manual de instruções.\nAssim, a leitura do Manual de instruções deverá ser realizada, necessariamente, em conjunto com este Suplemento, uma vez que as informações aqui contidas prevale-cem sobre aquelas que se encontram no Manual de instruções.",
+      "posicao": 8,
+      "provedor": "tavily",
+      "consulta": "site:vw.com.br filetype:pdf Amarok"
+    },
+    {
+      "url": "https://www.vw.com.br/idhub/content/dam/onehub_pkw/importers/br/literatura-de-bordo/manuais-de-resgate/indices/2025/VWB_RD_Model_index_06_2025_EN.pdf",
+      "titulo": "[PDF] Rescue data Volkswagen Model index",
+      "snippet": "Vehicle name Model cycle A Amarok (double cabin) from 2011 Amarok (simple cabin) from 2011 Amarok from 2022 Amarok from 2024 C CrossFox from 2011 F Fox (2 doors) from 2011 Fox (4 doors) from 2011 G Gol G4 (2 doors) from 2011 Gol G4 (4 doors) from 2011 Gol G5 from 2011 Golf from 2011 Golf A7 from 2013 Golf 7 GTE from 2014 I ID.4 from 2020 ID.Buzz from 2022 J Jetta from 2011 Jetta Variant from 2011 Jetta from 2022 K Kombi from 2011 N Nivus from 2020 Nivus from 2024 Nova Saveiro (double cabin)",
+      "posicao": 9,
+      "provedor": "tavily",
+      "consulta": "site:vw.com.br filetype:pdf Amarok"
+    }
+  ]
+}

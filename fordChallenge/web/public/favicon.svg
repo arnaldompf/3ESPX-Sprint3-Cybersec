@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="SpecRadar">
+  <!-- O wordmark do produto, não a marca da Ford: `020_BRIEF_PRODUTO.md` proíbe usar ou
+       redesenhar o logotipo da Ford dentro do sistema. Quadrado no azul institucional
+       (`--brand-950`) com a inicial, que é o mesmo desenho da sidebar. -->
+  <rect width="32" height="32" rx="7" fill="#06143F"/>
+  <text x="16" y="22" text-anchor="middle" font-family="Schibsted Grotesk, system-ui, sans-serif"
+        font-size="17" font-weight="700" fill="#FFFFFF">S</text>
+</svg>

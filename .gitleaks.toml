@@ -1,0 +1,26 @@
+# Gitleaks: regras padrão + exceções revisadas. Toda exceção tem motivo.
+title = "SpecRadar — secret scanning"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Falsos positivos conhecidos e revisados"
+paths = [
+  # Cópias datadas de páginas públicas de montadoras (modo replay). Contêm tokens de
+  # analytics/CDN dos próprios sites, não credenciais do projeto.
+  '''fordChallenge/tests/fixtures/snapshots/''',
+  '''fordChallenge/tests/fixtures/search/''',
+  '''fordChallenge/gabarito/raw/''',
+  # Lockfiles: hashes de integridade (sha512) que parecem segredo.
+  '''fordChallenge/uv\.lock''',
+  '''package-lock\.json''',
+]
+regexes = [
+  # Segredos de teste declarados como tais (nome explícito, nunca usados fora de CI/teste).
+  '''ci-secret-nao-usar-em-producao''',
+  '''segredo-de-teste-com-mais-de-32-bytes''',
+  # Achados do Gitleaks em 01/10/2026, triados: JWT_SECRET de fixtures de teste da solução.
+  '''segredo-de-teste-com-folga-de-32-bytes''',
+  '''teste-nao-e-segredo-de-producao''',
+]

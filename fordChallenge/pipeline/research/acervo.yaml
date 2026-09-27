@@ -1,0 +1,75 @@
+# Localizadores. A aplicação ainda precisa ser comprovada no conteúdo capturado.
+- marca: Ford
+  modelo: Ranger
+  titulo: Ford Ranger garantia contratual por ano-modelo
+  url: https://www.ford.com.br/servico-ao-cliente/garantia/
+  versoes: [Limited 3.0 V6 Diesel 4WD AT]
+  anos_modelo: [2027]
+  finalidade: garantia_contratual
+  limitacao: somente prazo geral do cabeçalho exato; não transporta garantia de componentes
+- marca: Ford
+  modelo: Ranger
+  titulo: Ford Ranger Limited ficha técnica brasileira
+  url: https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at/
+  versoes: [Limited 3.0 V6 Diesel 4WD AT]
+  finalidade: especificacoes_e_equipamentos
+  limitacao: página mutável; ano-modelo precisa ser confirmado no conteúdo
+- marca: Volkswagen
+  modelo: Amarok
+  titulo: Webmotors Amarok Extreme 2026
+  url: https://www.webmotors.com.br/volkswagen/amarok/2026/3-0-v6-tdi-diesel-extreme-cd-4motion-automatico/387633
+  versoes: [V6 Extreme]
+  anos_modelo: [2026]
+  finalidade: especificacoes_complementares
+  limitacao: fonte secundária; itens e ano precisam constar do trecho
+- marca: Volkswagen
+  modelo: Amarok
+  titulo: Volkswagen Amarok catálogo brasileiro
+  url: https://www.vw.com.br/pt/carros/amarok.html
+  finalidade: especificacoes_e_equipamentos
+  limitacao: página multiversão; confirmar coluna e ano antes de publicar
+
+  # ------------------------------------------------------- CarrosNaWeb (Fase 2, 18/18)
+  # Ficha padronizada por versão + ano-modelo, tier 3. Código opaco por versão+ano:
+  # conferido um a um ao vivo em 2026-09-15, nunca por sitemap/busca (armadilha real do
+  # projeto: 49975 é a Limited Plus, vizinha de 49974, a Limited).
+- marca: Ford
+  modelo: Ranger
+  titulo: CarrosNaWeb Ford Ranger Raptor 3.0 V6 2026
+  url: https://www.carrosnaweb.com.br/fichadetalhe.asp?codigo=46982
+  versoes: [Raptor 3.0 V6]
+  anos_modelo: [2026]
+  finalidade: rpm_torque_e_potencia
+  limitacao: "código opaco por versão+ano; ano-modelo reconfirmado no cabeçalho; potência em cv vem como imagem"
+- marca: Ford
+  modelo: Ranger
+  titulo: CarrosNaWeb Ford Ranger Limited 3.0 V6 2027
+  url: https://www.carrosnaweb.com.br/fichadetalhe.asp?codigo=49974
+  versoes: [Limited 3.0 V6]
+  anos_modelo: [2027]
+  finalidade: aceleracao_suspensao_e_pneus
+  limitacao: "código opaco por versão+ano; NÃO é 49975 (Limited Plus, versão vizinha); potência em cv vem como imagem"
+- marca: Chevrolet
+  modelo: S10
+  titulo: CarrosNaWeb Chevrolet S10 High Country 2.8 2027
+  url: https://www.carrosnaweb.com.br/fichadetalhe.asp?codigo=47930
+  versoes: [High Country 2.8]
+  anos_modelo: [2027]
+  finalidade: rpm_aceleracao_e_pneus
+  limitacao: "código opaco por versão+ano; ano-modelo reconfirmado no cabeçalho; potência em cv vem como imagem"
+- marca: Volkswagen
+  modelo: Amarok
+  titulo: CarrosNaWeb Volkswagen Amarok Extreme 3.0 V6 2026
+  url: https://www.carrosnaweb.com.br/fichadetalhe.asp?codigo=44849
+  versoes: [Extreme 3.0 V6]
+  anos_modelo: [2026]
+  finalidade: suspensao_e_amortecedores
+  limitacao: "código opaco por versão+ano; ano-modelo reconfirmado no cabeçalho; potência em cv vem como imagem"
+- marca: Toyota
+  modelo: Hilux
+  titulo: CarrosNaWeb Toyota Hilux SRX Plus 2.8 2026
+  url: https://www.carrosnaweb.com.br/fichadetalhe.asp?codigo=41190
+  versoes: [SRX Plus 2.8]
+  anos_modelo: [2026]
+  finalidade: aceleracao_e_suspensao
+  limitacao: "código opaco por versão+ano; ano-modelo reconfirmado no cabeçalho; potência em cv vem como imagem"

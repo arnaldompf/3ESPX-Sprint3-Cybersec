@@ -1,0 +1,58 @@
+# IaC e container — executado localmente com as mesmas ferramentas do pipeline (2026-10-01T07:42Z)
+
+$ docker run --rm -i hadolint/hadolint:v2.12.0 < infra/Dockerfile
+(código de saída: 0 — nenhum achado)
+
+$ trivy config --severity HIGH,CRITICAL --exit-code 1 infra/
+(código de saída: 0)
+
+$ trivy config --include-non-failures infra/   # todas as severidades
+Dockerfile: 28 verificações — 28 PASS, 0 FAIL
+(usuário não-root, sem ADD remoto, sem segredo em ENV, HEALTHCHECK, apt sem cache, sem sudo, ...)
+
+$ trivy image --severity HIGH,CRITICAL --ignore-unfixed --exit-code 1 specradar:local
+specradar:local (debian 12.15)
+==============================
+Total: 0 (HIGH: 0, CRITICAL: 0)
+Python (python-pkg)
+===================
+Total: 8 (HIGH: 7, CRITICAL: 1)
+┌────────────────────┬─────────────────┬──────────┬────────┬───────────────────┬───────────────┬─────────────────────────────────────────────────────────────┐
+│      Library       │  Vulnerability  │ Severity │ Status │ Installed Version │ Fixed Version │                            Title                            │
+├────────────────────┼─────────────────┼──────────┼────────┼───────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+│ PyJWT (METADATA)   │ CVE-2026-102268 │ CRITICAL │ fixed  │ 2.13.0            │ 2.14.0        │ PyJWT is a Python implementation of JSON Web Token          │
+│                    │                 │          │        │                   │               │ standards. Prior to...                                      │
+│                    │                 │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-102268                 │
+│                    ├─────────────────┼──────────┤        │                   │               ├─────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-102266 │ HIGH     │        │                   │               │ pyjwt: pyjwt: Authentication bypass via empty HMAC key      │
+│                    │                 │          │        │                   │               │ acceptance                                                  │
+│                    │                 │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-102266                 │
+│                    ├─────────────────┤          │        │                   │               ├─────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-102267 │          │        │                   │               │ pyjwt: pyjwt: Verification key substitution via unvalidated │
+│                    │                 │          │        │                   │               │ JWKS redirects                                              │
+│                    │                 │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-102267                 │
+│                    ├─────────────────┤          │        │                   │               ├─────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-102271 │          │        │                   │               │ pyjwt: PyJWT: Authentication bypass via acceptance of DER   │
+│                    │                 │          │        │                   │               │ public keys as HMAC...                                      │
+│                    │                 │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-102271                 │
+│                    ├─────────────────┤          │        │                   │               ├─────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-102272 │          │        │                   │               │ pyjwt: pyjwt: Token forgery via improper Unicode byte-order │
+│                    │                 │          │        │                   │               │ mark handling                                               │
+│                    │                 │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-102272                 │
+│                    ├─────────────────┤          │        │                   │               ├─────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-102273 │          │        │                   │               │ pyjwt: pyjwt: Token forgery via acceptance of public JWK    │
+│                    │                 │          │        │                   │               │ containers as HMAC...                                       │
+│                    │                 │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-102273                 │
+├────────────────────┼─────────────────┤          │        ├───────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+│ urllib3 (METADATA) │ CVE-2026-97687  │          │        │ 2.7.0             │ 2.8.0         │ urllib3: urllib3: Traffic interception via HTTPS proxy TLS  │
+│                    │                 │          │        │                   │               │ configuration override                                      │
+│                    │                 │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-97687                  │
+│                    ├─────────────────┤          │        │                   │               ├─────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-97689  │          │        │                   │               │ urllib3: urllib3: Denial of Service via unbounded memory    │
+│                    │                 │          │        │                   │               │ allocation in chunk parser...                               │
+│                    │                 │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-97689                  │
+└────────────────────┴─────────────────┴──────────┴────────┴───────────────────┴───────────────┴─────────────────────────────────────────────────────────────┘
+(código de saída: 1 — REPROVADO: as mesmas pyjwt/urllib3 do pip-audit)
+
+$ trivy image --format cyclonedx --output sbom-specradar.cdx.json specradar:local
+SBOM CycloneDX 1.6: 220 componentes — {'pypi': 113, 'deb': 105, 'operating-system': 1, 'npm': 1}

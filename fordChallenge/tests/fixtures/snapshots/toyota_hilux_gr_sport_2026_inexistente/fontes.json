@@ -1,0 +1,34 @@
+{
+  "version_id": "toyota_hilux_gr_sport_2026_inexistente",
+  "descricao": "Toyota Hilux GR-Sport — caso negativo do resolvedor (fora da linha 2026)",
+  "captured_at": "2026-09-01",
+  "fontes": [
+    {
+      "source_id": "toyota_site_cd",
+      "url": "https://www.toyota.com.br/modelos/hilux-cabine-dupla",
+      "tier": 1,
+      "tipo": "pagina_oficial",
+      "status": "consultada",
+      "tem_texto_salvo": true
+    },
+    {
+      "source_id": "registro_evidencias_grsport",
+      "url": "https://www.toyota.com.br/modelos/hilux-cabine-dupla",
+      "tier": 1,
+      "tipo": "registro_de_evidencia",
+      "status": "consultada",
+      "tem_texto_salvo": true,
+      "nota": "linha vigente 2026 e ausência da GR-Sport",
+      "origem": "registro verbatim da coleta de 2026-09-01 (execução do Manus seguindo o protocolo)"
+    },
+    {
+      "source_id": "fipe_grsport",
+      "url": "https://www.tabelafipebrasil.com/carros/TOYOTA/HILUX-CD-GR-S-4X4-28-TDI-DIES-AUT",
+      "tier": 2,
+      "tipo": "fipe",
+      "status": "consultada",
+      "tem_texto_salvo": false,
+      "nota": "histórico; último ano-modelo 2024"
+    }
+  ]
+}

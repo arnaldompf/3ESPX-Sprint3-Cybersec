@@ -1,0 +1,15 @@
+{
+  "source_id": "autoesporte_globo_com_f3683863",
+  "version_id": "pesquisa_autoesporte_globo_com",
+  "url_final": "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2026/05/mitsubishi-triton-2027-precos-versoes-equipamentos-picape-media.ghtml",
+  "url": "https://autoesporte.globo.com/setor-automotivo/mercado-automotivo/noticia/2026/05/mitsubishi-triton-2027-precos-versoes-equipamentos-picape-media.ghtml",
+  "http_status": 200,
+  "tier": 3,
+  "tipo": "site_oficial",
+  "status": "consultada",
+  "captured_at": "2026-09-13",
+  "text_path": "doc.md",
+  "sha256": "39053740a29c12d2826aa6d8168c22cb6064ba2b209a8402dbd16bbbf0838669",
+  "bytes": 644037,
+  "gerado_por": "scripts/gravar_replay_pesquisa.py"
+}
