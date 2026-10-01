@@ -211,13 +211,13 @@ jobs:
           image-ref: specradar:${{ github.sha }}
           format: cyclonedx
           output: sbom-specradar.cdx.json
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: sbom
           path: sbom-specradar.cdx.json
       - name: Exportar imagem para o DAST
         run: docker save specradar:${{ github.sha }} -o imagem.tar
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: imagem
           path: imagem.tar
