@@ -19,7 +19,7 @@
 #   | pacotes do SO como vieram na base               | `apt-get upgrade` aplica correções de CVE    |
 
 # ---------------------------------------------------------------- 1. front-end (React/Vite)
-FROM node:22.12-alpine3.21 AS web
+FROM node:25.2-alpine3.21 AS web
 WORKDIR /src/web
 COPY fordChallenge/web/package.json fordChallenge/web/package-lock.json ./
 # --ignore-scripts: script de pós-instalação de dependência é vetor clássico de supply chain.
