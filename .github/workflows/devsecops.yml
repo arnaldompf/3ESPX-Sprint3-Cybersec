@@ -48,7 +48,7 @@ jobs:
     name: Secret scanning (Gitleaks)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0 # histórico inteiro: segredo apagado num commit continua no anterior
       - uses: gitleaks/gitleaks-action@v2
@@ -64,7 +64,7 @@ jobs:
       contents: read
       security-events: write # publica o SARIF na aba Security do GitHub
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@v6
       - name: Semgrep (Python, TypeScript, OWASP Top 10 + regras do projeto)
         run: |
@@ -87,7 +87,7 @@ jobs:
     name: SCA (pip-audit + npm audit)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@v6
       - name: Dependências Python travadas no uv.lock
         run: |
@@ -125,7 +125,7 @@ jobs:
           --health-cmd "pg_isready -U specradar -d specradar"
           --health-interval 5s --health-timeout 3s --health-retries 12
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@v6
         with:
           enable-cache: true
@@ -157,7 +157,7 @@ jobs:
       contents: read
       security-events: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Hadolint (boas práticas do Dockerfile)
         uses: hadolint/hadolint-action@v3.1.0
         with:
@@ -180,7 +180,7 @@ jobs:
       contents: read
       security-events: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: docker/setup-buildx-action@v3
       - name: Build da imagem endurecida
         uses: docker/build-push-action@v6
@@ -229,7 +229,7 @@ jobs:
     needs: container
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/download-artifact@v4
         with:
           name: imagem
@@ -264,7 +264,7 @@ jobs:
       packages: write
       id-token: write # assinatura keyless do Cosign (OIDC), sem chave privada guardada
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: docker/setup-buildx-action@v3
       - uses: docker/login-action@v3
         with:
