@@ -28,7 +28,7 @@ COPY fordChallenge/web/ ./
 RUN npm run build && find dist -name '*.map' -delete
 
 # ---------------------------------------------------------------- 2. dependências Python
-FROM python:3.12.8-slim-bookworm AS build
+FROM python:3.14.7-slim-bookworm AS build
 COPY --from=ghcr.io/astral-sh/uv:0.8 /uv /bin/uv
 ENV UV_COMPILE_BYTECODE=1 \
     UV_LINK_MODE=copy \
@@ -43,7 +43,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --frozen --no-dev --extra postgres
 
 # ---------------------------------------------------------------- 3. runtime
-FROM python:3.12.8-slim-bookworm AS runtime
+FROM python:3.14.7-slim-bookworm AS runtime
 
 LABEL org.opencontainers.image.title="specradar" \
       org.opencontainers.image.description="SpecRadar - Ford Challenge (imagem endurecida)" \
