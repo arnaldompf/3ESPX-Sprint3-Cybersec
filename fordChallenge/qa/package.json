@@ -8,6 +8,6 @@
     "golden": "playwright test --config playwright.golden.config.ts"
   },
   "devDependencies": {
-    "@playwright/test": "1.56.1"
+    "@playwright/test": "1.63.0"
   }
 }
