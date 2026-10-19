@@ -58,10 +58,10 @@ pdf = ["pdfplumber>=0.11"]          # WP-09 - leve, preserva layout de tabela
 pdf-ocr = [
     "pdfplumber>=0.11",
     "pypdfium2>=5.13,<6",
-    "rapidocr==3.9.2",
-    "onnxruntime==1.30.0",
+    "rapidocr==3.10.0",
+    "onnxruntime==1.31.0",
 ]  # OCR CPU local; modelos/configuração explícitos, sem serviço pago
-docling = ["docling==2.127.0"]       # opções e parser verificados nesta versão
+docling = ["docling==2.140.0"]       # opções e parser verificados nesta versão
 postgres = ["psycopg[binary]>=3.2"]  # producao / CI
 # WP-28: dois motores. O weasyprint e o previsto pela spec e depende de bibliotecas
 # nativas (GTK/Pango/Cairo); o xhtml2pdf e a reserva em Python puro, para a maquina que
